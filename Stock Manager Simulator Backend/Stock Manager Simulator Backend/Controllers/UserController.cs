@@ -1,5 +1,7 @@
 ﻿using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Stock_Manager_Simulator_Backend.Constans;
 using Stock_Manager_Simulator_Backend.Dtos;
 using Stock_Manager_Simulator_Backend.Services;
 using Stock_Manager_Simulator_Backend.Validators;
@@ -27,10 +29,11 @@ namespace Stock_Manager_Simulator_Backend.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            return null;
+            return new List<string>();
         }
 
         // GET api/<UserController>/5
+        [Authorize]
         [HttpGet("{id}")]
         public string Get(int id)
         {
@@ -51,6 +54,7 @@ namespace Stock_Manager_Simulator_Backend.Controllers
         }
 
         // PUT api/<UserController>/5
+        [Authorize]
         [HttpPut("change-password/{id}")]
         public async Task<ActionResult> Put(int id, [FromBody] ChangePasswordDto changePasswordDto)
         {
@@ -70,6 +74,7 @@ namespace Stock_Manager_Simulator_Backend.Controllers
         }
 
         // DELETE api/<UserController>/5
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id, ConfirmDeleteDto confirmDeleteDto)
         {
@@ -80,6 +85,19 @@ namespace Stock_Manager_Simulator_Backend.Controllers
             }
 
             return BadRequest(new { Error = result });
+        }
+
+        [Authorize]
+        [HttpGet("me")]
+        public async Task<ActionResult<UserDto>> GetMySelfAsync()
+        {
+            var result = await _userService.GetMySelfAsync();
+            if (result == null)
+            {
+                return BadRequest(new { Error = ErrorConstans.THERE_IS_AN_UNEXPECTED_ERROR });
+            }
+
+            return Ok(result);
         }
     }
 }

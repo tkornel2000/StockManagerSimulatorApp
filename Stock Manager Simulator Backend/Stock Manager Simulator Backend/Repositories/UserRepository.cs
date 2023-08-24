@@ -18,6 +18,11 @@ namespace Stock_Manager_Simulator_Backend.Repositories
             return _context.Users.FirstOrDefaultAsync(x => x.Id == id);
         }
 
+        public Task<User?> GetUserByUsernameAsync(string username)
+        {
+            return _context.Users.FirstOrDefaultAsync(x => x.Username == username);
+        }
+
         public async Task CreateUserAsync(User user)
         {
             _context.Users.Add(user);

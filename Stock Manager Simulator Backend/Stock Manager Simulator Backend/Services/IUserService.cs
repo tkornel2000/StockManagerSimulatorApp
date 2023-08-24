@@ -9,5 +9,6 @@ namespace Stock_Manager_Simulator_Backend.Services
         Task<string> DeleteUserAsync(int id, ConfirmDeleteDto confirmDeleteDto);
         string HashPassword(string password);
         bool ValidatePassword(string inputPassword, string passwordHash);
+        Task<UserDto?> GetMySelfAsync();
     }
 }

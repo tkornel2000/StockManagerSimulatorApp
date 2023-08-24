@@ -5,6 +5,7 @@ namespace Stock_Manager_Simulator_Backend.Repositories
     public interface IUserRepository
     {
         Task<User?> GetUserByIdAsync(int id);
+        Task<User?> GetUserByUsernameAsync(string username);
         Task CreateUserAsync(User user);
         Task SavaChangesAsync();
         Task DeleteUserAsync(User user);

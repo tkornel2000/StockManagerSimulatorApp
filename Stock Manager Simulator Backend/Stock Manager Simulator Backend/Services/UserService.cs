@@ -11,18 +11,13 @@ namespace Stock_Manager_Simulator_Backend.Services
     {
         private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
+        private readonly ITokenService _tokenService;
 
-        public UserService(IUserRepository userRepository, IMapper mapper)
+        public UserService(IUserRepository userRepository, IMapper mapper, ITokenService tokenService)
         {
             _userRepository = userRepository;
             _mapper = mapper;
-        }
-
-        public async Task<UserDto> GetUserByIdAsync(int id)
-        {
-            var user = await _userRepository.GetUserByIdAsync(id);
-            var userDto = _mapper.Map<UserDto>(user);
-            return userDto;
+            _tokenService = tokenService;
         }
 
         public async Task CreateUserAsync(RegisterDto registerDto)
@@ -82,6 +77,17 @@ namespace Stock_Manager_Simulator_Backend.Services
             return string.Equals(hashedInputPassword, passwordHash/*, StringComparison.OrdinalIgnoreCase*/);
         }
 
+        public async Task<UserDto?> GetMySelfAsync()
+        {
+            var user = await _userRepository.GetUserByIdAsync(_tokenService.GetMyId());
+            if (user == null)
+            {
+                return null;
+            }
+
+            var userDto = _mapper.Map<UserDto>(user);
+            return userDto;
+        }
 
     }
 }
