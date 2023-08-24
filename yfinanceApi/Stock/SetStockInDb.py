@@ -4,8 +4,12 @@ from Data.DbContext import mydb
 def SetStcockInDb():
     cursor = mydb.cursor()
 
+    #Először törlünk mindent és csak utána tudunk hozzáadni.
+    sql_delete = 'DELETE FROM Stock.dbo.Stocks';
+    cursor.execute(sql_delete)
+
     sql_insert = (
-            'INSERT INTO Stock.dbo.stock '
+            'INSERT INTO Stock.dbo.Stocks '
                 '(stockSymbol, name, fullName) '
             'VALUES '
                 '(?, ?, ?)'

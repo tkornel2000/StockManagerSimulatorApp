@@ -1,14 +1,12 @@
-import sys
 import threading
 import time
 
 import schedule
 from flask import Flask, jsonify
-from flask_cors import CORS
 
 from Bux.GetCurrentBux import GetCurrentBux
 from Bux.GetTodayBux import GetTodayBux
-from Data.DbUpdateStockPrice import DbUpdateStockPrice
+from Stock.SetCurrentStockPricesInDb import DbUpdateStockPrice
 from Stock.GetCurrentStockPrice import GetCurrentStockPrice
 from Stock.GetSpecificHistoryStockData import GetSpecificHistoryStockData
 

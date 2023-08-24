@@ -5,7 +5,7 @@ import datetime as dt
 
 def DbUpdateStockPrice():
     sql_insert = (
-        'INSERT INTO Stock.dbo.stock_price '
+        'INSERT INTO Stock.dbo.StocksPrices'
             '(stockSymbol, price, volume, dayHigh, dayLow, dayOpen, updateTime) '
         'VALUES '
             '(?, ?, ?, ?, ?, ?, ?)'
