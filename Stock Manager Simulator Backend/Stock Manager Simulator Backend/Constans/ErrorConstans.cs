@@ -1,0 +1,22 @@
+﻿namespace Stock_Manager_Simulator_Backend.Constans
+{
+    public class ErrorConstans
+    {
+        public const string NAME_IS_REQUIRED = "NAME_IS_REQUIRED";
+        public const string EMAIL_IS_REQUIRED = "EMAIL_IS_REQUIRED";
+        public const string INVALID_EMAIL_FORMAT = "INVALID_EMAIL_FORMAT";
+        public const string THERE_IS_USER_WITH_THIS_EMAIL = "THERE_IS_USER_WITH_THIS_EMAIL";
+        public const string PASSWORD_IS_REQUIRED = "PASSWORD_IS_REQUIRED";
+        public const string PASSWORD_IS_TOO_SHORT = "PASSWORD_IS_TOO_SHORT";
+        public const string PASSWORD_MUST_HAVE_UPPERCASE_LETTER = "PASSWORD_MUST_HAVE_UPPERCASE_LETTER";
+        public const string PASSWORD_MUST_HAVE_LOWERCASE_LETTER = "PASSWORD_MUST_HAVE_LOWERCASE_LETTER";
+        public const string PASSWORD_MUST_HAVE_NUMBER = "PASSWORD_MUST_HAVE_NUMBER";
+        public const string THERE_IS_USER_WITH_THIS_USERNAME = "THERE_IS_USER_WITH_THIS_USERNAME";
+        public const string CONFIRMPASSWORD_IS_REQUIRED = "CONFIRMPASSWORD_IS_REQUIRED";
+        public const string CONFIRMPASSWORD_IS_NOT_MATCHED_WITH_PASSWORD = "CONFIRMPASSWORD_IS_NOT_MATCHED_WITH_PASSWORD";
+        public const string THERE_IS_NO_USER_WITH_THIS_ID = "THERE_IS_NO_USER_WITH_THIS_ID";
+        public const string YOU_CAN_NOT_DELETE_THIS_ACCOUNT_BECAUSE_PASSWORD_IS_INVALID = "YOU_CAN_NOT_DELETE_THIS_ACCOUNT_BECAUSE_PASSWORD_IS_INVALID";
+        public const string YOUR_OLD_PASSWORD_WAS_WRONG = "YOUR_OLD_PASSWORD_WAS_WRONG";
+
+    }
+}
