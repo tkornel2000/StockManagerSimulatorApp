@@ -14,7 +14,7 @@ from Stock.GetSpecificHistoryStockData import GetSpecificHistoryStockData
 
 app = Flask(__name__)
 
-# CORS(app)
+DbUpdateStockPrice()
 
 @app.route('/bux/current')
 def GetCurrentBuxFlask():
@@ -34,7 +34,7 @@ def GetSpecificHistoryStockDataFlask(stockSymbol: str, period: int,
         periodUnit: str, interval: int, intervalUnit: str):
     return jsonify(GetSpecificHistoryStockData(stockSymbol, period, periodUnit, interval, intervalUnit))
 
-schedule.every(10).minutes.do(DbUpdateStockPrice)
+schedule.every(15).seconds.do(DbUpdateStockPrice)
 
 def run_schedule():
     while True:

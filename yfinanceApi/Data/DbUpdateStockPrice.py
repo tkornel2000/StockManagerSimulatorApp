@@ -4,10 +4,12 @@ from Stock.GetCurrentStockPrice import GetCurrentStockPrice
 import datetime as dt
 
 def DbUpdateStockPrice():
-    sql_insert = "INSERT INTO `stock2`.`stock_price` " \
-                 "(`stockSymbol`, `price`, `volume`," \
-                 "`dayHigh`, `dayLow`, `dayOpen`,`update`) " \
-                 "VALUES (%s, %s, %s, %s, %s, %s, %s)"
+    sql_insert = (
+        'INSERT INTO Stock.dbo.stock_price '
+            '(stockSymbol, price, volume, dayHigh, dayLow, dayOpen, updateTime) '
+        'VALUES '
+            '(?, ?, ?, ?, ?, ?, ?)'
+    )
 
     for companySymbol in Companies.CompaniesSymbol:
         result = GetCurrentStockPrice(companySymbol)
@@ -25,5 +27,3 @@ def DbUpdateStockPrice():
         cursor.execute(sql_insert, value)
         mydb.commit()
         cursor.close()
-
-
