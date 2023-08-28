@@ -400,3 +400,4 @@ FodyWeavers.xsd
 Stock Manager Simulator Backend/Stock Manager Simulator Backend/obj/Debug/net6.0/Stock Manager Simulator Backend.csproj.AssemblyReference.cache
 *.cache
 *.suo
+*.vsidx
