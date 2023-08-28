@@ -6,6 +6,7 @@ namespace Stock_Manager_Simulator_Backend.Repositories
     {
         Task<User?> GetUserByIdAsync(int id);
         Task<User?> GetUserByUsernameAsync(string username);
+        Task<User?> GetUserByEmailAsync(string email);
         Task CreateUserAsync(User user);
         Task SavaChangesAsync();
         Task DeleteUserAsync(User user);

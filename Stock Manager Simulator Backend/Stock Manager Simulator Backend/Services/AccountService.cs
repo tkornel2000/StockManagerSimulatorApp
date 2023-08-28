@@ -19,10 +19,10 @@ namespace Stock_Manager_Simulator_Backend.Services
 
         public async Task<UserResult> LoginAsync(LoginDto loginDto)
         {
-            var user = await _userRepository.GetUserByUsernameAsync(loginDto.Username);
+            var user = await _userRepository.GetUserByEmailAsync(loginDto.Email);
             if (user is null)
             {
-                return new UserResult { Error = ErrorConstans.THERE_IS_NO_USER_WITH_THIS_USERNAME };
+                return new UserResult { Error = ErrorConstans.THERE_IS_NO_USER_WITH_THIS_EMAIL };
             }
 
             if (!_userService.ValidatePassword(loginDto.Password, user.PasswordHash))
