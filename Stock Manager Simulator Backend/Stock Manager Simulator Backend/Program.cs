@@ -76,6 +76,16 @@ builder.Services.Configure<JwtOptions>(builder.Configuration.GetRequiredSection(
 builder.Services.AddDbContext<ApplicationDbContext>(opt =>
     opt.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 
+var originHosts = builder.Configuration.GetSection("OriginHosts").Get<string[]>();
+
+builder.Services.AddCors(opt =>
+{
+    opt.AddDefaultPolicy(builder =>
+    {
+        builder.AllowAnyMethod().AllowAnyHeader().WithOrigins(originHosts);
+    });
+});
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
