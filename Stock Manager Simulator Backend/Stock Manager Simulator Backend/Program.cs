@@ -76,13 +76,13 @@ builder.Services.Configure<JwtOptions>(builder.Configuration.GetRequiredSection(
 builder.Services.AddDbContext<ApplicationDbContext>(opt =>
     opt.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 
-var originHosts = builder.Configuration.GetSection("OriginHosts").Get<string[]>();
+var originHost = builder.Configuration.GetSection("OriginHosts").Get<string>();
 
 builder.Services.AddCors(opt =>
 {
     opt.AddDefaultPolicy(builder =>
     {
-        builder.AllowAnyMethod().AllowAnyHeader().WithOrigins(originHosts);
+        builder.AllowAnyMethod().AllowAnyHeader().WithOrigins(originHost);
     });
 });
 
@@ -101,6 +101,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors();
 
 app.UseAuthentication();
 
