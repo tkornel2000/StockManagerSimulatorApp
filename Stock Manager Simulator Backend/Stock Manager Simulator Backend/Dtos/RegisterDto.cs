@@ -9,6 +9,6 @@
         public string Lastname { get; set; } = null!;
         public DateTime BirtOfDate { get; set; }
         public string Email { get; set; } = null!;
-        public bool IsMan { get; set; }
+        public string Gender { get; set; } = null!;
     }
 }

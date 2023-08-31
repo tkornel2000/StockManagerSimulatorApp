@@ -21,6 +21,10 @@
         public const string WRONG_PASSWORD = "WRONG_PASSWORD";
         public const string THERE_IS_AN_UNEXPECTED_ERROR = "THERE_IS_AN_UNEXPECTED_ERROR";
         public const string THERE_IS_NO_USER_WITH_THIS_EMAIL = "THERE_IS_NO_USER_WITH_THIS_EMAIL";
+        public const string BIRTH_OF_DATE_IS_REQUIRED = "BIRTH_OF_DATE_IS_REQUIRED";
+        public const string GENDER_IS_REQUIRED = "GENDER_IS_REQUIRED";
+        public const string LASTNAME_IS_REQUIRED = "LASTNAME_IS_REQUIRED";
+        public const string FIRSTNAME_IS_REQUIRED = "FIRSTNAME_IS_REQUIRED";
         
 
     }

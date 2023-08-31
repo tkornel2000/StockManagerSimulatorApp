@@ -11,13 +11,13 @@ namespace Stock_Manager_Simulator_Backend.Validators
         {
             RuleFor(x => x.Username)
                 .NotEmpty().WithMessage(ErrorConstans.NAME_IS_REQUIRED)
-                .Must(_userRepository.WithThisEmailThereIsNoUser)
+                .Must(_userRepository.WithThisUsernameThereIsNoUser)
                 .WithMessage(ErrorConstans.THERE_IS_USER_WITH_THIS_USERNAME);
 
             RuleFor(x => x.Email)
                 .NotEmpty().WithMessage(ErrorConstans.EMAIL_IS_REQUIRED)
                 .EmailAddress().WithMessage(ErrorConstans.INVALID_EMAIL_FORMAT)
-                .Must(_userRepository.WithThisUsernameThereIsNoUser)
+                .Must(_userRepository.WithThisEmailThereIsNoUser)
                 .WithMessage(ErrorConstans.THERE_IS_USER_WITH_THIS_EMAIL);
 
             RuleFor(x => x.Password)
@@ -30,6 +30,19 @@ namespace Stock_Manager_Simulator_Backend.Validators
             RuleFor(x => x.ConfirmPassword)
                 .NotEmpty().WithMessage(ErrorConstans.CONFIRMPASSWORD_IS_REQUIRED)
                 .Equal(x => x.Password).WithMessage(ErrorConstans.CONFIRMPASSWORD_IS_NOT_MATCHED_WITH_PASSWORD);
+
+            RuleFor(x => x.BirtOfDate)
+                .NotEmpty().WithMessage(ErrorConstans.BIRTH_OF_DATE_IS_REQUIRED);
+
+            RuleFor(x => x.Gender)
+                .NotEmpty().WithMessage(ErrorConstans.GENDER_IS_REQUIRED);
+
+            RuleFor(x => x.Lastname)
+                .NotEmpty().WithMessage(ErrorConstans.LASTNAME_IS_REQUIRED);
+
+            RuleFor(x => x.Firstname)
+                .NotEmpty().WithMessage(ErrorConstans.FIRSTNAME_IS_REQUIRED);
+
         }
     }
 }
