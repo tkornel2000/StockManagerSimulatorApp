@@ -1,10 +1,12 @@
-import { Navbar } from './Navbar';
+import { Navbar } from './Navbar'
 import { PermissionForComponent } from './Functions/PermissionForComponent'
 
-export const Dashboard = () => {
+export const Transactions = () => {
   PermissionForComponent()
 
   return (
-    <Navbar/>
+    <div>
+      <Navbar/>
+    </div>
   )
 }

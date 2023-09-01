@@ -13,3 +13,20 @@
 .rounded-lg{
   border-radius: 20px;
 }
+
+.bg-grey{     
+  background-color: rgba(150, 150, 150, 0.877);
+}
+
+.bg-light-grey{
+  background-color: rgba(212, 212, 212, 0.879);;
+}
+
+.isActive{
+  width:100%
+}
+
+.isActive:hover{
+  background-color: rgb(185, 185, 185);;
+  color: black;
+}
