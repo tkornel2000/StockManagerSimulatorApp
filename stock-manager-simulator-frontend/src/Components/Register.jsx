@@ -20,6 +20,12 @@ const Register = () => {
 
   const handleLogin = async () => {
     try {
+      if (user.birthOfDate === "" || isNaN(new Date(user.birthOfDate))) {
+        console.log("bent")
+        setErrorMessage("INVALID_BIRTH_OF_DATE");
+        setShowErrorModal(true);
+        return;
+      }
       const response = await axios.post("user", {
         username: user.username,
         email: user.email,
@@ -30,8 +36,9 @@ const Register = () => {
         birthOfDate: new Date(user.birthOfDate).toISOString(),
         gender: user.gender,
       });
-
+      console.log(response)
       if (response.status === 204) {
+        console.log("Sikeres regisztráció")
         setShowSuccessModal(true);
       }
     } catch (error) {
@@ -44,8 +51,21 @@ const Register = () => {
     }
   };
 
-  const handleClose = () => {
+  const handleErrorClose = () => {
     setShowErrorModal(false);
+  };
+
+  const handleSuccessClose = () => {
+    console.log("meghivtam a handleSuccessClose")
+    setShowSuccessModal(false);
+  };
+
+  const openSuccessModal = () => {
+    setShowSuccessModal(true);
+  };
+
+  const openErrorModal = () => {
+    setShowErrorModal(true);
   };
 
   return (
@@ -67,6 +87,7 @@ const Register = () => {
                       setUser({ ...user, username: e.target.value })
                     }
                     autoComplete="on"
+                    required
                   />
                 </div>
                 <div className="mb-3">
@@ -177,18 +198,20 @@ const Register = () => {
                   Bejelentkezés
                 </a>
               </p>
+              <button onClick={openSuccessModal} >success</button>
+              <button onClick={openErrorModal} >error</button>
             </div>
           </div>
         </div>
         <ErrorModal
           show={showErrorModal}
-          handleClose={handleClose}
+          onClose={handleErrorClose}
           errorHead="Regisztrációs hiba"
           errorMessage={errorMessage}
         />
         <SuccessModal
           show={showSuccessModal}
-          handleClose={handleClose}
+          onClose={handleSuccessClose}
           successHead="Sikeres regisztráció"
           successMessage="Ön sikereses regisztrált egy új profilt."
         />

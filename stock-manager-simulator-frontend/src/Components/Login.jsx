@@ -34,8 +34,10 @@ const Login = () => {
       }
     } catch (error) {
       if (error?.response?.status === 401) {
+        console.log(error)        
         setErrorMessage(error.response.data.error);
       } else {
+        console.log("sever error")
         setErrorMessage("SERVER_ERROR");
       }
       setShowErrorModal(true);
@@ -110,7 +112,7 @@ const Login = () => {
       </div>
       <ErrorModal
         show={showErrorModal}
-        handleClose={handleClose}
+        onClose={handleClose}
         errorHead="Bejelentkezési hiba"
         errorMessage={errorMessage}
       />

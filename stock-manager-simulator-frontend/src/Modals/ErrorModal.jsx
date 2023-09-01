@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import translateErrorMessage from "./TranslateErrorMessage";
 import "./Modal.css";
 
-const ErrorModal = ({ show, handleClose, errorHead, errorMessage }) => {
+const ErrorModal = ({ show, onClose, errorHead, errorMessage }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   React.useEffect(() => {
@@ -11,8 +11,8 @@ const ErrorModal = ({ show, handleClose, errorHead, errorMessage }) => {
 
   const closeModal = () => {
     setIsOpen(false);
-    if (handleClose) {
-      handleClose();
+    if (onClose) {
+      onClose();
     }
   };
 

@@ -42,8 +42,11 @@ function translateErrorMessage(errorMessage) {
             return 'A születési dátum megadása kötelező.';
         case 'GENDER_IS_REQUIRED':
             return 'A nem megadása kötelező.';
+        case 'INVALID_BIRTH_OF_DATE':
+            return 'Érvénytelen születési dátum formátum.';
         case 'SERVER_ERROR':
             return 'A szerver jelenleg nem elérhető';
+         
         default:
             return 'Ismeretlen hiba történt.';
     }

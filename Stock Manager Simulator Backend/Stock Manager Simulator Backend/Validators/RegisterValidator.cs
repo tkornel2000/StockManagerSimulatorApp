@@ -32,7 +32,8 @@ namespace Stock_Manager_Simulator_Backend.Validators
                 .Equal(x => x.Password).WithMessage(ErrorConstans.CONFIRMPASSWORD_IS_NOT_MATCHED_WITH_PASSWORD);
 
             RuleFor(x => x.BirthOfDate)
-                .NotEmpty().WithMessage(ErrorConstans.BIRTH_OF_DATE_IS_REQUIRED);
+                .NotEmpty().WithMessage(ErrorConstans.BIRTH_OF_DATE_IS_REQUIRED)
+                .NotNull().WithMessage(ErrorConstans.BIRTH_OF_DATE_IS_REQUIRED);
 
             RuleFor(x => x.Gender)
                 .NotEmpty().WithMessage(ErrorConstans.GENDER_IS_REQUIRED);

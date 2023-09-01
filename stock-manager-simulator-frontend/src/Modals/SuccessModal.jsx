@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Modal.css";
 
-const SuccessModal = ({ show, handleClose, successHead, successMessage }) => {
+const SuccessModal = ({ show, onClose, successHead, successMessage }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   React.useEffect(() => {
@@ -10,8 +10,8 @@ const SuccessModal = ({ show, handleClose, successHead, successMessage }) => {
 
   const closeModal = () => {
     setIsOpen(false);
-    if (handleClose) {
-      handleClose();
+    if (onClose) {
+      onClose();
     }
   };
 
