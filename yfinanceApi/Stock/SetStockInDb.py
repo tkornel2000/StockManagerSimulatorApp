@@ -14,11 +14,11 @@ def SetStockInDb():
             'VALUES '
                 '(?, ?, ?)'
         )
-    for company in CompaniesWithInfoDict.keys():
+    for stockSymbol in CompaniesWithInfoDict.keys():
         values = (
-            company["symbol"],
-            company["name"],
-            company["fullname"]
+            stockSymbol,
+            CompaniesWithInfoDict[stockSymbol]["name"],
+            CompaniesWithInfoDict[stockSymbol]["fullname"]
         )
         cursor.execute(sql_insert, values)
     mydb.commit()

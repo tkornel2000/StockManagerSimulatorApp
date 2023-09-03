@@ -6,15 +6,17 @@ from Data.DbContext import mydb
 def GetLastStockDataFromDb(stockSymbol:str):
     cursor = mydb.cursor()
     sql_select = (
-        'SELECT TOP (1) stockSymbol, price, volume, '
-        'dayHigh, dayLow, dayOpen, updateTime '
+        'SELECT TOP (1) StockSymbol, Price, Volume, '
+        'DayHigh, DayLow, DayOpen, UpdateTimeInTimestamp '
         'FROM Stock.dbo.StocksPrices '
-        'WHERE stockSymbol = ? '
-        'ORDER BY updateTime DESC'
+        'WHERE StockSymbol = ? '
+        'ORDER BY UpdateTimeInTimestamp DESC'
     )
 
     cursor.execute(sql_select, (stockSymbol,))
     result = cursor.fetchone()
+    if result == None:
+        return {}
 
     return {
         'symbol': result[0],

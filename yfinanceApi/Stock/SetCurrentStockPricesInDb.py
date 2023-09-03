@@ -18,7 +18,7 @@ def SetCurrentStockPricesInDb():
 
     sql_insert = (
         'INSERT INTO Stock.dbo.StocksPrices'
-        '(stockSymbol, price, volume, dayHigh, dayLow, dayOpen, updateTime) '
+        '(StockSymbol, Price, Volume, DayHigh, DayLow, DayOpen, UpdateTimeInTimestamp) '
         'VALUES '
         '(?, ?, ?, ?, ?, ?, ?)'
     )

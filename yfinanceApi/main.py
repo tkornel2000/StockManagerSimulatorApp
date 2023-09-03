@@ -9,10 +9,11 @@ from Bux.GetTodayBux import GetTodayBux
 from Stock.GetCurrentStockPrice import GetCurrentStockPrice
 from Stock.GetSpecificHistoryStockData import GetSpecificHistoryStockData
 from Stock.SetCurrentStockPricesInDb import SetCurrentStockPricesInDb
+from Stock.SetStockInDb import SetStockInDb
 
 app = Flask(__name__)
 
-#SetStockInDb()
+SetStockInDb()
 SetCurrentStockPricesInDb()
 
 @app.route('/bux/current')
