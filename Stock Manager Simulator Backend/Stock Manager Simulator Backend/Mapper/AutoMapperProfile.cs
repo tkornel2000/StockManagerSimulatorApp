@@ -14,6 +14,9 @@ namespace Stock_Manager_Simulator_Backend.Mapper
                 .ForMember(dest => dest.IsDelete, opt => opt.MapFrom(src => false))
                 .ForMember(dest => dest.IsMan, opt => opt.MapFrom(src => src.Gender=="Férfi"?true: false));
             CreateMap<User, UserDto>();
+            CreateMap<StockPrice, StockPriceDto>()
+                .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Stock.Name))
+                .ForMember(dest => dest.FullName, opt => opt.MapFrom(src => src.Stock.FullName));
         }
     }
 }

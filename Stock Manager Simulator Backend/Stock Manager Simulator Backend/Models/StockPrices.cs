@@ -1,6 +1,6 @@
 ﻿namespace Stock_Manager_Simulator_Backend.Models
 {
-    public class StocksPrice
+    public class StockPrice
     {
         public int Id { get; set; }
         public string StockSymbol { get; set; } = null!;
