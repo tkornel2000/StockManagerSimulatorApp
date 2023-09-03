@@ -1,11 +1,11 @@
-from Constans.Companies import CompaniesWithInfo
+from Constans.Companies import CompaniesWithInfoDict
 from Data.DbContext import mydb
 
-def SetStcockInDb():
+def SetStockInDb():
     cursor = mydb.cursor()
 
     #Először törlünk mindent és csak utána tudunk hozzáadni.
-    sql_delete = 'DELETE FROM Stock.dbo.Stocks';
+    sql_delete = 'DELETE FROM Stock.dbo.Stocks'
     cursor.execute(sql_delete)
 
     sql_insert = (
@@ -14,7 +14,7 @@ def SetStcockInDb():
             'VALUES '
                 '(?, ?, ?)'
         )
-    for company in CompaniesWithInfo:
+    for company in CompaniesWithInfoDict.keys():
         values = (
             company["symbol"],
             company["name"],
@@ -23,5 +23,3 @@ def SetStcockInDb():
         cursor.execute(sql_insert, values)
     mydb.commit()
     cursor.close()
-
-SetStcockInDb()

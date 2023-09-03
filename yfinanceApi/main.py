@@ -6,13 +6,14 @@ from flask import Flask, jsonify
 
 from Bux.GetCurrentBux import GetCurrentBux
 from Bux.GetTodayBux import GetTodayBux
-from Stock.SetCurrentStockPricesInDb import DbUpdateStockPrice
 from Stock.GetCurrentStockPrice import GetCurrentStockPrice
 from Stock.GetSpecificHistoryStockData import GetSpecificHistoryStockData
+from Stock.SetCurrentStockPricesInDb import SetCurrentStockPricesInDb
 
 app = Flask(__name__)
 
-DbUpdateStockPrice()
+#SetStockInDb()
+SetCurrentStockPricesInDb()
 
 @app.route('/bux/current')
 def GetCurrentBuxFlask():
@@ -32,7 +33,7 @@ def GetSpecificHistoryStockDataFlask(stockSymbol: str, period: int,
         periodUnit: str, interval: int, intervalUnit: str):
     return jsonify(GetSpecificHistoryStockData(stockSymbol, period, periodUnit, interval, intervalUnit))
 
-schedule.every(15).seconds.do(DbUpdateStockPrice)
+schedule.every(5).minutes.do(SetCurrentStockPricesInDb)
 
 def run_schedule():
     while True:

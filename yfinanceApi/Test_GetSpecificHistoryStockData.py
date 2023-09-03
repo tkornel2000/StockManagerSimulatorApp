@@ -1,3 +1,3 @@
 from Stock.GetSpecificHistoryStockData import GetSpecificHistoryStockData
 
-print(GetSpecificHistoryStockData("OTP.BD", 5, "d", 90, "m"))
+print(GetSpecificHistoryStockData("GSP.BD", 3, "d", 5, "m"))
