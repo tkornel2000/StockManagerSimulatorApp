@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Secret_Sharing_Platform.Helper;
+using Stock_Manager_Simulator_Backend.BackgroundServices;
 using Stock_Manager_Simulator_Backend.Data;
 using Stock_Manager_Simulator_Backend.Dtos;
 using Stock_Manager_Simulator_Backend.Repositories;
@@ -69,9 +70,14 @@ builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddScoped<IStockRepository, StockRepository>();
 builder.Services.AddScoped<IStockService, StockService>();
+builder.Services.AddScoped<ITransactionRepository, TransactionRepository>();
+builder.Services.AddScoped<ITransactionService, TransactionService>();
 
 builder.Services.AddScoped<IValidator<RegisterDto>, RegisterValidator>();
 builder.Services.AddScoped<IValidator<ChangePasswordDto>, ChangePasswordValidator>();
+
+builder.Services.AddHostedService<UpdatePortfolio>();
+builder.Services.AddScoped<ITestBgService, TestBgService>();
 
 builder.Services.Configure<JwtOptions>(builder.Configuration.GetRequiredSection("Jwt"));
 

@@ -5,5 +5,6 @@ namespace Stock_Manager_Simulator_Backend.Repositories
     public interface IStockRepository
     {
         Task<List<StockPrice>> GetAllStockLastPriceAsync();
+        Task<StockPrice> GetSpecificStockLastPriceAsync(string stockSymbol);
     }
 }

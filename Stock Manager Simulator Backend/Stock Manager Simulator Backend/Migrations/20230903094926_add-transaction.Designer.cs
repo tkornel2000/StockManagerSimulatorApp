@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Stock_Manager_Simulator_Backend.Data;
 
@@ -11,9 +12,10 @@ using Stock_Manager_Simulator_Backend.Data;
 namespace Stock_Manager_Simulator_Backend.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230903094926_add-transaction")]
+    partial class addtransaction
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -64,8 +66,8 @@ namespace Stock_Manager_Simulator_Backend.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<long>("UpdateTimeInTimestamp")
-                        .HasColumnType("bigint");
+                    b.Property<int>("UpdateTimeInTimestamp")
+                        .HasColumnType("int");
 
                     b.Property<int>("Volume")
                         .HasColumnType("int");
@@ -85,8 +87,11 @@ namespace Stock_Manager_Simulator_Backend.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<float>("Price")
+                    b.Property<float>("BuyPrice")
                         .HasColumnType("real");
+
+                    b.Property<bool>("IsBuy")
+                        .HasColumnType("bit");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
@@ -94,9 +99,6 @@ namespace Stock_Manager_Simulator_Backend.Migrations
                     b.Property<string>("StockSymbol")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
-
-                    b.Property<long>("TimeInTimestamp")
-                        .HasColumnType("bigint");
 
                     b.Property<int>("UserId")
                         .HasColumnType("int");

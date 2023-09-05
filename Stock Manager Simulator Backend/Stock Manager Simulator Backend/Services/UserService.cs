@@ -41,7 +41,7 @@ namespace Stock_Manager_Simulator_Backend.Services
             }
 
             user.PasswordHash = HashPassword(changePasswordDto.NewPassword);
-            await _userRepository.SavaChangesAsync();
+            await _userRepository.SaveChangesAsync();
             return "";
         }
 

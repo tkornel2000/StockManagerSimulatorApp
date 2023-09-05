@@ -9,7 +9,7 @@
         public float DayHigh { get; set; }
         public float DayLow { get; set; }
         public float DayOpen { get; set; }
-        public int UpdateTimeInTimestamp { get; set; }
+        public long UpdateTimeInTimestamp { get; set; }
         public Stock Stock { get; set; } = null!;
     }
 }

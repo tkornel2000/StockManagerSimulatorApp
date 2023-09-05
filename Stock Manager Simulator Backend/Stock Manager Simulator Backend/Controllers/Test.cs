@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Stock_Manager_Simulator_Backend.Constans;
 using Stock_Manager_Simulator_Backend.Dtos;
 using Stock_Manager_Simulator_Backend.Models;
 using Stock_Manager_Simulator_Backend.Repositories;
@@ -11,20 +12,19 @@ namespace Stock_Manager_Simulator_Backend.Controllers
     [ApiController]
     public class Test : ControllerBase
     {
-        private readonly IStockRepository _stockRepository;
+        private readonly ITransactionRepository _transactionRepository;
 
-        public Test(IStockRepository stockRepository)
+        public Test(ITransactionRepository transactionRepository)
         {
-            _stockRepository = stockRepository;
+            _transactionRepository = transactionRepository;
         }
 
         // GET: api/<Test>
         [HttpGet]
-        public async Task<IEnumerable<int>> GetAsync()
+        public async Task<ActionResult<float>> Get()
         {
-            await _stockRepository.GetAllStockLastPriceAsync();
-            var allStockLastPrice = new List<int>();
-            return allStockLastPrice;
+            var result = await _transactionRepository.GetCurrentStockValueByUser(54);
+            return Ok(result);
         }
     }
 }

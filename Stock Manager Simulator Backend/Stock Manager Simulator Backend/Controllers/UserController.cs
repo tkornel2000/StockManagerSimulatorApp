@@ -25,21 +25,6 @@ namespace Stock_Manager_Simulator_Backend.Controllers
             _changePasswordValidator = changePasswordValidator;
         }
 
-        // GET: api/<UserController>
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new List<string>();
-        }
-
-        // GET api/<UserController>/5
-        [Authorize]
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
         // POST api/<UserController>
         [HttpPost]
         public async Task<ActionResult> Post([FromBody] RegisterDto registerDto)

@@ -9,5 +9,6 @@ namespace Stock_Manager_Simulator_Backend.Models
         public string Name { get; set; } = null!;
         public string FullName { get; set; } = null!;
         public List<StockPrice> StocksPrices { get; set; } = new List<StockPrice>();
+        public List<Transaction> Transactions { get; set; } = new List<Transaction>();
     }
 }

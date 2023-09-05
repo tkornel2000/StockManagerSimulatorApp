@@ -15,11 +15,6 @@ namespace Stock_Manager_Simulator_Backend.Repositories
 
         public Task<List<StockPrice>> GetAllStockLastPriceAsync()
         {
-            if (_context.StocksPrices == null)
-            {
-                return Task.FromResult(new List<StockPrice>());
-            }
-
             return _context.StocksPrices
             .OrderByDescending(x => x.UpdateTimeInTimestamp)
             .GroupBy(x => x.StockSymbol)
@@ -36,6 +31,14 @@ namespace Stock_Manager_Simulator_Backend.Repositories
                 Volume = x.First().Volume
             })
             .ToListAsync();
+        }
+
+        public Task<StockPrice> GetSpecificStockLastPriceAsync(string stockSymbol)
+        {
+            return _context.StocksPrices
+                .Where(x => x.StockSymbol == stockSymbol)
+                .OrderByDescending(x => x.UpdateTimeInTimestamp)
+                .FirstAsync();
         }
     }
 }

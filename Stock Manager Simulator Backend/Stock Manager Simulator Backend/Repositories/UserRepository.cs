@@ -13,6 +13,11 @@ namespace Stock_Manager_Simulator_Backend.Repositories
             _context = context;
         }
 
+        public Task<List<User>> GetAllAsync()
+        {
+            return _context.Users.Where(x => x.IsDelete==false).ToListAsync();
+        }
+
         public Task<User?> GetUserByIdAsync(int id)
         {
             return _context.Users.FirstOrDefaultAsync(x => x.Id == id);
@@ -34,7 +39,7 @@ namespace Stock_Manager_Simulator_Backend.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task SavaChangesAsync()
+        public async Task SaveChangesAsync()
         {
             await _context.SaveChangesAsync();
         }
@@ -42,6 +47,23 @@ namespace Stock_Manager_Simulator_Backend.Repositories
         public async Task DeleteUserAsync(User user)
         {
             user.IsDelete = true;
+            await _context.SaveChangesAsync();
+        }
+
+
+        public async Task HandleStockBuyForUserAsync(int id, float buyValue)
+        {
+            var user = _context.Users.First(x => x.Id == id);
+            user.Money -= buyValue;
+            user.StockValue += buyValue;
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task HandleStockSellForUserAsync(int id, float sellValue)
+        {
+            var user = _context.Users.First(x => x.Id == id);
+            user.Money += sellValue;
+            user.StockValue -= sellValue;
             await _context.SaveChangesAsync();
         }
 
