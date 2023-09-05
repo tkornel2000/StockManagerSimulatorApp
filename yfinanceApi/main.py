@@ -13,7 +13,9 @@ from Stock.SetStockInDb import SetStockInDb
 
 app = Flask(__name__)
 
-SetStockInDb()
+#Ha ez meg van hívva akkor törli az összes részvényt a stocks táblából,
+#illetve azokat a rekordot is ahol idegen kulcsként szerepel, szóval magyarul majdnem mindent töröl.
+#SetStockInDb()
 SetCurrentStockPricesInDb()
 
 @app.route('/bux/current')

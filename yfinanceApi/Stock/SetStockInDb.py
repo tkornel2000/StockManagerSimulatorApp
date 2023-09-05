@@ -5,7 +5,7 @@ def SetStockInDb():
     cursor = mydb.cursor()
 
     #Először törlünk mindent és csak utána tudunk hozzáadni.
-    sql_delete = 'DELETE FROM Stock.dbo.Stocks'
+    sql_delete = 'DELETE FROM Stock.dbo.Stocks WHERE 1=1'
     cursor.execute(sql_delete)
 
     sql_insert = (

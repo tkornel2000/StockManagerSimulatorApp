@@ -20,10 +20,10 @@ def GetLastStockDataFromDb(stockSymbol:str):
 
     return {
         'symbol': result[0],
-        'currentPrice': result[1],
+        'currentPrice': round(result[1], 3),
         'volume': result[2],
-        'high': result[3],
-        'low': result[4],
-        'openPrice': result[5],
+        'high': round(result[3], 3),
+        'low': round(result[4], 3),
+        'openPrice': round(result[5], 3),
         'timestamp': result[6]
     }

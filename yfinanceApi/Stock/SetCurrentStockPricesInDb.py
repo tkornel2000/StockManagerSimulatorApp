@@ -50,13 +50,15 @@ def SetCurrentStockPricesInDb():
         #print(stockFromDb)
         if stockFromApi != stockFromDb:
             print("frissités történik")
+            print(stockFromApi)
+            print(stockFromDb)
             value = (
                 stockFromApi["symbol"],
-                stockFromApi["currentPrice"],
+                round(stockFromApi["currentPrice"], 3),
                 stockFromApi["volume"],
-                stockFromApi["high"],
-                stockFromApi["low"],
-                stockFromApi["openPrice"],
+                round(stockFromApi["high"], 3),
+                round(stockFromApi["low"], 3),
+                round(stockFromApi["openPrice"], 3),
                 stockFromApi["timestamp"]
             )
             cursor.execute(sql_insert, value)
