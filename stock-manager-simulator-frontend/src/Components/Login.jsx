@@ -1,7 +1,7 @@
 import LogoWithText from "../Images/LogoWithText.png";
 import { useState, useContext } from "react";
 import AuthContext from "../Context/AuthContext";
-import axios from "../api/axios";
+import { dotnetApi } from "../api/axios";
 import { useNavigate } from "react-router-dom";
 import ErrorModal from "../Modals/ErrorModal";
 
@@ -14,7 +14,7 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post("Auth/login", {
+      const response = await dotnetApi.post("Auth/login", {
         email: login.email,
         password: login.password,
       });
@@ -22,7 +22,7 @@ const Login = () => {
       if (response.status === 200) {
         const accessToken = response?.data?.token;
         localStorage.setItem("accessToken", accessToken);
-        const responseMe = await axios.get("User/me", {
+        const responseMe = await dotnetApi.get("User/me", {
           headers: {
             Authorization: `Bearer ${accessToken}`,
           },

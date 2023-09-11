@@ -20,17 +20,17 @@ export const Navbar = () => {
               <h5 className="text-center mt-2 mb-2">Saját részvények</h5>
             </Link>
           </li>
-          <li className="nav-item col border border-dark"> {/* Fix szélesség */}
+          <li className="nav-item col border border-dark">
             <Link to="/transactions" className="nav-link isActive">
               <h5 className="text-center mt-2 mb-2">Tranzakciók</h5>
             </Link>
           </li>
-          <li className="nav-item col border border-dark"> {/* Fix szélesség */}
+          <li className="nav-item col border border-dark">
             <Link to="/rank" className="nav-link isActive">
               <h5 className="text-center mt-2 mb-2">Ranglista</h5>
             </Link>
           </li>
-        <li className="nav-item col border border-dark"> {/* Fix szélesség */}
+        <li className="nav-item col border border-dark">
             <Link to="/myprofile" className="nav-link isActive">
               <h5 className="text-center mt-2 mb-2">Felhasználó</h5>
             </Link>

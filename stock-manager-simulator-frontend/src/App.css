@@ -6,6 +6,18 @@
   background-color: rgba(223, 223, 223, 0.801);
 }
 
+.bg-very-little-transparent{
+  background-color: rgba(248, 248, 248, 0.87);
+}
+
+.bg-little-transparent-white{
+  background-color: rgba(248, 248, 248, 0.8);
+}
+
+.bg-little-transparent-grey{
+  background-color: rgba(243, 243, 243, 0.8);
+}
+
 .rounded-very-lg{
   border-radius: 50px;
 }
@@ -29,4 +41,8 @@
 .isActive:hover{
   background-color: rgb(185, 185, 185);;
   color: black;
+}
+
+.table-grey{
+  background-color: rgb(165, 165, 165);
 }

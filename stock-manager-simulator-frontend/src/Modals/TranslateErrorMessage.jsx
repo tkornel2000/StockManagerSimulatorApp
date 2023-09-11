@@ -42,11 +42,20 @@ function translateErrorMessage(errorMessage) {
             return 'A születési dátum megadása kötelező.';
         case 'GENDER_IS_REQUIRED':
             return 'A nem megadása kötelező.';
+        case 'YOU_DO_NOT_HAVE_ENOUGH_MONEY':
+            return 'Nincs elég pénzed.';
+        case 'YOU_CAN_NOT_BUY_ZERO_OR_MINUS_NUMBER_OF_STOCK':
+            return 'Nem vásárolhatsz nullát vagy negatív számú részvényt.';
+        case 'YOU_CAN_NOT_SELL_THAT_MANY_STOCK_BECAUSE_YOU_DO_NOT_HAVE_THAT_MANY':
+            return 'Nem adhatsz el ennyi részvényt, mert nincs ennyi a birtokodban.';
+        case 'YOU_CAN_NOT_SELL_ZERO_OR_MINUS_NUMBER_OF_STOCK':
+            return 'Nem adhatsz el nullát vagy negatív számú részvényt.';
+        case 'THERE_IS_NO_STOCK_WITH_THIS_SYMBOL':
+            return 'Nincs részvény ezzel a szimbólummal.';
         case 'INVALID_BIRTH_OF_DATE':
             return 'Érvénytelen születési dátum formátum.';
         case 'SERVER_ERROR':
             return 'A szerver jelenleg nem elérhető';
-         
         default:
             return 'Ismeretlen hiba történt.';
     }

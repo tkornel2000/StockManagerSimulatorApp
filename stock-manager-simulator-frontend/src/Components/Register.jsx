@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "../api/axios";
+import { dotnetApi } from "../api/axios";
 import ErrorModal from "../Modals/ErrorModal";
 import SuccessModal from "../Modals/SuccessModal";
 
@@ -26,7 +26,7 @@ const Register = () => {
         setShowErrorModal(true);
         return;
       }
-      const response = await axios.post("user", {
+      const response = await dotnetApi.post("user", {
         username: user.username,
         email: user.email,
         firstname: user.firstname,
@@ -56,7 +56,6 @@ const Register = () => {
   };
 
   const handleSuccessClose = () => {
-    console.log("meghivtam a handleSuccessClose")
     setShowSuccessModal(false);
   };
 
@@ -213,7 +212,7 @@ const Register = () => {
           show={showSuccessModal}
           onClose={handleSuccessClose}
           successHead="Sikeres regisztráció"
-          successMessage="Ön sikereses regisztrált egy új profilt."
+          successMessage="Ön sikeresen regisztrált egy új profilt."
         />
       </div>
     </div>
