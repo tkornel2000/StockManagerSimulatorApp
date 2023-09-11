@@ -52,15 +52,17 @@ namespace Stock_Manager_Simulator_Backend.Repositories
                 }).FirstAsync();
         }
 
-        public Task<List<StockQuantityDto>> GetAllAvailableStockQuantityByUserAsync(int userId)
+        public Task<List<StockQuantityWithStockDto>> GetAllAvailableStockQuantityByUserAsync(int userId)
         {
             return _context.Transactions
                 .Where(x => x.UserId == userId)
                 .GroupBy(x => x.StockSymbol)
-                .Select(x => new StockQuantityDto
+                .Select(x => new StockQuantityWithStockDto
                 {
                     StockSymbol = x.Key,
-                    Quantity = x.Sum(x => x.Quantity)
+                    StockName = x.Select(x => x.Stock.Name).First(),
+                    Quantity = x.Sum(x => x.Quantity),
+                    Price = x.Select(x => x.Stock.StocksPrices.First()).OrderByDescending(x => x.UpdateTimeInTimestamp).First().Price,
                 }).ToListAsync();
         }
 

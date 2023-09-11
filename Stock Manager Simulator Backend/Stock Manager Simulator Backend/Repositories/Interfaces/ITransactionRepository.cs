@@ -9,6 +9,6 @@ namespace Stock_Manager_Simulator_Backend.Repositories.Interfaces
         Task<List<Transaction>> GetAllTransactionByUserAsync(int userId);
         public Task<StockQuantityDto> GetAvailableStockQuantityByUserAndSymbolAsync
             (int userId, string stockSymbol);
-        Task<List<StockQuantityDto>> GetAllAvailableStockQuantityByUserAsync(int userId);
+        Task<List<StockQuantityWithStockDto>> GetAllAvailableStockQuantityByUserAsync(int userId);
     }
 }

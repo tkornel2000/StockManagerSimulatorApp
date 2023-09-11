@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Stock_Manager_Simulator_Backend.Dtos;
+using Stock_Manager_Simulator_Backend.Dtos.Results;
 using Stock_Manager_Simulator_Backend.Models;
 
 namespace Stock_Manager_Simulator_Backend.Mapper
@@ -28,6 +29,7 @@ namespace Stock_Manager_Simulator_Backend.Mapper
 
             CreateMap<Rank, RankDto>()
                 .ForMember(dest => dest.UserDto, opt => opt.MapFrom(src => src.User));
+            
         }
     }
 }

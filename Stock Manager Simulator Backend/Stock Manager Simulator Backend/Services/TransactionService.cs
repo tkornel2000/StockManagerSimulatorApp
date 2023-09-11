@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Stock_Manager_Simulator_Backend.Constans;
 using Stock_Manager_Simulator_Backend.Dtos;
+using Stock_Manager_Simulator_Backend.Dtos.Results;
 using Stock_Manager_Simulator_Backend.Models;
 using Stock_Manager_Simulator_Backend.Repositories.Interfaces;
 using Stock_Manager_Simulator_Backend.Services.Interfaces;
@@ -78,18 +79,19 @@ namespace Stock_Manager_Simulator_Backend.Services
             return transactionDtoList;
         }
 
-        public async Task<List<StockQuantityDto>> GetAllMyAvailableStockQuantityAsync()
+        public async Task<List<StockQuantityWithStockDto>> GetAllMyAvailableStockQuantityAsync()
         {
             var meDto = await _userService.GetMySelfAsync();
             if (meDto == null)
             {
-                return new List<StockQuantityDto>();
+                return new List<StockQuantityWithStockDto>();
             }
 
-            var stockQuantityDtoList = await _transactionRepository
+            var stockQuantityWithStockDtoList = await _transactionRepository
                 .GetAllAvailableStockQuantityByUserAsync(meDto.Id);
-            stockQuantityDtoList = stockQuantityDtoList.Where(x => x.Quantity != 0).ToList();
-            return stockQuantityDtoList;
+            stockQuantityWithStockDtoList = stockQuantityWithStockDtoList
+                .Where(x => x.Quantity != 0).ToList();
+            return stockQuantityWithStockDtoList;
         }
 
         public async Task<string> CreateSellTransactionAsync(StockQuantityDto stockQuantityDto)

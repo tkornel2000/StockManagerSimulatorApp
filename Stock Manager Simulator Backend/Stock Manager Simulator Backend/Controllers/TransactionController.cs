@@ -29,7 +29,7 @@ namespace Stock_Manager_Simulator_Backend.Controllers
 
         //TODO vissza kell adni egy olyan listát ahol részletesebb adatok vannak a részvényről(név jelenlegi ár)
         [HttpGet("available-stocks")]
-        public async Task<ActionResult<List<StockQuantityDto>>> GetAllMyAvailablyStock()
+        public async Task<ActionResult<List<StockQuantityWithStockDto>>> GetAllMyAvailablyStock()
         {
             var result = await _transactionService.GetAllMyAvailableStockQuantityAsync();
             return Ok(result);
