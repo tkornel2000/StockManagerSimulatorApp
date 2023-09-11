@@ -3,6 +3,7 @@ using Microsoft.IdentityModel.Tokens;
 using Secret_Sharing_Platform.Dto;
 using Secret_Sharing_Platform.Helper;
 using Stock_Manager_Simulator_Backend.Models;
+using Stock_Manager_Simulator_Backend.Services.Interfaces;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;

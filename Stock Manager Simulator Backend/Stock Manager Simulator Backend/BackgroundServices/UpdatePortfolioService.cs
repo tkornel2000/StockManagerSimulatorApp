@@ -4,15 +4,15 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using Stock_Manager_Simulator_Backend.Repositories;
 using Stock_Manager_Simulator_Backend.Constans;
+using Stock_Manager_Simulator_Backend.Repositories.Interfaces;
 
-public class UpdatePortfolio : BackgroundService
+public class UpdatePortfolioService : BackgroundService
 {
-    private readonly ILogger<UpdatePortfolio> _logger;
+    private readonly ILogger<UpdatePortfolioService> _logger;
     private readonly IServiceScopeFactory _serviceScopeFactory;
 
-    public UpdatePortfolio(ILogger<UpdatePortfolio> logger, IServiceScopeFactory serviceScopeFactory)
+    public UpdatePortfolioService(ILogger<UpdatePortfolioService> logger, IServiceScopeFactory serviceScopeFactory)
     {
         _logger = logger;
         _serviceScopeFactory = serviceScopeFactory;
@@ -27,22 +27,17 @@ public class UpdatePortfolio : BackgroundService
             using (var scope = _serviceScopeFactory.CreateScope())
             {
                 var _userRepository = scope.ServiceProvider.GetRequiredService<IUserRepository>();
-                var _transactionRepository = scope.ServiceProvider
-                    .GetRequiredService<ITransactionRepository>();
                 var users = await _userRepository.GetAllAsync();
                 foreach (var user in users)
                 {
-                    var value = await _transactionRepository.GetCurrentStockValueByUser(user.Id);
+                    var value = await _userRepository.GetCurrentStockValueByUserAsync(user.Id);
                     user.StockValue = value;
                     await _userRepository.SaveChangesAsync();
-                    _logger.LogError($"update @{user.Email}");
                 }
             }
 
             // Várakozás 10 mpig
-            await Task.Delay(TimeSpan.FromSeconds(10));
+            await Task.Delay(TimeSpan.FromMinutes(5));
         }
-
-        _logger.LogInformation("UpdatePortfolioService is stopping.");
     }
 }

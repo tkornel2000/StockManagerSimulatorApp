@@ -1,6 +1,6 @@
 ﻿using Stock_Manager_Simulator_Backend.Dtos;
 
-namespace Stock_Manager_Simulator_Backend.Services
+namespace Stock_Manager_Simulator_Backend.Services.Interfaces
 {
     public interface ITransactionService
     {

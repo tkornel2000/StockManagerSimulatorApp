@@ -10,7 +10,7 @@ namespace Stock_Manager_Simulator_Backend.Mapper
         {
             CreateMap<RegisterDto, User>()
                 .ForMember(dest => dest.StockValue, opt => opt.MapFrom(src => 0))
-                .ForMember(dest => dest.Money, opt => opt.MapFrom(src => 2000000.0f))
+                .ForMember(dest => dest.Money, opt => opt.MapFrom(src => (float)(Constans.MoneyConstans.Money)))
                 .ForMember(dest => dest.IsDelete, opt => opt.MapFrom(src => false))
                 .ForMember(dest => dest.IsMan, opt => opt.MapFrom(src => src.Gender=="Férfi"?true: false));
 
@@ -25,6 +25,9 @@ namespace Stock_Manager_Simulator_Backend.Mapper
                 .ForMember(dest => dest.StockName, opt => opt.MapFrom(src => src.Stock.Name))
                 .ForMember(dest => dest.CurrentPrice, opt => opt.MapFrom(src => src.Stock.StocksPrices.OrderByDescending(x => x.UpdateTimeInTimestamp).First().Price))
                 .ForMember(dest => dest.IsSell, opt => opt.MapFrom(src => src.Quantity<0));
+
+            CreateMap<Rank, RankDto>()
+                .ForMember(dest => dest.UserDto, opt => opt.MapFrom(src => src.User));
         }
     }
 }

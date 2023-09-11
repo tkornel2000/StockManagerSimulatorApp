@@ -1,6 +1,6 @@
 ﻿using Stock_Manager_Simulator_Backend.Models;
 
-namespace Stock_Manager_Simulator_Backend.Repositories
+namespace Stock_Manager_Simulator_Backend.Repositories.Interfaces
 {
     public interface IStockRepository
     {

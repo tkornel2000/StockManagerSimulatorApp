@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using Stock_Manager_Simulator_Backend.Constans;
 using Stock_Manager_Simulator_Backend.Dtos;
-using Stock_Manager_Simulator_Backend.Repositories;
+using Stock_Manager_Simulator_Backend.Repositories.Interfaces;
 
 namespace Stock_Manager_Simulator_Backend.Validators
 {

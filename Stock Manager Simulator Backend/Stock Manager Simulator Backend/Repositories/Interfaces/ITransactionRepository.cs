@@ -1,7 +1,7 @@
 ﻿using Stock_Manager_Simulator_Backend.Dtos;
 using Stock_Manager_Simulator_Backend.Models;
 
-namespace Stock_Manager_Simulator_Backend.Repositories
+namespace Stock_Manager_Simulator_Backend.Repositories.Interfaces
 {
     public interface ITransactionRepository
     {
@@ -10,6 +10,5 @@ namespace Stock_Manager_Simulator_Backend.Repositories
         public Task<StockQuantityDto> GetAvailableStockQuantityByUserAndSymbolAsync
             (int userId, string stockSymbol);
         Task<List<StockQuantityDto>> GetAllAvailableStockQuantityByUserAsync(int userId);
-        Task<float> GetCurrentStockValueByUser(int userId);
     }
 }

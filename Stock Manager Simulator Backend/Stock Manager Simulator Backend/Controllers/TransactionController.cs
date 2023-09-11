@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Stock_Manager_Simulator_Backend.Dtos;
-using Stock_Manager_Simulator_Backend.Services;
+using Stock_Manager_Simulator_Backend.Services.Interfaces;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -27,7 +27,8 @@ namespace Stock_Manager_Simulator_Backend.Controllers
             return Ok(result);
         }
 
-        [HttpGet("available-sotcks")]
+        //TODO vissza kell adni egy olyan listát ahol részletesebb adatok vannak a részvényről(név jelenlegi ár)
+        [HttpGet("available-stocks")]
         public async Task<ActionResult<List<StockQuantityDto>>> GetAllMyAvailablyStock()
         {
             var result = await _transactionService.GetAllMyAvailableStockQuantityAsync();

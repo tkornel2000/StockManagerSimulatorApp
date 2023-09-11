@@ -2,7 +2,8 @@
 using Stock_Manager_Simulator_Backend.Constans;
 using Stock_Manager_Simulator_Backend.Dtos;
 using Stock_Manager_Simulator_Backend.Models;
-using Stock_Manager_Simulator_Backend.Repositories;
+using Stock_Manager_Simulator_Backend.Repositories.Interfaces;
+using Stock_Manager_Simulator_Backend.Services.Interfaces;
 
 namespace Stock_Manager_Simulator_Backend.Services
 {
@@ -48,7 +49,7 @@ namespace Stock_Manager_Simulator_Backend.Services
 
             if (meDto.Money < buyValue)
             {
-                return ErrorConstans.YOU_DO_NOT_HAVE_ENAUGH_MONEY;
+                return ErrorConstans.YOU_DO_NOT_HAVE_ENOUGH_MONEY;
             }
 
             var transaction = _mapper.Map<Transaction>(stockQuantityDto);
@@ -87,6 +88,7 @@ namespace Stock_Manager_Simulator_Backend.Services
 
             var stockQuantityDtoList = await _transactionRepository
                 .GetAllAvailableStockQuantityByUserAsync(meDto.Id);
+            stockQuantityDtoList = stockQuantityDtoList.Where(x => x.Quantity != 0).ToList();
             return stockQuantityDtoList;
         }
 

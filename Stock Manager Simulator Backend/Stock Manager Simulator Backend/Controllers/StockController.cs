@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Stock_Manager_Simulator_Backend.Dtos;
-using Stock_Manager_Simulator_Backend.Services;
+using Stock_Manager_Simulator_Backend.Services.Interfaces;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Stock_Manager_Simulator_Backend.Data;
 
@@ -11,9 +12,10 @@ using Stock_Manager_Simulator_Backend.Data;
 namespace Stock_Manager_Simulator_Backend.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230905084339_add-rank")]
+    partial class addrank
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -32,9 +34,6 @@ namespace Stock_Manager_Simulator_Backend.Migrations
 
                     b.Property<float>("CurrentValue")
                         .HasColumnType("real");
-
-                    b.Property<DateTime>("Datetime")
-                        .HasColumnType("datetime2");
 
                     b.Property<float>("PreviousValue")
                         .HasColumnType("real");

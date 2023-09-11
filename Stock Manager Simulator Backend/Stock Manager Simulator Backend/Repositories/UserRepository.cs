@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Stock_Manager_Simulator_Backend.Data;
 using Stock_Manager_Simulator_Backend.Models;
+using Stock_Manager_Simulator_Backend.Repositories.Interfaces;
 
 namespace Stock_Manager_Simulator_Backend.Repositories
 {
@@ -77,6 +78,31 @@ namespace Stock_Manager_Simulator_Backend.Repositories
         {
             var result = _context.Users.FirstOrDefault(x => x.Username == username);
             return result == null;
+        }
+
+        public async Task<float> GetCurrentStockValueByUserAsync(int userId)
+        {
+            return (await _context.Transactions
+                .Where(x => x.UserId == userId)
+                .GroupBy(x => x.StockSymbol)
+                .Select(x => new
+                {
+                    StockSymbol = x.Key,
+                    Value = x.Sum(x => x.Quantity) * x.First().Stock.StocksPrices.OrderByDescending(x => x.UpdateTimeInTimestamp).First().Price
+                }).ToListAsync()).Sum(x => x.Value);
+        }
+
+        public async Task<float> GetCurrentPortfolioValueByUserAsync(int userId)
+        {
+            return (await _context.Transactions
+                .Where(x => x.UserId == userId)
+                .GroupBy(x => x.StockSymbol)
+                .Select(x => new
+                {
+                    StockSymbol = x.Key,
+                    Value = x.Sum(x => x.Quantity) * x.First().Stock.StocksPrices.OrderByDescending(x => x.UpdateTimeInTimestamp).First().Price
+                }).ToListAsync()).Sum(x => x.Value) + 
+                _context.Users.First(x => x.Id == userId).Money;
         }
     }
 }

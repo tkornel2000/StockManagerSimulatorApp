@@ -2,7 +2,8 @@
 using Stock_Manager_Simulator_Backend.Constans;
 using Stock_Manager_Simulator_Backend.Dtos;
 using Stock_Manager_Simulator_Backend.Models;
-using Stock_Manager_Simulator_Backend.Repositories;
+using Stock_Manager_Simulator_Backend.Repositories.Interfaces;
+using Stock_Manager_Simulator_Backend.Services.Interfaces;
 using System.Security.Cryptography;
 
 namespace Stock_Manager_Simulator_Backend.Services

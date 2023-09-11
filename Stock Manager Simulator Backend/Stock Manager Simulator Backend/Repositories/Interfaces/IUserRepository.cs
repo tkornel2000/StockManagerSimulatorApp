@@ -1,6 +1,6 @@
 ﻿using Stock_Manager_Simulator_Backend.Models;
 
-namespace Stock_Manager_Simulator_Backend.Repositories
+namespace Stock_Manager_Simulator_Backend.Repositories.Interfaces
 {
     public interface IUserRepository
     {
@@ -16,5 +16,7 @@ namespace Stock_Manager_Simulator_Backend.Repositories
         Task HandleStockSellForUserAsync(int id, float sellValue);
         bool WithThisEmailThereIsNoUser(string email);
         bool WithThisUsernameThereIsNoUser(string username);
+        Task<float> GetCurrentPortfolioValueByUserAsync(int userId);
+        Task<float> GetCurrentStockValueByUserAsync(int userId);
     }
 }

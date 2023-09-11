@@ -16,5 +16,6 @@ namespace Stock_Manager_Simulator_Backend.Models
         public float StockValue { get; set; }
         public bool IsDelete { get; set; }
         public List<Transaction> Transactions { get; set; } = new List<Transaction>();
+        public List<Rank> Ranks { get; set; } = new List<Rank>();
     }
 }

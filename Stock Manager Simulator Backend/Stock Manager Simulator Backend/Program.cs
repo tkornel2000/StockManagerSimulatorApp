@@ -8,7 +8,9 @@ using Stock_Manager_Simulator_Backend.BackgroundServices;
 using Stock_Manager_Simulator_Backend.Data;
 using Stock_Manager_Simulator_Backend.Dtos;
 using Stock_Manager_Simulator_Backend.Repositories;
+using Stock_Manager_Simulator_Backend.Repositories.Interfaces;
 using Stock_Manager_Simulator_Backend.Services;
+using Stock_Manager_Simulator_Backend.Services.Interfaces;
 using Stock_Manager_Simulator_Backend.Validators;
 using System.Text;
 
@@ -72,12 +74,15 @@ builder.Services.AddScoped<IStockRepository, StockRepository>();
 builder.Services.AddScoped<IStockService, StockService>();
 builder.Services.AddScoped<ITransactionRepository, TransactionRepository>();
 builder.Services.AddScoped<ITransactionService, TransactionService>();
+builder.Services.AddScoped<IRankRepository, RankRepository>();
+builder.Services.AddScoped<IRankService, RankService>();
+
 
 builder.Services.AddScoped<IValidator<RegisterDto>, RegisterValidator>();
 builder.Services.AddScoped<IValidator<ChangePasswordDto>, ChangePasswordValidator>();
 
-builder.Services.AddHostedService<UpdatePortfolio>();
-builder.Services.AddScoped<ITestBgService, TestBgService>();
+builder.Services.AddHostedService<UpdatePortfolioService>();
+builder.Services.AddHostedService<UpdateRankService>();
 
 builder.Services.Configure<JwtOptions>(builder.Configuration.GetRequiredSection("Jwt"));
 

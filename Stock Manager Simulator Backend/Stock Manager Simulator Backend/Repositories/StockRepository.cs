@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Stock_Manager_Simulator_Backend.Data;
 using Stock_Manager_Simulator_Backend.Models;
+using Stock_Manager_Simulator_Backend.Repositories.Interfaces;
 
 namespace Stock_Manager_Simulator_Backend.Repositories
 {
