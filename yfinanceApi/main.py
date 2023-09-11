@@ -3,6 +3,7 @@ import time
 
 import schedule
 from flask import Flask, jsonify
+from flask_cors import CORS
 
 from Bux.GetCurrentBux import GetCurrentBux
 from Bux.GetTodayBux import GetTodayBux
@@ -12,7 +13,7 @@ from Stock.SetCurrentStockPricesInDb import SetCurrentStockPricesInDb
 from Stock.SetStockInDb import SetStockInDb
 
 app = Flask(__name__)
-
+CORS(app)
 #Ha ez meg van hívva akkor törli az összes részvényt a stocks táblából,
 #illetve azokat a rekordot is ahol idegen kulcsként szerepel, szóval magyarul majdnem mindent töröl.
 #SetStockInDb()

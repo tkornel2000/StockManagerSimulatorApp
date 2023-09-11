@@ -9,7 +9,7 @@ def GetCurrentBux():
     day = 1
     dataIsEmpty = True
     while dataIsEmpty:
-        data: pandas.core.frame.DataFrame = ticker.history(period=f"{day}1", interval='5m')
+        data: pandas.core.frame.DataFrame = ticker.history(period=f"{day}1", interval='1m')
         if data.empty:
             day = day+1
             if day > 10:
