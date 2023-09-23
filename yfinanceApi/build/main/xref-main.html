@@ -15,13 +15,15 @@
 
 <div class="node">
   <a name="main.py"></a>
-  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/main.py" type="text/plain"><tt>main.py</tt></a>
+  <a target="code" href="///C:/Users/tkorn/OneDrive/Asztali%20g%C3%A9p/StockManagerSimulatorApp/yfinanceApi/main.py" type="text/plain"><tt>main.py</tt></a>
 <span class="moduletype">Script</span>  <div class="import">
 imports:
     <a href="#Bux.GetCurrentBux">Bux.GetCurrentBux</a>
  &#8226;   <a href="#Bux.GetTodayBux">Bux.GetTodayBux</a>
  &#8226;   <a href="#Stock.GetCurrentStockPrice">Stock.GetCurrentStockPrice</a>
  &#8226;   <a href="#Stock.GetSpecificHistoryStockData">Stock.GetSpecificHistoryStockData</a>
+ &#8226;   <a href="#Stock.SetCurrentStockPricesInDb">Stock.SetCurrentStockPricesInDb</a>
+ &#8226;   <a href="#Stock.SetStockInDb">Stock.SetStockInDb</a>
  &#8226;   <a href="#_collections_abc">_collections_abc</a>
  &#8226;   <a href="#_weakrefset">_weakrefset</a>
  &#8226;   <a href="#abc">abc</a>
@@ -153,6 +155,7 @@ imports:
  &#8226;   <a href="#encodings.zlib_codec">encodings.zlib_codec</a>
  &#8226;   <a href="#enum">enum</a>
  &#8226;   <a href="#flask">flask</a>
+ &#8226;   <a href="#flask_cors">flask_cors</a>
  &#8226;   <a href="#fnmatch">fnmatch</a>
  &#8226;   <a href="#functools">functools</a>
  &#8226;   <a href="#genericpath">genericpath</a>
@@ -176,10 +179,13 @@ imports:
  &#8226;   <a href="#re._constants">re._constants</a>
  &#8226;   <a href="#re._parser">re._parser</a>
  &#8226;   <a href="#reprlib">reprlib</a>
+ &#8226;   <a href="#schedule">schedule</a>
  &#8226;   <a href="#sre_compile">sre_compile</a>
  &#8226;   <a href="#sre_constants">sre_constants</a>
  &#8226;   <a href="#sre_parse">sre_parse</a>
  &#8226;   <a href="#stat">stat</a>
+ &#8226;   <a href="#threading">threading</a>
+ &#8226;   <a href="#time">time</a>
  &#8226;   <a href="#token">token</a>
  &#8226;   <a href="#tokenize">tokenize</a>
  &#8226;   <a href="#traceback">traceback</a>
@@ -372,6 +378,17 @@ imported by:
 </div>
 
 <div class="node">
+  <a name="'dns.resolver'"></a>
+  <a target="code" href="" type="text/plain"><tt>'dns.resolver'</tt></a>
+<span class="moduletype">MissingModule</span>  <div class="import">
+imported by:
+    <a href="#mysql.connector.pooling">mysql.connector.pooling</a>
+
+  </div>
+
+</div>
+
+<div class="node">
   <a name="'genshi.core'"></a>
   <a target="code" href="" type="text/plain"><tt>'genshi.core'</tt></a>
 <span class="moduletype">MissingModule</span>  <div class="import">
@@ -548,6 +565,41 @@ imported by:
 <span class="moduletype">MissingModule</span>  <div class="import">
 imported by:
     <a href="#pandas.io.excel._openpyxl">pandas.io.excel._openpyxl</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="'opentelemetry.sdk'"></a>
+  <a target="code" href="" type="text/plain"><tt>'opentelemetry.sdk'</tt></a>
+<span class="moduletype">MissingModule</span>  <div class="import">
+imported by:
+    <a href="#mysql.connector.opentelemetry.constants">mysql.connector.opentelemetry.constants</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry.instrumentation">mysql.connector.opentelemetry.instrumentation</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="'opentelemetry.semconv'"></a>
+  <a target="code" href="" type="text/plain"><tt>'opentelemetry.semconv'</tt></a>
+<span class="moduletype">MissingModule</span>  <div class="import">
+imported by:
+    <a href="#mysql.connector.opentelemetry.constants">mysql.connector.opentelemetry.constants</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry.instrumentation">mysql.connector.opentelemetry.instrumentation</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="'opentelemetry.trace'"></a>
+  <a target="code" href="" type="text/plain"><tt>'opentelemetry.trace'</tt></a>
+<span class="moduletype">MissingModule</span>  <div class="import">
+imported by:
+    <a href="#mysql.connector.opentelemetry.context_propagation">mysql.connector.opentelemetry.context_propagation</a>
 
   </div>
 
@@ -789,12 +841,12 @@ imported by:
 
 <div class="node">
   <a name="Bux.GetCurrentBux"></a>
-  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/Bux/GetCurrentBux.py" type="text/plain"><tt>Bux.GetCurrentBux</tt></a>
+  <a target="code" href="///C:/Users/tkorn/Onedrive/Asztali%20g%C3%A9p/StockManagerSimulatorApp/yfinanceApi/Bux/GetCurrentBux.py" type="text/plain"><tt>Bux.GetCurrentBux</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
 imports:
     <a href="#Bux">Bux</a>
  &#8226;   <a href="#Constans.ErrorMessages">Constans.ErrorMessages</a>
- &#8226;   <a href="#pandas">pandas</a>
+ &#8226;   <a href="#pandas.core.frame">pandas.core.frame</a>
  &#8226;   <a href="#yfinance">yfinance</a>
 
   </div>
@@ -808,7 +860,7 @@ imported by:
 
 <div class="node">
   <a name="Bux.GetTodayBux"></a>
-  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/Bux/GetTodayBux.py" type="text/plain"><tt>Bux.GetTodayBux</tt></a>
+  <a target="code" href="///C:/Users/tkorn/Onedrive/Asztali%20g%C3%A9p/StockManagerSimulatorApp/yfinanceApi/Bux/GetTodayBux.py" type="text/plain"><tt>Bux.GetTodayBux</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
 imports:
     <a href="#Bux">Bux</a>
@@ -829,16 +881,13 @@ imported by:
   <a name="Constans"></a>
   <a target="code" href="-" type="text/plain"><tt>Constans</tt></a>
 <span class="moduletype">NamespacePackage</span>  <div class="import">
-imports:
-    <a href="#Constans.Companies">Constans.Companies</a>
-
-  </div>
-  <div class="import">
 imported by:
     <a href="#Constans.Companies">Constans.Companies</a>
  &#8226;   <a href="#Constans.ErrorMessages">Constans.ErrorMessages</a>
  &#8226;   <a href="#Stock.GetCurrentStockPrice">Stock.GetCurrentStockPrice</a>
  &#8226;   <a href="#Stock.GetSpecificHistoryStockData">Stock.GetSpecificHistoryStockData</a>
+ &#8226;   <a href="#Stock.Methods.GetCurrentStockDataFromApi">Stock.Methods.GetCurrentStockDataFromApi</a>
+ &#8226;   <a href="#Stock.SetCurrentStockPricesInDb">Stock.SetCurrentStockPricesInDb</a>
 
   </div>
 
@@ -846,7 +895,7 @@ imported by:
 
 <div class="node">
   <a name="Constans.Companies"></a>
-  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/Constans/Companies.py" type="text/plain"><tt>Constans.Companies</tt></a>
+  <a target="code" href="///C:/Users/tkorn/Onedrive/Asztali%20g%C3%A9p/StockManagerSimulatorApp/yfinanceApi/Constans/Companies.py" type="text/plain"><tt>Constans.Companies</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
 imports:
     <a href="#Constans">Constans</a>
@@ -854,9 +903,11 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#Constans">Constans</a>
- &#8226;   <a href="#Stock.GetCurrentStockPrice">Stock.GetCurrentStockPrice</a>
+    <a href="#Stock.GetCurrentStockPrice">Stock.GetCurrentStockPrice</a>
  &#8226;   <a href="#Stock.GetSpecificHistoryStockData">Stock.GetSpecificHistoryStockData</a>
+ &#8226;   <a href="#Stock.Methods.GetCurrentStockDataFromApi">Stock.Methods.GetCurrentStockDataFromApi</a>
+ &#8226;   <a href="#Stock.SetCurrentStockPricesInDb">Stock.SetCurrentStockPricesInDb</a>
+ &#8226;   <a href="#Stock.SetStockInDb">Stock.SetStockInDb</a>
 
   </div>
 
@@ -864,7 +915,7 @@ imported by:
 
 <div class="node">
   <a name="Constans.ErrorMessages"></a>
-  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/Constans/ErrorMessages.py" type="text/plain"><tt>Constans.ErrorMessages</tt></a>
+  <a target="code" href="///C:/Users/tkorn/Onedrive/Asztali%20g%C3%A9p/StockManagerSimulatorApp/yfinanceApi/Constans/ErrorMessages.py" type="text/plain"><tt>Constans.ErrorMessages</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
 imports:
     <a href="#Constans">Constans</a>
@@ -876,6 +927,38 @@ imported by:
  &#8226;   <a href="#Bux.GetTodayBux">Bux.GetTodayBux</a>
  &#8226;   <a href="#Stock.GetCurrentStockPrice">Stock.GetCurrentStockPrice</a>
  &#8226;   <a href="#Stock.GetSpecificHistoryStockData">Stock.GetSpecificHistoryStockData</a>
+ &#8226;   <a href="#Stock.SetCurrentStockPricesInDb">Stock.SetCurrentStockPricesInDb</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="Data"></a>
+  <a target="code" href="-" type="text/plain"><tt>Data</tt></a>
+<span class="moduletype">NamespacePackage</span>  <div class="import">
+imported by:
+    <a href="#Data.DbContext">Data.DbContext</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="Data.DbContext"></a>
+  <a target="code" href="///C:/Users/tkorn/Onedrive/Asztali%20g%C3%A9p/StockManagerSimulatorApp/yfinanceApi/Data/DbContext.py" type="text/plain"><tt>Data.DbContext</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#Data">Data</a>
+ &#8226;   <a href="#mysql.connector">mysql.connector</a>
+ &#8226;   <a href="#pyodbc">pyodbc</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#Stock.Methods.GetLastStockDataFromDb">Stock.Methods.GetLastStockDataFromDb</a>
+ &#8226;   <a href="#Stock.SetCurrentStockPricesInDb">Stock.SetCurrentStockPricesInDb</a>
+ &#8226;   <a href="#Stock.SetStockInDb">Stock.SetStockInDb</a>
 
   </div>
 
@@ -943,6 +1026,9 @@ imported by:
 imported by:
     <a href="#Stock.GetCurrentStockPrice">Stock.GetCurrentStockPrice</a>
  &#8226;   <a href="#Stock.GetSpecificHistoryStockData">Stock.GetSpecificHistoryStockData</a>
+ &#8226;   <a href="#Stock.Methods">Stock.Methods</a>
+ &#8226;   <a href="#Stock.SetCurrentStockPricesInDb">Stock.SetCurrentStockPricesInDb</a>
+ &#8226;   <a href="#Stock.SetStockInDb">Stock.SetStockInDb</a>
 
   </div>
 
@@ -950,14 +1036,14 @@ imported by:
 
 <div class="node">
   <a name="Stock.GetCurrentStockPrice"></a>
-  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/Stock/GetCurrentStockPrice.py" type="text/plain"><tt>Stock.GetCurrentStockPrice</tt></a>
+  <a target="code" href="///C:/Users/tkorn/Onedrive/Asztali%20g%C3%A9p/StockManagerSimulatorApp/yfinanceApi/Stock/GetCurrentStockPrice.py" type="text/plain"><tt>Stock.GetCurrentStockPrice</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
 imports:
     <a href="#Constans">Constans</a>
  &#8226;   <a href="#Constans.Companies">Constans.Companies</a>
  &#8226;   <a href="#Constans.ErrorMessages">Constans.ErrorMessages</a>
  &#8226;   <a href="#Stock">Stock</a>
- &#8226;   <a href="#flask">flask</a>
+ &#8226;   <a href="#Stock.Methods.GetCurrentStockDataFromApi">Stock.Methods.GetCurrentStockDataFromApi</a>
  &#8226;   <a href="#pandas.core.frame">pandas.core.frame</a>
  &#8226;   <a href="#yfinance">yfinance</a>
 
@@ -972,7 +1058,7 @@ imported by:
 
 <div class="node">
   <a name="Stock.GetSpecificHistoryStockData"></a>
-  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/Stock/GetSpecificHistoryStockData.py" type="text/plain"><tt>Stock.GetSpecificHistoryStockData</tt></a>
+  <a target="code" href="///C:/Users/tkorn/Onedrive/Asztali%20g%C3%A9p/StockManagerSimulatorApp/yfinanceApi/Stock/GetSpecificHistoryStockData.py" type="text/plain"><tt>Stock.GetSpecificHistoryStockData</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
 imports:
     <a href="#Constans">Constans</a>
@@ -982,6 +1068,104 @@ imports:
  &#8226;   <a href="#pandas.core.frame">pandas.core.frame</a>
  &#8226;   <a href="#sys">sys</a>
  &#8226;   <a href="#yfinance">yfinance</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#main.py">main.py</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="Stock.Methods"></a>
+  <a target="code" href="-" type="text/plain"><tt>Stock.Methods</tt></a>
+<span class="moduletype">NamespacePackage</span>  <div class="import">
+imports:
+    <a href="#Stock">Stock</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#Stock.Methods.GetCurrentStockDataFromApi">Stock.Methods.GetCurrentStockDataFromApi</a>
+ &#8226;   <a href="#Stock.Methods.GetLastStockDataFromDb">Stock.Methods.GetLastStockDataFromDb</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="Stock.Methods.GetCurrentStockDataFromApi"></a>
+  <a target="code" href="///C:/Users/tkorn/Onedrive/Asztali%20g%C3%A9p/StockManagerSimulatorApp/yfinanceApi/Stock/Methods/GetCurrentStockDataFromApi.py" type="text/plain"><tt>Stock.Methods.GetCurrentStockDataFromApi</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#Constans">Constans</a>
+ &#8226;   <a href="#Constans.Companies">Constans.Companies</a>
+ &#8226;   <a href="#Stock.Methods">Stock.Methods</a>
+ &#8226;   <a href="#pandas.core.frame">pandas.core.frame</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#Stock.GetCurrentStockPrice">Stock.GetCurrentStockPrice</a>
+ &#8226;   <a href="#Stock.SetCurrentStockPricesInDb">Stock.SetCurrentStockPricesInDb</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="Stock.Methods.GetLastStockDataFromDb"></a>
+  <a target="code" href="///C:/Users/tkorn/Onedrive/Asztali%20g%C3%A9p/StockManagerSimulatorApp/yfinanceApi/Stock/Methods/GetLastStockDataFromDb.py" type="text/plain"><tt>Stock.Methods.GetLastStockDataFromDb</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#Data.DbContext">Data.DbContext</a>
+ &#8226;   <a href="#Stock.Methods">Stock.Methods</a>
+ &#8226;   <a href="#datetime">datetime</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#Stock.SetCurrentStockPricesInDb">Stock.SetCurrentStockPricesInDb</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="Stock.SetCurrentStockPricesInDb"></a>
+  <a target="code" href="///C:/Users/tkorn/Onedrive/Asztali%20g%C3%A9p/StockManagerSimulatorApp/yfinanceApi/Stock/SetCurrentStockPricesInDb.py" type="text/plain"><tt>Stock.SetCurrentStockPricesInDb</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#Constans">Constans</a>
+ &#8226;   <a href="#Constans.Companies">Constans.Companies</a>
+ &#8226;   <a href="#Constans.ErrorMessages">Constans.ErrorMessages</a>
+ &#8226;   <a href="#Data.DbContext">Data.DbContext</a>
+ &#8226;   <a href="#Stock">Stock</a>
+ &#8226;   <a href="#Stock.Methods.GetCurrentStockDataFromApi">Stock.Methods.GetCurrentStockDataFromApi</a>
+ &#8226;   <a href="#Stock.Methods.GetLastStockDataFromDb">Stock.Methods.GetLastStockDataFromDb</a>
+ &#8226;   <a href="#datetime">datetime</a>
+ &#8226;   <a href="#pandas.core.frame">pandas.core.frame</a>
+ &#8226;   <a href="#yfinance">yfinance</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#main.py">main.py</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="Stock.SetStockInDb"></a>
+  <a target="code" href="///C:/Users/tkorn/Onedrive/Asztali%20g%C3%A9p/StockManagerSimulatorApp/yfinanceApi/Stock/SetStockInDb.py" type="text/plain"><tt>Stock.SetStockInDb</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#Constans.Companies">Constans.Companies</a>
+ &#8226;   <a href="#Data.DbContext">Data.DbContext</a>
+ &#8226;   <a href="#Stock">Stock</a>
 
   </div>
   <div class="import">
@@ -1074,6 +1258,12 @@ imported by:
  &#8226;   <a href="#lxml.cssselect">lxml.cssselect</a>
  &#8226;   <a href="#lxml.html">lxml.html</a>
  &#8226;   <a href="#lxml.html._diffcommand">lxml.html._diffcommand</a>
+ &#8226;   <a href="#mysql.connector.abstracts">mysql.connector.abstracts</a>
+ &#8226;   <a href="#mysql.connector.cursor">mysql.connector.cursor</a>
+ &#8226;   <a href="#mysql.connector.cursor_cext">mysql.connector.cursor_cext</a>
+ &#8226;   <a href="#mysql.connector.custom_types">mysql.connector.custom_types</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry.instrumentation">mysql.connector.opentelemetry.instrumentation</a>
+ &#8226;   <a href="#mysql.connector.pooling">mysql.connector.pooling</a>
  &#8226;   <a href="#numpy._typing">numpy._typing</a>
  &#8226;   <a href="#numpy._typing._array_like">numpy._typing._array_like</a>
  &#8226;   <a href="#numpy._typing._nested_sequence">numpy._typing._nested_sequence</a>
@@ -1475,6 +1665,7 @@ imported by:
   <tt>_blake2</tt> <span class="moduletype"><i>(builtin module)</i></span>  <div class="import">
 imported by:
     <a href="#hashlib">hashlib</a>
+ &#8226;   <a href="#pyodbc">pyodbc</a>
 
   </div>
 
@@ -1704,6 +1895,7 @@ imports:
   <div class="import">
 imported by:
     <a href="#datetime">datetime</a>
+ &#8226;   <a href="#pyodbc">pyodbc</a>
 
   </div>
 
@@ -1714,6 +1906,7 @@ imported by:
   <tt>_decimal</tt> <span class="moduletype"><tt>C:\Python311\DLLs\_decimal.pyd</tt></span>  <div class="import">
 imported by:
     <a href="#decimal">decimal</a>
+ &#8226;   <a href="#pyodbc">pyodbc</a>
 
   </div>
 
@@ -1803,6 +1996,7 @@ imported by:
 imported by:
     <a href="#hashlib">hashlib</a>
  &#8226;   <a href="#hmac">hmac</a>
+ &#8226;   <a href="#pyodbc">pyodbc</a>
 
   </div>
 
@@ -1869,6 +2063,7 @@ imported by:
   <tt>_locale</tt> <span class="moduletype"><i>(builtin module)</i></span>  <div class="import">
 imported by:
     <a href="#locale">locale</a>
+ &#8226;   <a href="#pyodbc">pyodbc</a>
 
   </div>
 
@@ -1963,6 +2158,17 @@ imported by:
  &#8226;   <a href="#multiprocessing.queues">multiprocessing.queues</a>
  &#8226;   <a href="#multiprocessing.resource_tracker">multiprocessing.resource_tracker</a>
  &#8226;   <a href="#multiprocessing.synchronize">multiprocessing.synchronize</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="_mysql_connector"></a>
+  <tt>_mysql_connector</tt> <span class="moduletype"><tt>C:\Users\tkorn\PycharmProjects\yfinanceApi\venv\Lib\site-packages\_mysql_connector.cp311-win_amd64.pyd</tt></span>  <div class="import">
+imported by:
+    <a href="#mysql.connector.connection_cext">mysql.connector.connection_cext</a>
+ &#8226;   <a href="#mysql.connector.cursor_cext">mysql.connector.cursor_cext</a>
 
   </div>
 
@@ -2514,6 +2720,21 @@ imported by:
  &#8226;   <a href="#io">io</a>
  &#8226;   <a href="#main.py">main.py</a>
  &#8226;   <a href="#multiprocessing.reduction">multiprocessing.reduction</a>
+ &#8226;   <a href="#mysql.connector.abstracts">mysql.connector.abstracts</a>
+ &#8226;   <a href="#mysql.connector.constants">mysql.connector.constants</a>
+ &#8226;   <a href="#mysql.connector.network">mysql.connector.network</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry.instrumentation">mysql.connector.opentelemetry.instrumentation</a>
+ &#8226;   <a href="#mysql.connector.plugins">mysql.connector.plugins</a>
+ &#8226;   <a href="#mysql.opentelemetry.context.context">mysql.opentelemetry.context.context</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata">mysql.opentelemetry.importlib_metadata</a>
+ &#8226;   <a href="#mysql.opentelemetry.metrics._internal">mysql.opentelemetry.metrics._internal</a>
+ &#8226;   <a href="#mysql.opentelemetry.metrics._internal.instrument">mysql.opentelemetry.metrics._internal.instrument</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.resources">mysql.opentelemetry.sdk.resources</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.trace">mysql.opentelemetry.sdk.trace</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.trace.id_generator">mysql.opentelemetry.sdk.trace.id_generator</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.trace.sampling">mysql.opentelemetry.sdk.trace.sampling</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace">mysql.opentelemetry.trace</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace.span">mysql.opentelemetry.trace.span</a>
  &#8226;   <a href="#numbers">numbers</a>
  &#8226;   <a href="#numpy.polynomial._polybase">numpy.polynomial._polybase</a>
  &#8226;   <a href="#os">os</a>
@@ -3605,6 +3826,7 @@ imported by:
     <a href="#colorama.initialise">colorama.initialise</a>
  &#8226;   <a href="#logging">logging</a>
  &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.trace">mysql.opentelemetry.sdk.trace</a>
  &#8226;   <a href="#rlcompleter">rlcompleter</a>
  &#8226;   <a href="#weakref">weakref</a>
  &#8226;   <a href="#werkzeug.serving">werkzeug.serving</a>
@@ -5197,6 +5419,7 @@ imported by:
  &#8226;   <a href="#html5lib.serializer">html5lib.serializer</a>
  &#8226;   <a href="#json">json</a>
  &#8226;   <a href="#main.py">main.py</a>
+ &#8226;   <a href="#mysql.connector.optionfiles">mysql.connector.optionfiles</a>
  &#8226;   <a href="#pandas.core.strings.accessor">pandas.core.strings.accessor</a>
  &#8226;   <a href="#pandas.io.common">pandas.io.common</a>
  &#8226;   <a href="#pandas.io.formats.xml">pandas.io.formats.xml</a>
@@ -5278,6 +5501,7 @@ imported by:
  &#8226;   <a href="#click.parser">click.parser</a>
  &#8226;   <a href="#collections.abc">collections.abc</a>
  &#8226;   <a href="#concurrent.futures._base">concurrent.futures._base</a>
+ &#8226;   <a href="#configparser">configparser</a>
  &#8226;   <a href="#contextlib">contextlib</a>
  &#8226;   <a href="#dateutil.tz._factories">dateutil.tz._factories</a>
  &#8226;   <a href="#dateutil.tz.tz">dateutil.tz.tz</a>
@@ -5315,6 +5539,15 @@ imported by:
  &#8226;   <a href="#multiprocessing.heap">multiprocessing.heap</a>
  &#8226;   <a href="#multiprocessing.pool">multiprocessing.pool</a>
  &#8226;   <a href="#multiprocessing.queues">multiprocessing.queues</a>
+ &#8226;   <a href="#mysql.connector.cursor">mysql.connector.cursor</a>
+ &#8226;   <a href="#mysql.connector.cursor_cext">mysql.connector.cursor_cext</a>
+ &#8226;   <a href="#mysql.connector.network">mysql.connector.network</a>
+ &#8226;   <a href="#mysql.opentelemetry.attributes">mysql.opentelemetry.attributes</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata">mysql.opentelemetry.importlib_metadata</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata._collections">mysql.opentelemetry.importlib_metadata._collections</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.trace">mysql.opentelemetry.sdk.trace</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.util">mysql.opentelemetry.sdk.util</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace.span">mysql.opentelemetry.trace.span</a>
  &#8226;   <a href="#numpy.core.overrides">numpy.core.overrides</a>
  &#8226;   <a href="#numpy.core.records">numpy.core.records</a>
  &#8226;   <a href="#pandas._testing">pandas._testing</a>
@@ -5463,8 +5696,10 @@ imported by:
  &#8226;   <a href="#bs4.element">bs4.element</a>
  &#8226;   <a href="#cgi">cgi</a>
  &#8226;   <a href="#click.core">click.core</a>
+ &#8226;   <a href="#configparser">configparser</a>
  &#8226;   <a href="#flask.app">flask.app</a>
  &#8226;   <a href="#flask.sessions">flask.sessions</a>
+ &#8226;   <a href="#flask_cors.core">flask_cors.core</a>
  &#8226;   <a href="#frozendict">frozendict</a>
  &#8226;   <a href="#frozendict.monkeypatch">frozendict.monkeypatch</a>
  &#8226;   <a href="#html5lib._trie._base">html5lib._trie._base</a>
@@ -5483,6 +5718,8 @@ imported by:
  &#8226;   <a href="#lxml.html">lxml.html</a>
  &#8226;   <a href="#lxml.html._setmixin">lxml.html._setmixin</a>
  &#8226;   <a href="#main.py">main.py</a>
+ &#8226;   <a href="#mysql.opentelemetry.attributes">mysql.opentelemetry.attributes</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.util">mysql.opentelemetry.sdk.util</a>
  &#8226;   <a href="#numpy._typing._array_like">numpy._typing._array_like</a>
  &#8226;   <a href="#numpy._typing._dtype_like">numpy._typing._dtype_like</a>
  &#8226;   <a href="#numpy._typing._nested_sequence">numpy._typing._nested_sequence</a>
@@ -5514,6 +5751,7 @@ imported by:
  &#8226;   <a href="#pkg_resources._vendor.pyparsing.results">pkg_resources._vendor.pyparsing.results</a>
  &#8226;   <a href="#pytz.lazy">pytz.lazy</a>
  &#8226;   <a href="#requests.compat">requests.compat</a>
+ &#8226;   <a href="#schedule">schedule</a>
  &#8226;   <a href="#selectors">selectors</a>
  &#8226;   <a href="#sqlite3.dbapi2">sqlite3.dbapi2</a>
  &#8226;   <a href="#traceback">traceback</a>
@@ -5694,6 +5932,8 @@ imported by:
  &#8226;   <a href="#concurrent.futures._base">concurrent.futures._base</a>
  &#8226;   <a href="#concurrent.futures.process">concurrent.futures.process</a>
  &#8226;   <a href="#concurrent.futures.thread">concurrent.futures.thread</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.resources">mysql.opentelemetry.sdk.resources</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.trace">mysql.opentelemetry.sdk.trace</a>
 
   </div>
 
@@ -5775,6 +6015,30 @@ imported by:
 </div>
 
 <div class="node">
+  <a name="configparser"></a>
+  <a target="code" href="///C:/Python311/Lib/configparser.py" type="text/plain"><tt>configparser</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#collections">collections</a>
+ &#8226;   <a href="#collections.abc">collections.abc</a>
+ &#8226;   <a href="#functools">functools</a>
+ &#8226;   <a href="#io">io</a>
+ &#8226;   <a href="#itertools">itertools</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#re">re</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#warnings">warnings</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.connector.optionfiles">mysql.connector.optionfiles</a>
+
+  </div>
+
+</div>
+
+<div class="node">
   <a name="contextlib"></a>
   <a target="code" href="///C:/Python311/Lib/contextlib.py" type="text/plain"><tt>contextlib</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
@@ -5811,6 +6075,9 @@ imported by:
  &#8226;   <a href="#importlib.util">importlib.util</a>
  &#8226;   <a href="#jinja2.compiler">jinja2.compiler</a>
  &#8226;   <a href="#lxml.etree">lxml.etree</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata">mysql.opentelemetry.importlib_metadata</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.trace">mysql.opentelemetry.sdk.trace</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace">mysql.opentelemetry.trace</a>
  &#8226;   <a href="#numpy.core._methods">numpy.core._methods</a>
  &#8226;   <a href="#numpy.core._ufunc_config">numpy.core._ufunc_config</a>
  &#8226;   <a href="#numpy.core.arrayprint">numpy.core.arrayprint</a>
@@ -5999,6 +6266,7 @@ imports:
   <div class="import">
 imported by:
     <a href="#importlib.metadata">importlib.metadata</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata">mysql.opentelemetry.importlib_metadata</a>
  &#8226;   <a href="#pandas._testing.contexts">pandas._testing.contexts</a>
  &#8226;   <a href="#pandas.core.arrays.categorical">pandas.core.arrays.categorical</a>
  &#8226;   <a href="#pandas.io.formats.csvs">pandas.io.formats.csvs</a>
@@ -6107,6 +6375,7 @@ imports:
   <div class="import">
 imported by:
     <a href="#flask.json.provider">flask.json.provider</a>
+ &#8226;   <a href="#mysql.opentelemetry.metrics._internal.instrument">mysql.opentelemetry.metrics._internal.instrument</a>
  &#8226;   <a href="#numpy.array_api._data_type_functions">numpy.array_api._data_type_functions</a>
  &#8226;   <a href="#pandas.core.dtypes.inference">pandas.core.dtypes.inference</a>
  &#8226;   <a href="#pandas.core.groupby.base">pandas.core.groupby.base</a>
@@ -6137,7 +6406,9 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#_strptime">_strptime</a>
+    <a href="#Stock.Methods.GetLastStockDataFromDb">Stock.Methods.GetLastStockDataFromDb</a>
+ &#8226;   <a href="#Stock.SetCurrentStockPricesInDb">Stock.SetCurrentStockPricesInDb</a>
+ &#8226;   <a href="#_strptime">_strptime</a>
  &#8226;   <a href="#calendar">calendar</a>
  &#8226;   <a href="#click.types">click.types</a>
  &#8226;   <a href="#dateutil.easter">dateutil.easter</a>
@@ -6156,10 +6427,18 @@ imported by:
  &#8226;   <a href="#flask.json.tag">flask.json.tag</a>
  &#8226;   <a href="#flask.scaffold">flask.scaffold</a>
  &#8226;   <a href="#flask.sessions">flask.sessions</a>
+ &#8226;   <a href="#flask_cors.core">flask_cors.core</a>
  &#8226;   <a href="#http.cookiejar">http.cookiejar</a>
  &#8226;   <a href="#http.server">http.server</a>
  &#8226;   <a href="#itsdangerous.exc">itsdangerous.exc</a>
  &#8226;   <a href="#itsdangerous.timed">itsdangerous.timed</a>
+ &#8226;   <a href="#mysql.connector.abstracts">mysql.connector.abstracts</a>
+ &#8226;   <a href="#mysql.connector.connection">mysql.connector.connection</a>
+ &#8226;   <a href="#mysql.connector.conversion">mysql.connector.conversion</a>
+ &#8226;   <a href="#mysql.connector.dbapi">mysql.connector.dbapi</a>
+ &#8226;   <a href="#mysql.connector.protocol">mysql.connector.protocol</a>
+ &#8226;   <a href="#mysql.connector.types">mysql.connector.types</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.util">mysql.opentelemetry.sdk.util</a>
  &#8226;   <a href="#pandas._testing">pandas._testing</a>
  &#8226;   <a href="#pandas._typing">pandas._typing</a>
  &#8226;   <a href="#pandas.core.arrays.arrow.dtype">pandas.core.arrays.arrow.dtype</a>
@@ -6198,11 +6477,13 @@ imported by:
  &#8226;   <a href="#pandas.io.stata">pandas.io.stata</a>
  &#8226;   <a href="#pkg_resources._vendor.pyparsing.common">pkg_resources._vendor.pyparsing.common</a>
  &#8226;   <a href="#plistlib">plistlib</a>
+ &#8226;   <a href="#pyodbc">pyodbc</a>
  &#8226;   <a href="#pytz">pytz</a>
  &#8226;   <a href="#pytz.tzfile">pytz.tzfile</a>
  &#8226;   <a href="#pytz.tzinfo">pytz.tzinfo</a>
  &#8226;   <a href="#requests.models">requests.models</a>
  &#8226;   <a href="#requests.sessions">requests.sessions</a>
+ &#8226;   <a href="#schedule">schedule</a>
  &#8226;   <a href="#soupsieve.css_match">soupsieve.css_match</a>
  &#8226;   <a href="#sqlite3.dbapi2">sqlite3.dbapi2</a>
  &#8226;   <a href="#urllib3.connection">urllib3.connection</a>
@@ -6628,12 +6909,34 @@ imported by:
     <a href="#dateutil.parser._parser">dateutil.parser._parser</a>
  &#8226;   <a href="#flask.json.provider">flask.json.provider</a>
  &#8226;   <a href="#fractions">fractions</a>
+ &#8226;   <a href="#mysql.connector.abstracts">mysql.connector.abstracts</a>
+ &#8226;   <a href="#mysql.connector.connection">mysql.connector.connection</a>
+ &#8226;   <a href="#mysql.connector.conversion">mysql.connector.conversion</a>
+ &#8226;   <a href="#mysql.connector.cursor">mysql.connector.cursor</a>
+ &#8226;   <a href="#mysql.connector.protocol">mysql.connector.protocol</a>
+ &#8226;   <a href="#mysql.connector.types">mysql.connector.types</a>
+ &#8226;   <a href="#mysql.connector.utils">mysql.connector.utils</a>
  &#8226;   <a href="#pandas._testing">pandas._testing</a>
  &#8226;   <a href="#pandas.core.arrays.arrow.dtype">pandas.core.arrays.arrow.dtype</a>
  &#8226;   <a href="#pandas.core.dtypes.missing">pandas.core.dtypes.missing</a>
  &#8226;   <a href="#pandas.io.formats.format">pandas.io.formats.format</a>
+ &#8226;   <a href="#pyodbc">pyodbc</a>
  &#8226;   <a href="#statistics">statistics</a>
  &#8226;   <a href="#xmlrpc.client">xmlrpc.client</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="deprecated"></a>
+  <a target="code" href="" type="text/plain"><tt>deprecated</tt></a>
+<span class="moduletype">MissingModule</span>  <div class="import">
+imported by:
+    <a href="#mysql.opentelemetry.sdk.trace">mysql.opentelemetry.sdk.trace</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.util">mysql.opentelemetry.sdk.util</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.util.instrumentation">mysql.opentelemetry.sdk.util.instrumentation</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace">mysql.opentelemetry.trace</a>
 
   </div>
 
@@ -6681,6 +6984,17 @@ imports:
 imported by:
     <a href="#inspect">inspect</a>
  &#8226;   <a href="#pdb">pdb</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="dns"></a>
+  <a target="code" href="" type="text/plain"><tt>dns</tt></a>
+<span class="moduletype">MissingModule</span>  <div class="import">
+imported by:
+    <a href="#mysql.connector.pooling">mysql.connector.pooling</a>
 
   </div>
 
@@ -6774,6 +7088,7 @@ imported by:
  &#8226;   <a href="#email.quoprimime">email.quoprimime</a>
  &#8226;   <a href="#email.utils">email.utils</a>
  &#8226;   <a href="#importlib.metadata">importlib.metadata</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata">mysql.opentelemetry.importlib_metadata</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
  &#8226;   <a href="#urllib3.util.retry">urllib3.util.retry</a>
 
@@ -7114,6 +7429,7 @@ imported by:
  &#8226;   <a href="#email.policy">email.policy</a>
  &#8226;   <a href="#http.client">http.client</a>
  &#8226;   <a href="#importlib.metadata._adapters">importlib.metadata._adapters</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata._adapters">mysql.opentelemetry.importlib_metadata._adapters</a>
  &#8226;   <a href="#pydoc">pydoc</a>
 
   </div>
@@ -9753,6 +10069,11 @@ imported by:
  &#8226;   <a href="#inspect">inspect</a>
  &#8226;   <a href="#jinja2.utils">jinja2.utils</a>
  &#8226;   <a href="#main.py">main.py</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.trace.sampling">mysql.opentelemetry.sdk.trace.sampling</a>
+ &#8226;   <a href="#mysql.opentelemetry.semconv.resource">mysql.opentelemetry.semconv.resource</a>
+ &#8226;   <a href="#mysql.opentelemetry.semconv.trace">mysql.opentelemetry.semconv.trace</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace">mysql.opentelemetry.trace</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace.status">mysql.opentelemetry.trace.status</a>
  &#8226;   <a href="#numpy._globals">numpy._globals</a>
  &#8226;   <a href="#numpy.array_api._array_object">numpy.array_api._array_object</a>
  &#8226;   <a href="#pandas.core.arrays.sparse.array">pandas.core.arrays.sparse.array</a>
@@ -9843,8 +10164,7 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#Stock.GetCurrentStockPrice">Stock.GetCurrentStockPrice</a>
- &#8226;   <a href="#flask">flask</a>
+    <a href="#flask">flask</a>
  &#8226;   <a href="#flask.app">flask.app</a>
  &#8226;   <a href="#flask.blueprints">flask.blueprints</a>
  &#8226;   <a href="#flask.cli">flask.cli</a>
@@ -9862,6 +10182,9 @@ imported by:
  &#8226;   <a href="#flask.testing">flask.testing</a>
  &#8226;   <a href="#flask.typing">flask.typing</a>
  &#8226;   <a href="#flask.wrappers">flask.wrappers</a>
+ &#8226;   <a href="#flask_cors.core">flask_cors.core</a>
+ &#8226;   <a href="#flask_cors.decorator">flask_cors.decorator</a>
+ &#8226;   <a href="#flask_cors.extension">flask_cors.extension</a>
  &#8226;   <a href="#main.py">main.py</a>
 
   </div>
@@ -10456,6 +10779,108 @@ imported by:
 </div>
 
 <div class="node">
+  <a name="flask_cors"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/flask_cors/__init__.py" type="text/plain"><tt>flask_cors</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#flask_cors.decorator">flask_cors.decorator</a>
+ &#8226;   <a href="#flask_cors.extension">flask_cors.extension</a>
+ &#8226;   <a href="#flask_cors.version">flask_cors.version</a>
+ &#8226;   <a href="#logging">logging</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#flask_cors.core">flask_cors.core</a>
+ &#8226;   <a href="#flask_cors.decorator">flask_cors.decorator</a>
+ &#8226;   <a href="#flask_cors.extension">flask_cors.extension</a>
+ &#8226;   <a href="#flask_cors.version">flask_cors.version</a>
+ &#8226;   <a href="#main.py">main.py</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="flask_cors.core"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/flask_cors/core.py" type="text/plain"><tt>flask_cors.core</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#collections.abc">collections.abc</a>
+ &#8226;   <a href="#datetime">datetime</a>
+ &#8226;   <a href="#flask">flask</a>
+ &#8226;   <a href="#flask_cors">flask_cors</a>
+ &#8226;   <a href="#logging">logging</a>
+ &#8226;   <a href="#re">re</a>
+ &#8226;   <a href="#werkzeug.datastructures">werkzeug.datastructures</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#flask_cors.decorator">flask_cors.decorator</a>
+ &#8226;   <a href="#flask_cors.extension">flask_cors.extension</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="flask_cors.decorator"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/flask_cors/decorator.py" type="text/plain"><tt>flask_cors.decorator</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#flask">flask</a>
+ &#8226;   <a href="#flask_cors">flask_cors</a>
+ &#8226;   <a href="#flask_cors.core">flask_cors.core</a>
+ &#8226;   <a href="#functools">functools</a>
+ &#8226;   <a href="#logging">logging</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#flask_cors">flask_cors</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="flask_cors.extension"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/flask_cors/extension.py" type="text/plain"><tt>flask_cors.extension</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#flask">flask</a>
+ &#8226;   <a href="#flask_cors">flask_cors</a>
+ &#8226;   <a href="#flask_cors.core">flask_cors.core</a>
+ &#8226;   <a href="#logging">logging</a>
+ &#8226;   <a href="#urllib.parse">urllib.parse</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#flask_cors">flask_cors</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="flask_cors.version"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/flask_cors/version.py" type="text/plain"><tt>flask_cors.version</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#flask_cors">flask_cors</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#flask_cors">flask_cors</a>
+
+  </div>
+
+</div>
+
+<div class="node">
   <a name="fnmatch"></a>
   <a target="code" href="///C:/Python311/Lib/fnmatch.py" type="text/plain"><tt>fnmatch</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
@@ -10637,6 +11062,7 @@ imported by:
  &#8226;   <a href="#click.decorators">click.decorators</a>
  &#8226;   <a href="#click.utils">click.utils</a>
  &#8226;   <a href="#concurrent.futures.process">concurrent.futures.process</a>
+ &#8226;   <a href="#configparser">configparser</a>
  &#8226;   <a href="#contextlib">contextlib</a>
  &#8226;   <a href="#copyreg">copyreg</a>
  &#8226;   <a href="#dataclasses">dataclasses</a>
@@ -10652,6 +11078,7 @@ imported by:
  &#8226;   <a href="#flask.ctx">flask.ctx</a>
  &#8226;   <a href="#flask.helpers">flask.helpers</a>
  &#8226;   <a href="#flask.scaffold">flask.scaffold</a>
+ &#8226;   <a href="#flask_cors.decorator">flask_cors.decorator</a>
  &#8226;   <a href="#fnmatch">fnmatch</a>
  &#8226;   <a href="#importlib.metadata">importlib.metadata</a>
  &#8226;   <a href="#importlib.metadata._functools">importlib.metadata._functools</a>
@@ -10671,6 +11098,13 @@ imported by:
  &#8226;   <a href="#markupsafe">markupsafe</a>
  &#8226;   <a href="#multiprocessing.reduction">multiprocessing.reduction</a>
  &#8226;   <a href="#multiprocessing.shared_memory">multiprocessing.shared_memory</a>
+ &#8226;   <a href="#mysql.connector.authentication">mysql.connector.authentication</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry.instrumentation">mysql.connector.opentelemetry.instrumentation</a>
+ &#8226;   <a href="#mysql.connector.utils">mysql.connector.utils</a>
+ &#8226;   <a href="#mysql.opentelemetry.context">mysql.opentelemetry.context</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata">mysql.opentelemetry.importlib_metadata</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata._adapters">mysql.opentelemetry.importlib_metadata._adapters</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata._functools">mysql.opentelemetry.importlib_metadata._functools</a>
  &#8226;   <a href="#numpy.core.arrayprint">numpy.core.arrayprint</a>
  &#8226;   <a href="#numpy.core.defchararray">numpy.core.defchararray</a>
  &#8226;   <a href="#numpy.core.fromnumeric">numpy.core.fromnumeric</a>
@@ -10760,6 +11194,7 @@ imported by:
  &#8226;   <a href="#pkgutil">pkgutil</a>
  &#8226;   <a href="#platform">platform</a>
  &#8226;   <a href="#re">re</a>
+ &#8226;   <a href="#schedule">schedule</a>
  &#8226;   <a href="#six">six</a>
  &#8226;   <a href="#soupsieve.css_parser">soupsieve.css_parser</a>
  &#8226;   <a href="#soupsieve.util">soupsieve.util</a>
@@ -10878,6 +11313,7 @@ imports:
   <div class="import">
 imported by:
     <a href="#click.termui">click.termui</a>
+ &#8226;   <a href="#mysql.connector.connection">mysql.connector.connection</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
  &#8226;   <a href="#werkzeug.debug">werkzeug.debug</a>
 
@@ -11015,6 +11451,7 @@ imported by:
  &#8226;   <a href="#itsdangerous.signer">itsdangerous.signer</a>
  &#8226;   <a href="#jinja2.bccache">jinja2.bccache</a>
  &#8226;   <a href="#jinja2.loaders">jinja2.loaders</a>
+ &#8226;   <a href="#pyodbc">pyodbc</a>
  &#8226;   <a href="#random">random</a>
  &#8226;   <a href="#requests.auth">requests.auth</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
@@ -12221,7 +12658,6 @@ imports:
  &#8226;   <a href="#importlib">importlib</a>
  &#8226;   <a href="#importlib._bootstrap">importlib._bootstrap</a>
  &#8226;   <a href="#importlib._bootstrap_external">importlib._bootstrap_external</a>
- &#8226;   <a href="#importlib.machinery">importlib.machinery</a>
  &#8226;   <a href="#sys">sys</a>
  &#8226;   <a href="#warnings">warnings</a>
 
@@ -12247,6 +12683,9 @@ imported by:
  &#8226;   <a href="#importlib.util">importlib.util</a>
  &#8226;   <a href="#inspect">inspect</a>
  &#8226;   <a href="#jinja2.loaders">jinja2.loaders</a>
+ &#8226;   <a href="#mysql.connector.abstracts">mysql.connector.abstracts</a>
+ &#8226;   <a href="#mysql.connector.authentication">mysql.connector.authentication</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata">mysql.opentelemetry.importlib_metadata</a>
  &#8226;   <a href="#pandas.compat._optional">pandas.compat._optional</a>
  &#8226;   <a href="#pandas.plotting._core">pandas.plotting._core</a>
  &#8226;   <a href="#pkg_resources">pkg_resources</a>
@@ -12351,6 +12790,7 @@ imports:
   <div class="import">
 imported by:
     <a href="#importlib.metadata">importlib.metadata</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata">mysql.opentelemetry.importlib_metadata</a>
 
   </div>
 
@@ -12369,7 +12809,6 @@ imports:
   <div class="import">
 imported by:
     <a href="#imp">imp</a>
- &#8226;   <a href="#importlib">importlib</a>
  &#8226;   <a href="#importlib.abc">importlib.abc</a>
  &#8226;   <a href="#inspect">inspect</a>
  &#8226;   <a href="#numpy.compat.py3k">numpy.compat.py3k</a>
@@ -12814,6 +13253,8 @@ imported by:
  &#8226;   <a href="#flask.cli">flask.cli</a>
  &#8226;   <a href="#jinja2.async_utils">jinja2.async_utils</a>
  &#8226;   <a href="#jinja2.nodes">jinja2.nodes</a>
+ &#8226;   <a href="#mysql.connector.abstracts">mysql.connector.abstracts</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata">mysql.opentelemetry.importlib_metadata</a>
  &#8226;   <a href="#numpy.lib.utils">numpy.lib.utils</a>
  &#8226;   <a href="#numpy.ma.core">numpy.ma.core</a>
  &#8226;   <a href="#numpy.testing._private.utils">numpy.testing._private.utils</a>
@@ -12867,6 +13308,7 @@ imported by:
  &#8226;   <a href="#click._winconsole">click._winconsole</a>
  &#8226;   <a href="#click.termui">click.termui</a>
  &#8226;   <a href="#click.testing">click.testing</a>
+ &#8226;   <a href="#configparser">configparser</a>
  &#8226;   <a href="#csv">csv</a>
  &#8226;   <a href="#dateutil.parser._parser">dateutil.parser._parser</a>
  &#8226;   <a href="#dateutil.zoneinfo">dateutil.zoneinfo</a>
@@ -12896,6 +13338,8 @@ imported by:
  &#8226;   <a href="#multiprocessing.popen_forkserver">multiprocessing.popen_forkserver</a>
  &#8226;   <a href="#multiprocessing.popen_spawn_posix">multiprocessing.popen_spawn_posix</a>
  &#8226;   <a href="#multiprocessing.reduction">multiprocessing.reduction</a>
+ &#8226;   <a href="#mysql.connector.connection">mysql.connector.connection</a>
+ &#8226;   <a href="#mysql.connector.optionfiles">mysql.connector.optionfiles</a>
  &#8226;   <a href="#numpy.compat.py3k">numpy.compat.py3k</a>
  &#8226;   <a href="#numpy.lib._datasource">numpy.lib._datasource</a>
  &#8226;   <a href="#numpy.lib.format">numpy.lib.format</a>
@@ -13006,6 +13450,7 @@ imported by:
  &#8226;   <a href="#collections">collections</a>
  &#8226;   <a href="#concurrent.futures.process">concurrent.futures.process</a>
  &#8226;   <a href="#concurrent.futures.thread">concurrent.futures.thread</a>
+ &#8226;   <a href="#configparser">configparser</a>
  &#8226;   <a href="#dataclasses">dataclasses</a>
  &#8226;   <a href="#dateutil.rrule">dateutil.rrule</a>
  &#8226;   <a href="#flask.app">flask.app</a>
@@ -13022,6 +13467,8 @@ imported by:
  &#8226;   <a href="#multiprocessing.pool">multiprocessing.pool</a>
  &#8226;   <a href="#multiprocessing.process">multiprocessing.process</a>
  &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata">mysql.opentelemetry.importlib_metadata</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata._itertools">mysql.opentelemetry.importlib_metadata._itertools</a>
  &#8226;   <a href="#numpy.core.einsumfunc">numpy.core.einsumfunc</a>
  &#8226;   <a href="#numpy.core.numeric">numpy.core.numeric</a>
  &#8226;   <a href="#numpy.core.shape_base">numpy.core.shape_base</a>
@@ -13973,6 +14420,9 @@ imported by:
  &#8226;   <a href="#json.decoder">json.decoder</a>
  &#8226;   <a href="#json.encoder">json.encoder</a>
  &#8226;   <a href="#json.scanner">json.scanner</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.resources">mysql.opentelemetry.sdk.resources</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.trace">mysql.opentelemetry.sdk.trace</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.util.instrumentation">mysql.opentelemetry.sdk.util.instrumentation</a>
  &#8226;   <a href="#numpy._version">numpy._version</a>
  &#8226;   <a href="#pandas._version">pandas._version</a>
  &#8226;   <a href="#pandas.core.arrays.arrow.extension_types">pandas.core.arrays.arrow.extension_types</a>
@@ -14129,6 +14579,7 @@ imported by:
  &#8226;   <a href="#pandas._config.display">pandas._config.display</a>
  &#8226;   <a href="#pandas._config.localization">pandas._config.localization</a>
  &#8226;   <a href="#pandas.util._print_versions">pandas.util._print_versions</a>
+ &#8226;   <a href="#pyodbc">pyodbc</a>
  &#8226;   <a href="#subprocess">subprocess</a>
 
   </div>
@@ -14167,12 +14618,29 @@ imported by:
  &#8226;   <a href="#concurrent.futures._base">concurrent.futures._base</a>
  &#8226;   <a href="#flask.app">flask.app</a>
  &#8226;   <a href="#flask.logging">flask.logging</a>
+ &#8226;   <a href="#flask_cors">flask_cors</a>
+ &#8226;   <a href="#flask_cors.core">flask_cors.core</a>
+ &#8226;   <a href="#flask_cors.decorator">flask_cors.decorator</a>
+ &#8226;   <a href="#flask_cors.extension">flask_cors.extension</a>
  &#8226;   <a href="#hashlib">hashlib</a>
  &#8226;   <a href="#http.cookiejar">http.cookiejar</a>
  &#8226;   <a href="#jinja2.runtime">jinja2.runtime</a>
  &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
+ &#8226;   <a href="#mysql.connector.logger">mysql.connector.logger</a>
+ &#8226;   <a href="#mysql.opentelemetry.attributes">mysql.opentelemetry.attributes</a>
+ &#8226;   <a href="#mysql.opentelemetry.context">mysql.opentelemetry.context</a>
+ &#8226;   <a href="#mysql.opentelemetry.metrics._internal">mysql.opentelemetry.metrics._internal</a>
+ &#8226;   <a href="#mysql.opentelemetry.metrics._internal.instrument">mysql.opentelemetry.metrics._internal.instrument</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.resources">mysql.opentelemetry.sdk.resources</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.trace">mysql.opentelemetry.sdk.trace</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.trace.sampling">mysql.opentelemetry.sdk.trace.sampling</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace">mysql.opentelemetry.trace</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace.span">mysql.opentelemetry.trace.span</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace.status">mysql.opentelemetry.trace.status</a>
+ &#8226;   <a href="#mysql.opentelemetry.util._providers">mysql.opentelemetry.util._providers</a>
  &#8226;   <a href="#pkg_resources._vendor.packaging.tags">pkg_resources._vendor.packaging.tags</a>
  &#8226;   <a href="#requests">requests</a>
+ &#8226;   <a href="#schedule">schedule</a>
  &#8226;   <a href="#unittest._log">unittest._log</a>
  &#8226;   <a href="#urllib3">urllib3</a>
  &#8226;   <a href="#urllib3.connection">urllib3.connection</a>
@@ -14969,12 +15437,14 @@ imported by:
  &#8226;   <a href="#dateutil.rrule">dateutil.rrule</a>
  &#8226;   <a href="#fractions">fractions</a>
  &#8226;   <a href="#jinja2.filters">jinja2.filters</a>
+ &#8226;   <a href="#mysql.connector.conversion">mysql.connector.conversion</a>
  &#8226;   <a href="#numpy">numpy</a>
  &#8226;   <a href="#numpy.core._machar">numpy.core._machar</a>
  &#8226;   <a href="#numpy.lib">numpy.lib</a>
  &#8226;   <a href="#numpy.lib.index_tricks">numpy.lib.index_tricks</a>
  &#8226;   <a href="#pandas.io.formats.format">pandas.io.formats.format</a>
  &#8226;   <a href="#pkg_resources._vendor.more_itertools.more">pkg_resources._vendor.more_itertools.more</a>
+ &#8226;   <a href="#pyodbc">pyodbc</a>
  &#8226;   <a href="#random">random</a>
  &#8226;   <a href="#selectors">selectors</a>
  &#8226;   <a href="#statistics">statistics</a>
@@ -15905,6 +16375,1713 @@ imported by:
 </div>
 
 <div class="node">
+  <a name="mysql"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/__init__.py" type="text/plain"><tt>mysql</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#mysql">mysql</a>
+ &#8226;   <a href="#mysql.connector">mysql.connector</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql">mysql</a>
+ &#8226;   <a href="#mysql.connector">mysql.connector</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry.instrumentation">mysql.connector.opentelemetry.instrumentation</a>
+ &#8226;   <a href="#mysql.opentelemetry">mysql.opentelemetry</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.connector"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/connector/__init__.py" type="text/plain"><tt>mysql.connector</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#mysql">mysql</a>
+ &#8226;   <a href="#mysql.connector">mysql.connector</a>
+ &#8226;   <a href="#mysql.connector.connection">mysql.connector.connection</a>
+ &#8226;   <a href="#mysql.connector.connection_cext">mysql.connector.connection_cext</a>
+ &#8226;   <a href="#mysql.connector.constants">mysql.connector.constants</a>
+ &#8226;   <a href="#mysql.connector.dbapi">mysql.connector.dbapi</a>
+ &#8226;   <a href="#mysql.connector.errorcode">mysql.connector.errorcode</a>
+ &#8226;   <a href="#mysql.connector.errors">mysql.connector.errors</a>
+ &#8226;   <a href="#mysql.connector.pooling">mysql.connector.pooling</a>
+ &#8226;   <a href="#mysql.connector.version">mysql.connector.version</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#Data.DbContext">Data.DbContext</a>
+ &#8226;   <a href="#mysql">mysql</a>
+ &#8226;   <a href="#mysql.connector">mysql.connector</a>
+ &#8226;   <a href="#mysql.connector.abstracts">mysql.connector.abstracts</a>
+ &#8226;   <a href="#mysql.connector.authentication">mysql.connector.authentication</a>
+ &#8226;   <a href="#mysql.connector.charsets">mysql.connector.charsets</a>
+ &#8226;   <a href="#mysql.connector.connection">mysql.connector.connection</a>
+ &#8226;   <a href="#mysql.connector.connection_cext">mysql.connector.connection_cext</a>
+ &#8226;   <a href="#mysql.connector.constants">mysql.connector.constants</a>
+ &#8226;   <a href="#mysql.connector.conversion">mysql.connector.conversion</a>
+ &#8226;   <a href="#mysql.connector.cursor">mysql.connector.cursor</a>
+ &#8226;   <a href="#mysql.connector.cursor_cext">mysql.connector.cursor_cext</a>
+ &#8226;   <a href="#mysql.connector.custom_types">mysql.connector.custom_types</a>
+ &#8226;   <a href="#mysql.connector.dbapi">mysql.connector.dbapi</a>
+ &#8226;   <a href="#mysql.connector.errorcode">mysql.connector.errorcode</a>
+ &#8226;   <a href="#mysql.connector.errors">mysql.connector.errors</a>
+ &#8226;   <a href="#mysql.connector.locales">mysql.connector.locales</a>
+ &#8226;   <a href="#mysql.connector.logger">mysql.connector.logger</a>
+ &#8226;   <a href="#mysql.connector.network">mysql.connector.network</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry">mysql.connector.opentelemetry</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry.instrumentation">mysql.connector.opentelemetry.instrumentation</a>
+ &#8226;   <a href="#mysql.connector.optionfiles">mysql.connector.optionfiles</a>
+ &#8226;   <a href="#mysql.connector.plugins">mysql.connector.plugins</a>
+ &#8226;   <a href="#mysql.connector.pooling">mysql.connector.pooling</a>
+ &#8226;   <a href="#mysql.connector.protocol">mysql.connector.protocol</a>
+ &#8226;   <a href="#mysql.connector.types">mysql.connector.types</a>
+ &#8226;   <a href="#mysql.connector.utils">mysql.connector.utils</a>
+ &#8226;   <a href="#mysql.connector.version">mysql.connector.version</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.connector.abstracts"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/connector/abstracts.py" type="text/plain"><tt>mysql.connector.abstracts</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#__future__">__future__</a>
+ &#8226;   <a href="#abc">abc</a>
+ &#8226;   <a href="#datetime">datetime</a>
+ &#8226;   <a href="#decimal">decimal</a>
+ &#8226;   <a href="#importlib">importlib</a>
+ &#8226;   <a href="#inspect">inspect</a>
+ &#8226;   <a href="#mysql.connector">mysql.connector</a>
+ &#8226;   <a href="#mysql.connector.constants">mysql.connector.constants</a>
+ &#8226;   <a href="#mysql.connector.conversion">mysql.connector.conversion</a>
+ &#8226;   <a href="#mysql.connector.errors">mysql.connector.errors</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry.constants">mysql.connector.opentelemetry.constants</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry.instrumentation">mysql.connector.opentelemetry.instrumentation</a>
+ &#8226;   <a href="#mysql.connector.optionfiles">mysql.connector.optionfiles</a>
+ &#8226;   <a href="#mysql.connector.types">mysql.connector.types</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#re">re</a>
+ &#8226;   <a href="#ssl">ssl</a>
+ &#8226;   <a href="#time">time</a>
+ &#8226;   <a href="#types">types</a>
+ &#8226;   <a href="#typing">typing</a>
+ &#8226;   <a href="#weakref">weakref</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.connector.connection">mysql.connector.connection</a>
+ &#8226;   <a href="#mysql.connector.connection_cext">mysql.connector.connection_cext</a>
+ &#8226;   <a href="#mysql.connector.cursor">mysql.connector.cursor</a>
+ &#8226;   <a href="#mysql.connector.cursor_cext">mysql.connector.cursor_cext</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry.instrumentation">mysql.connector.opentelemetry.instrumentation</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.connector.authentication"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/connector/authentication.py" type="text/plain"><tt>mysql.connector.authentication</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#functools">functools</a>
+ &#8226;   <a href="#importlib">importlib</a>
+ &#8226;   <a href="#mysql.connector">mysql.connector</a>
+ &#8226;   <a href="#mysql.connector.errors">mysql.connector.errors</a>
+ &#8226;   <a href="#mysql.connector.logger">mysql.connector.logger</a>
+ &#8226;   <a href="#mysql.connector.plugins">mysql.connector.plugins</a>
+ &#8226;   <a href="#typing">typing</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.connector.connection">mysql.connector.connection</a>
+ &#8226;   <a href="#mysql.connector.protocol">mysql.connector.protocol</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.connector.charsets"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/connector/charsets.py" type="text/plain"><tt>mysql.connector.charsets</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#mysql.connector">mysql.connector</a>
+ &#8226;   <a href="#typing">typing</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.connector.constants">mysql.connector.constants</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.connector.connection"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/connector/connection.py" type="text/plain"><tt>mysql.connector.connection</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#datetime">datetime</a>
+ &#8226;   <a href="#decimal">decimal</a>
+ &#8226;   <a href="#getpass">getpass</a>
+ &#8226;   <a href="#io">io</a>
+ &#8226;   <a href="#mysql.connector">mysql.connector</a>
+ &#8226;   <a href="#mysql.connector.abstracts">mysql.connector.abstracts</a>
+ &#8226;   <a href="#mysql.connector.authentication">mysql.connector.authentication</a>
+ &#8226;   <a href="#mysql.connector.constants">mysql.connector.constants</a>
+ &#8226;   <a href="#mysql.connector.conversion">mysql.connector.conversion</a>
+ &#8226;   <a href="#mysql.connector.cursor">mysql.connector.cursor</a>
+ &#8226;   <a href="#mysql.connector.errors">mysql.connector.errors</a>
+ &#8226;   <a href="#mysql.connector.logger">mysql.connector.logger</a>
+ &#8226;   <a href="#mysql.connector.network">mysql.connector.network</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry.constants">mysql.connector.opentelemetry.constants</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry.context_propagation">mysql.connector.opentelemetry.context_propagation</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry.instrumentation">mysql.connector.opentelemetry.instrumentation</a>
+ &#8226;   <a href="#mysql.connector.plugins">mysql.connector.plugins</a>
+ &#8226;   <a href="#mysql.connector.protocol">mysql.connector.protocol</a>
+ &#8226;   <a href="#mysql.connector.types">mysql.connector.types</a>
+ &#8226;   <a href="#mysql.connector.utils">mysql.connector.utils</a>
+ &#8226;   <a href="#mysql.connector.version">mysql.connector.version</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#socket">socket</a>
+ &#8226;   <a href="#struct">struct</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#typing">typing</a>
+ &#8226;   <a href="#warnings">warnings</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.connector">mysql.connector</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry.context_propagation">mysql.connector.opentelemetry.context_propagation</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry.instrumentation">mysql.connector.opentelemetry.instrumentation</a>
+ &#8226;   <a href="#mysql.connector.pooling">mysql.connector.pooling</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.connector.connection_cext"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/connector/connection_cext.py" type="text/plain"><tt>mysql.connector.connection_cext</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#_mysql_connector">_mysql_connector</a>
+ &#8226;   <a href="#mysql.connector">mysql.connector</a>
+ &#8226;   <a href="#mysql.connector.abstracts">mysql.connector.abstracts</a>
+ &#8226;   <a href="#mysql.connector.constants">mysql.connector.constants</a>
+ &#8226;   <a href="#mysql.connector.conversion">mysql.connector.conversion</a>
+ &#8226;   <a href="#mysql.connector.cursor_cext">mysql.connector.cursor_cext</a>
+ &#8226;   <a href="#mysql.connector.errors">mysql.connector.errors</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry.constants">mysql.connector.opentelemetry.constants</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry.context_propagation">mysql.connector.opentelemetry.context_propagation</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry.instrumentation">mysql.connector.opentelemetry.instrumentation</a>
+ &#8226;   <a href="#mysql.connector.protocol">mysql.connector.protocol</a>
+ &#8226;   <a href="#mysql.connector.types">mysql.connector.types</a>
+ &#8226;   <a href="#mysql.connector.version">mysql.connector.version</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#platform">platform</a>
+ &#8226;   <a href="#socket">socket</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#typing">typing</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.connector">mysql.connector</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry.context_propagation">mysql.connector.opentelemetry.context_propagation</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry.instrumentation">mysql.connector.opentelemetry.instrumentation</a>
+ &#8226;   <a href="#mysql.connector.pooling">mysql.connector.pooling</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.connector.constants"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/connector/constants.py" type="text/plain"><tt>mysql.connector.constants</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#abc">abc</a>
+ &#8226;   <a href="#mysql.connector">mysql.connector</a>
+ &#8226;   <a href="#mysql.connector.charsets">mysql.connector.charsets</a>
+ &#8226;   <a href="#mysql.connector.errors">mysql.connector.errors</a>
+ &#8226;   <a href="#typing">typing</a>
+ &#8226;   <a href="#warnings">warnings</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.connector">mysql.connector</a>
+ &#8226;   <a href="#mysql.connector.abstracts">mysql.connector.abstracts</a>
+ &#8226;   <a href="#mysql.connector.connection">mysql.connector.connection</a>
+ &#8226;   <a href="#mysql.connector.connection_cext">mysql.connector.connection_cext</a>
+ &#8226;   <a href="#mysql.connector.conversion">mysql.connector.conversion</a>
+ &#8226;   <a href="#mysql.connector.cursor">mysql.connector.cursor</a>
+ &#8226;   <a href="#mysql.connector.dbapi">mysql.connector.dbapi</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry.instrumentation">mysql.connector.opentelemetry.instrumentation</a>
+ &#8226;   <a href="#mysql.connector.optionfiles">mysql.connector.optionfiles</a>
+ &#8226;   <a href="#mysql.connector.pooling">mysql.connector.pooling</a>
+ &#8226;   <a href="#mysql.connector.protocol">mysql.connector.protocol</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.connector.conversion"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/connector/conversion.py" type="text/plain"><tt>mysql.connector.conversion</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#datetime">datetime</a>
+ &#8226;   <a href="#decimal">decimal</a>
+ &#8226;   <a href="#math">math</a>
+ &#8226;   <a href="#mysql.connector">mysql.connector</a>
+ &#8226;   <a href="#mysql.connector.constants">mysql.connector.constants</a>
+ &#8226;   <a href="#mysql.connector.custom_types">mysql.connector.custom_types</a>
+ &#8226;   <a href="#mysql.connector.types">mysql.connector.types</a>
+ &#8226;   <a href="#mysql.connector.utils">mysql.connector.utils</a>
+ &#8226;   <a href="#struct">struct</a>
+ &#8226;   <a href="#time">time</a>
+ &#8226;   <a href="#typing">typing</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.connector.abstracts">mysql.connector.abstracts</a>
+ &#8226;   <a href="#mysql.connector.connection">mysql.connector.connection</a>
+ &#8226;   <a href="#mysql.connector.connection_cext">mysql.connector.connection_cext</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.connector.cursor"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/connector/cursor.py" type="text/plain"><tt>mysql.connector.cursor</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#__future__">__future__</a>
+ &#8226;   <a href="#collections">collections</a>
+ &#8226;   <a href="#decimal">decimal</a>
+ &#8226;   <a href="#mysql.connector">mysql.connector</a>
+ &#8226;   <a href="#mysql.connector.abstracts">mysql.connector.abstracts</a>
+ &#8226;   <a href="#mysql.connector.constants">mysql.connector.constants</a>
+ &#8226;   <a href="#mysql.connector.errors">mysql.connector.errors</a>
+ &#8226;   <a href="#mysql.connector.types">mysql.connector.types</a>
+ &#8226;   <a href="#re">re</a>
+ &#8226;   <a href="#typing">typing</a>
+ &#8226;   <a href="#warnings">warnings</a>
+ &#8226;   <a href="#weakref">weakref</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.connector.connection">mysql.connector.connection</a>
+ &#8226;   <a href="#mysql.connector.cursor_cext">mysql.connector.cursor_cext</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry.instrumentation">mysql.connector.opentelemetry.instrumentation</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.connector.cursor_cext"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/connector/cursor_cext.py" type="text/plain"><tt>mysql.connector.cursor_cext</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#__future__">__future__</a>
+ &#8226;   <a href="#_mysql_connector">_mysql_connector</a>
+ &#8226;   <a href="#collections">collections</a>
+ &#8226;   <a href="#mysql.connector">mysql.connector</a>
+ &#8226;   <a href="#mysql.connector.abstracts">mysql.connector.abstracts</a>
+ &#8226;   <a href="#mysql.connector.cursor">mysql.connector.cursor</a>
+ &#8226;   <a href="#mysql.connector.errorcode">mysql.connector.errorcode</a>
+ &#8226;   <a href="#mysql.connector.errors">mysql.connector.errors</a>
+ &#8226;   <a href="#mysql.connector.types">mysql.connector.types</a>
+ &#8226;   <a href="#re">re</a>
+ &#8226;   <a href="#typing">typing</a>
+ &#8226;   <a href="#warnings">warnings</a>
+ &#8226;   <a href="#weakref">weakref</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.connector.connection_cext">mysql.connector.connection_cext</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry.instrumentation">mysql.connector.opentelemetry.instrumentation</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.connector.custom_types"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/connector/custom_types.py" type="text/plain"><tt>mysql.connector.custom_types</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#__future__">__future__</a>
+ &#8226;   <a href="#mysql.connector">mysql.connector</a>
+ &#8226;   <a href="#typing">typing</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.connector.conversion">mysql.connector.conversion</a>
+ &#8226;   <a href="#mysql.connector.types">mysql.connector.types</a>
+ &#8226;   <a href="#mysql.connector.utils">mysql.connector.utils</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.connector.dbapi"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/connector/dbapi.py" type="text/plain"><tt>mysql.connector.dbapi</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#datetime">datetime</a>
+ &#8226;   <a href="#mysql.connector">mysql.connector</a>
+ &#8226;   <a href="#mysql.connector.constants">mysql.connector.constants</a>
+ &#8226;   <a href="#time">time</a>
+ &#8226;   <a href="#typing">typing</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.connector">mysql.connector</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.connector.errorcode"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/connector/errorcode.py" type="text/plain"><tt>mysql.connector.errorcode</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#mysql.connector">mysql.connector</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.connector">mysql.connector</a>
+ &#8226;   <a href="#mysql.connector.cursor_cext">mysql.connector.cursor_cext</a>
+ &#8226;   <a href="#mysql.connector.locales">mysql.connector.locales</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.connector.errors"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/connector/errors.py" type="text/plain"><tt>mysql.connector.errors</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#mysql.connector">mysql.connector</a>
+ &#8226;   <a href="#mysql.connector.locales">mysql.connector.locales</a>
+ &#8226;   <a href="#mysql.connector.types">mysql.connector.types</a>
+ &#8226;   <a href="#mysql.connector.utils">mysql.connector.utils</a>
+ &#8226;   <a href="#typing">typing</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.connector">mysql.connector</a>
+ &#8226;   <a href="#mysql.connector.abstracts">mysql.connector.abstracts</a>
+ &#8226;   <a href="#mysql.connector.authentication">mysql.connector.authentication</a>
+ &#8226;   <a href="#mysql.connector.connection">mysql.connector.connection</a>
+ &#8226;   <a href="#mysql.connector.connection_cext">mysql.connector.connection_cext</a>
+ &#8226;   <a href="#mysql.connector.constants">mysql.connector.constants</a>
+ &#8226;   <a href="#mysql.connector.cursor">mysql.connector.cursor</a>
+ &#8226;   <a href="#mysql.connector.cursor_cext">mysql.connector.cursor_cext</a>
+ &#8226;   <a href="#mysql.connector.network">mysql.connector.network</a>
+ &#8226;   <a href="#mysql.connector.plugins">mysql.connector.plugins</a>
+ &#8226;   <a href="#mysql.connector.pooling">mysql.connector.pooling</a>
+ &#8226;   <a href="#mysql.connector.protocol">mysql.connector.protocol</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.connector.locales"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/connector/locales/__init__.py" type="text/plain"><tt>mysql.connector.locales</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#mysql.connector">mysql.connector</a>
+ &#8226;   <a href="#mysql.connector.errorcode">mysql.connector.errorcode</a>
+ &#8226;   <a href="#typing">typing</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.connector.errors">mysql.connector.errors</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.connector.logger"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/connector/logger.py" type="text/plain"><tt>mysql.connector.logger</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#logging">logging</a>
+ &#8226;   <a href="#mysql.connector">mysql.connector</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.connector.authentication">mysql.connector.authentication</a>
+ &#8226;   <a href="#mysql.connector.connection">mysql.connector.connection</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry.instrumentation">mysql.connector.opentelemetry.instrumentation</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.connector.network"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/connector/network.py" type="text/plain"><tt>mysql.connector.network</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#abc">abc</a>
+ &#8226;   <a href="#collections">collections</a>
+ &#8226;   <a href="#mysql.connector">mysql.connector</a>
+ &#8226;   <a href="#mysql.connector.errors">mysql.connector.errors</a>
+ &#8226;   <a href="#mysql.connector.types">mysql.connector.types</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#socket">socket</a>
+ &#8226;   <a href="#ssl">ssl</a>
+ &#8226;   <a href="#struct">struct</a>
+ &#8226;   <a href="#typing">typing</a>
+ &#8226;   <a href="#warnings">warnings</a>
+ &#8226;   <a href="#zlib">zlib</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.connector.connection">mysql.connector.connection</a>
+ &#8226;   <a href="#mysql.connector.types">mysql.connector.types</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.connector.opentelemetry"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/connector/opentelemetry/__init__.py" type="text/plain"><tt>mysql.connector.opentelemetry</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#mysql.connector">mysql.connector</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.connector.opentelemetry.constants">mysql.connector.opentelemetry.constants</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry.context_propagation">mysql.connector.opentelemetry.context_propagation</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry.instrumentation">mysql.connector.opentelemetry.instrumentation</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.connector.opentelemetry.constants"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/connector/opentelemetry/constants.py" type="text/plain"><tt>mysql.connector.opentelemetry.constants</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#'opentelemetry.sdk'">'opentelemetry.sdk'</a>
+ &#8226;   <a href="#'opentelemetry.semconv'">'opentelemetry.semconv'</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry">mysql.connector.opentelemetry</a>
+ &#8226;   <a href="#mysql.opentelemetry">mysql.opentelemetry</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.trace">mysql.opentelemetry.sdk.trace</a>
+ &#8226;   <a href="#mysql.opentelemetry.semconv.trace">mysql.opentelemetry.semconv.trace</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace">mysql.opentelemetry.trace</a>
+ &#8226;   <a href="#opentelemetry">opentelemetry</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.connector.abstracts">mysql.connector.abstracts</a>
+ &#8226;   <a href="#mysql.connector.connection">mysql.connector.connection</a>
+ &#8226;   <a href="#mysql.connector.connection_cext">mysql.connector.connection_cext</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry.context_propagation">mysql.connector.opentelemetry.context_propagation</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry.instrumentation">mysql.connector.opentelemetry.instrumentation</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.connector.opentelemetry.context_propagation"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/connector/opentelemetry/context_propagation.py" type="text/plain"><tt>mysql.connector.opentelemetry.context_propagation</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#'opentelemetry.trace'">'opentelemetry.trace'</a>
+ &#8226;   <a href="#mysql.connector.connection">mysql.connector.connection</a>
+ &#8226;   <a href="#mysql.connector.connection_cext">mysql.connector.connection_cext</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry">mysql.connector.opentelemetry</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry.constants">mysql.connector.opentelemetry.constants</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry.instrumentation">mysql.connector.opentelemetry.instrumentation</a>
+ &#8226;   <a href="#mysql.opentelemetry">mysql.opentelemetry</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace">mysql.opentelemetry.trace</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace.span">mysql.opentelemetry.trace.span</a>
+ &#8226;   <a href="#opentelemetry">opentelemetry</a>
+ &#8226;   <a href="#typing">typing</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.connector.connection">mysql.connector.connection</a>
+ &#8226;   <a href="#mysql.connector.connection_cext">mysql.connector.connection_cext</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.connector.opentelemetry.instrumentation"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/connector/opentelemetry/instrumentation.py" type="text/plain"><tt>mysql.connector.opentelemetry.instrumentation</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#'opentelemetry.sdk'">'opentelemetry.sdk'</a>
+ &#8226;   <a href="#'opentelemetry.semconv'">'opentelemetry.semconv'</a>
+ &#8226;   <a href="#__future__">__future__</a>
+ &#8226;   <a href="#abc">abc</a>
+ &#8226;   <a href="#functools">functools</a>
+ &#8226;   <a href="#mysql">mysql</a>
+ &#8226;   <a href="#mysql.connector">mysql.connector</a>
+ &#8226;   <a href="#mysql.connector.abstracts">mysql.connector.abstracts</a>
+ &#8226;   <a href="#mysql.connector.connection">mysql.connector.connection</a>
+ &#8226;   <a href="#mysql.connector.connection_cext">mysql.connector.connection_cext</a>
+ &#8226;   <a href="#mysql.connector.constants">mysql.connector.constants</a>
+ &#8226;   <a href="#mysql.connector.cursor">mysql.connector.cursor</a>
+ &#8226;   <a href="#mysql.connector.cursor_cext">mysql.connector.cursor_cext</a>
+ &#8226;   <a href="#mysql.connector.logger">mysql.connector.logger</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry">mysql.connector.opentelemetry</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry.constants">mysql.connector.opentelemetry.constants</a>
+ &#8226;   <a href="#mysql.connector.pooling">mysql.connector.pooling</a>
+ &#8226;   <a href="#mysql.connector.version">mysql.connector.version</a>
+ &#8226;   <a href="#mysql.opentelemetry">mysql.opentelemetry</a>
+ &#8226;   <a href="#mysql.opentelemetry.semconv.trace">mysql.opentelemetry.semconv.trace</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace">mysql.opentelemetry.trace</a>
+ &#8226;   <a href="#opentelemetry">opentelemetry</a>
+ &#8226;   <a href="#re">re</a>
+ &#8226;   <a href="#typing">typing</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.connector.abstracts">mysql.connector.abstracts</a>
+ &#8226;   <a href="#mysql.connector.connection">mysql.connector.connection</a>
+ &#8226;   <a href="#mysql.connector.connection_cext">mysql.connector.connection_cext</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry.context_propagation">mysql.connector.opentelemetry.context_propagation</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.connector.optionfiles"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/connector/optionfiles.py" type="text/plain"><tt>mysql.connector.optionfiles</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#codecs">codecs</a>
+ &#8226;   <a href="#configparser">configparser</a>
+ &#8226;   <a href="#io">io</a>
+ &#8226;   <a href="#mysql.connector">mysql.connector</a>
+ &#8226;   <a href="#mysql.connector.constants">mysql.connector.constants</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#re">re</a>
+ &#8226;   <a href="#typing">typing</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.connector.abstracts">mysql.connector.abstracts</a>
+ &#8226;   <a href="#mysql.connector.pooling">mysql.connector.pooling</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.connector.plugins"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/connector/plugins/__init__.py" type="text/plain"><tt>mysql.connector.plugins</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#abc">abc</a>
+ &#8226;   <a href="#mysql.connector">mysql.connector</a>
+ &#8226;   <a href="#mysql.connector.errors">mysql.connector.errors</a>
+ &#8226;   <a href="#mysql.connector.types">mysql.connector.types</a>
+ &#8226;   <a href="#typing">typing</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.connector.authentication">mysql.connector.authentication</a>
+ &#8226;   <a href="#mysql.connector.connection">mysql.connector.connection</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.connector.pooling"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/connector/pooling.py" type="text/plain"><tt>mysql.connector.pooling</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#'dns.resolver'">'dns.resolver'</a>
+ &#8226;   <a href="#__future__">__future__</a>
+ &#8226;   <a href="#dns">dns</a>
+ &#8226;   <a href="#mysql.connector">mysql.connector</a>
+ &#8226;   <a href="#mysql.connector.connection">mysql.connector.connection</a>
+ &#8226;   <a href="#mysql.connector.connection_cext">mysql.connector.connection_cext</a>
+ &#8226;   <a href="#mysql.connector.constants">mysql.connector.constants</a>
+ &#8226;   <a href="#mysql.connector.errors">mysql.connector.errors</a>
+ &#8226;   <a href="#mysql.connector.optionfiles">mysql.connector.optionfiles</a>
+ &#8226;   <a href="#queue">queue</a>
+ &#8226;   <a href="#random">random</a>
+ &#8226;   <a href="#re">re</a>
+ &#8226;   <a href="#threading">threading</a>
+ &#8226;   <a href="#types">types</a>
+ &#8226;   <a href="#typing">typing</a>
+ &#8226;   <a href="#uuid">uuid</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.connector">mysql.connector</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry.instrumentation">mysql.connector.opentelemetry.instrumentation</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.connector.protocol"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/connector/protocol.py" type="text/plain"><tt>mysql.connector.protocol</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#datetime">datetime</a>
+ &#8226;   <a href="#decimal">decimal</a>
+ &#8226;   <a href="#mysql.connector">mysql.connector</a>
+ &#8226;   <a href="#mysql.connector.authentication">mysql.connector.authentication</a>
+ &#8226;   <a href="#mysql.connector.constants">mysql.connector.constants</a>
+ &#8226;   <a href="#mysql.connector.errors">mysql.connector.errors</a>
+ &#8226;   <a href="#mysql.connector.types">mysql.connector.types</a>
+ &#8226;   <a href="#mysql.connector.utils">mysql.connector.utils</a>
+ &#8226;   <a href="#struct">struct</a>
+ &#8226;   <a href="#typing">typing</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.connector.connection">mysql.connector.connection</a>
+ &#8226;   <a href="#mysql.connector.connection_cext">mysql.connector.connection_cext</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.connector.types"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/connector/types.py" type="text/plain"><tt>mysql.connector.types</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#datetime">datetime</a>
+ &#8226;   <a href="#decimal">decimal</a>
+ &#8226;   <a href="#mysql.connector">mysql.connector</a>
+ &#8226;   <a href="#mysql.connector.custom_types">mysql.connector.custom_types</a>
+ &#8226;   <a href="#mysql.connector.network">mysql.connector.network</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#time">time</a>
+ &#8226;   <a href="#typing">typing</a>
+ &#8226;   <a href="#typing_extensions">typing_extensions</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.connector.abstracts">mysql.connector.abstracts</a>
+ &#8226;   <a href="#mysql.connector.connection">mysql.connector.connection</a>
+ &#8226;   <a href="#mysql.connector.connection_cext">mysql.connector.connection_cext</a>
+ &#8226;   <a href="#mysql.connector.conversion">mysql.connector.conversion</a>
+ &#8226;   <a href="#mysql.connector.cursor">mysql.connector.cursor</a>
+ &#8226;   <a href="#mysql.connector.cursor_cext">mysql.connector.cursor_cext</a>
+ &#8226;   <a href="#mysql.connector.errors">mysql.connector.errors</a>
+ &#8226;   <a href="#mysql.connector.network">mysql.connector.network</a>
+ &#8226;   <a href="#mysql.connector.plugins">mysql.connector.plugins</a>
+ &#8226;   <a href="#mysql.connector.protocol">mysql.connector.protocol</a>
+ &#8226;   <a href="#mysql.connector.utils">mysql.connector.utils</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.connector.utils"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/connector/utils.py" type="text/plain"><tt>mysql.connector.utils</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#decimal">decimal</a>
+ &#8226;   <a href="#functools">functools</a>
+ &#8226;   <a href="#mysql.connector">mysql.connector</a>
+ &#8226;   <a href="#mysql.connector.custom_types">mysql.connector.custom_types</a>
+ &#8226;   <a href="#mysql.connector.types">mysql.connector.types</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#platform">platform</a>
+ &#8226;   <a href="#stringprep">stringprep</a>
+ &#8226;   <a href="#struct">struct</a>
+ &#8226;   <a href="#subprocess">subprocess</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#typing">typing</a>
+ &#8226;   <a href="#unicodedata">unicodedata</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.connector.connection">mysql.connector.connection</a>
+ &#8226;   <a href="#mysql.connector.conversion">mysql.connector.conversion</a>
+ &#8226;   <a href="#mysql.connector.errors">mysql.connector.errors</a>
+ &#8226;   <a href="#mysql.connector.protocol">mysql.connector.protocol</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.connector.version"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/connector/version.py" type="text/plain"><tt>mysql.connector.version</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#mysql.connector">mysql.connector</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.connector">mysql.connector</a>
+ &#8226;   <a href="#mysql.connector.connection">mysql.connector.connection</a>
+ &#8226;   <a href="#mysql.connector.connection_cext">mysql.connector.connection_cext</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry.instrumentation">mysql.connector.opentelemetry.instrumentation</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.opentelemetry"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/opentelemetry/__init__.py" type="text/plain"><tt>mysql.opentelemetry</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#mysql">mysql</a>
+ &#8226;   <a href="#mysql.opentelemetry.context">mysql.opentelemetry.context</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace">mysql.opentelemetry.trace</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.connector.opentelemetry.constants">mysql.connector.opentelemetry.constants</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry.context_propagation">mysql.connector.opentelemetry.context_propagation</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry.instrumentation">mysql.connector.opentelemetry.instrumentation</a>
+ &#8226;   <a href="#mysql.opentelemetry.attributes">mysql.opentelemetry.attributes</a>
+ &#8226;   <a href="#mysql.opentelemetry.context">mysql.opentelemetry.context</a>
+ &#8226;   <a href="#mysql.opentelemetry.environment_variables">mysql.opentelemetry.environment_variables</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata">mysql.opentelemetry.importlib_metadata</a>
+ &#8226;   <a href="#mysql.opentelemetry.metrics">mysql.opentelemetry.metrics</a>
+ &#8226;   <a href="#mysql.opentelemetry.metrics._internal.instrument">mysql.opentelemetry.metrics._internal.instrument</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk">mysql.opentelemetry.sdk</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.trace">mysql.opentelemetry.sdk.trace</a>
+ &#8226;   <a href="#mysql.opentelemetry.semconv">mysql.opentelemetry.semconv</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace">mysql.opentelemetry.trace</a>
+ &#8226;   <a href="#mysql.opentelemetry.util">mysql.opentelemetry.util</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.opentelemetry.attributes"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/opentelemetry/attributes/__init__.py" type="text/plain"><tt>mysql.opentelemetry.attributes</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#collections">collections</a>
+ &#8226;   <a href="#collections.abc">collections.abc</a>
+ &#8226;   <a href="#logging">logging</a>
+ &#8226;   <a href="#mysql.opentelemetry">mysql.opentelemetry</a>
+ &#8226;   <a href="#mysql.opentelemetry.util">mysql.opentelemetry.util</a>
+ &#8226;   <a href="#mysql.opentelemetry.util.types">mysql.opentelemetry.util.types</a>
+ &#8226;   <a href="#threading">threading</a>
+ &#8226;   <a href="#typing">typing</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.opentelemetry.sdk.resources">mysql.opentelemetry.sdk.resources</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.trace">mysql.opentelemetry.sdk.trace</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace">mysql.opentelemetry.trace</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.opentelemetry.context"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/opentelemetry/context/__init__.py" type="text/plain"><tt>mysql.opentelemetry.context</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#functools">functools</a>
+ &#8226;   <a href="#logging">logging</a>
+ &#8226;   <a href="#mysql.opentelemetry">mysql.opentelemetry</a>
+ &#8226;   <a href="#mysql.opentelemetry.context.context">mysql.opentelemetry.context.context</a>
+ &#8226;   <a href="#mysql.opentelemetry.environment_variables">mysql.opentelemetry.environment_variables</a>
+ &#8226;   <a href="#mysql.opentelemetry.util._importlib_metadata">mysql.opentelemetry.util._importlib_metadata</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#threading">threading</a>
+ &#8226;   <a href="#typing">typing</a>
+ &#8226;   <a href="#uuid">uuid</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.opentelemetry">mysql.opentelemetry</a>
+ &#8226;   <a href="#mysql.opentelemetry.context.context">mysql.opentelemetry.context.context</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.trace">mysql.opentelemetry.sdk.trace</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.trace.sampling">mysql.opentelemetry.sdk.trace.sampling</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace">mysql.opentelemetry.trace</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace.propagation">mysql.opentelemetry.trace.propagation</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.opentelemetry.context.context"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/opentelemetry/context/context.py" type="text/plain"><tt>mysql.opentelemetry.context.context</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#abc">abc</a>
+ &#8226;   <a href="#mysql.opentelemetry.context">mysql.opentelemetry.context</a>
+ &#8226;   <a href="#typing">typing</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.opentelemetry.context">mysql.opentelemetry.context</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace">mysql.opentelemetry.trace</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace.propagation">mysql.opentelemetry.trace.propagation</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.opentelemetry.environment_variables"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/opentelemetry/environment_variables.py" type="text/plain"><tt>mysql.opentelemetry.environment_variables</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#mysql.opentelemetry">mysql.opentelemetry</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.opentelemetry.context">mysql.opentelemetry.context</a>
+ &#8226;   <a href="#mysql.opentelemetry.metrics._internal">mysql.opentelemetry.metrics._internal</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace">mysql.opentelemetry.trace</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.opentelemetry.importlib_metadata"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/opentelemetry/importlib_metadata/__init__.py" type="text/plain"><tt>mysql.opentelemetry.importlib_metadata</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#abc">abc</a>
+ &#8226;   <a href="#collections">collections</a>
+ &#8226;   <a href="#contextlib">contextlib</a>
+ &#8226;   <a href="#csv">csv</a>
+ &#8226;   <a href="#email">email</a>
+ &#8226;   <a href="#functools">functools</a>
+ &#8226;   <a href="#importlib">importlib</a>
+ &#8226;   <a href="#importlib.abc">importlib.abc</a>
+ &#8226;   <a href="#inspect">inspect</a>
+ &#8226;   <a href="#itertools">itertools</a>
+ &#8226;   <a href="#mysql.opentelemetry">mysql.opentelemetry</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata">mysql.opentelemetry.importlib_metadata</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata._adapters">mysql.opentelemetry.importlib_metadata._adapters</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata._collections">mysql.opentelemetry.importlib_metadata._collections</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata._compat">mysql.opentelemetry.importlib_metadata._compat</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata._functools">mysql.opentelemetry.importlib_metadata._functools</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata._itertools">mysql.opentelemetry.importlib_metadata._itertools</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata._meta">mysql.opentelemetry.importlib_metadata._meta</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata._py39compat">mysql.opentelemetry.importlib_metadata._py39compat</a>
+ &#8226;   <a href="#operator">operator</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#pathlib">pathlib</a>
+ &#8226;   <a href="#posixpath">posixpath</a>
+ &#8226;   <a href="#re">re</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#textwrap">textwrap</a>
+ &#8226;   <a href="#typing">typing</a>
+ &#8226;   <a href="#warnings">warnings</a>
+ &#8226;   <a href="#zipp">zipp</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.opentelemetry.importlib_metadata">mysql.opentelemetry.importlib_metadata</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata._adapters">mysql.opentelemetry.importlib_metadata._adapters</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata._collections">mysql.opentelemetry.importlib_metadata._collections</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata._compat">mysql.opentelemetry.importlib_metadata._compat</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata._functools">mysql.opentelemetry.importlib_metadata._functools</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata._itertools">mysql.opentelemetry.importlib_metadata._itertools</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata._meta">mysql.opentelemetry.importlib_metadata._meta</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata._py39compat">mysql.opentelemetry.importlib_metadata._py39compat</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata._text">mysql.opentelemetry.importlib_metadata._text</a>
+ &#8226;   <a href="#mysql.opentelemetry.util._importlib_metadata">mysql.opentelemetry.util._importlib_metadata</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.opentelemetry.importlib_metadata._adapters"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/opentelemetry/importlib_metadata/_adapters.py" type="text/plain"><tt>mysql.opentelemetry.importlib_metadata._adapters</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#email.message">email.message</a>
+ &#8226;   <a href="#functools">functools</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata">mysql.opentelemetry.importlib_metadata</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata._compat">mysql.opentelemetry.importlib_metadata._compat</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata._text">mysql.opentelemetry.importlib_metadata._text</a>
+ &#8226;   <a href="#re">re</a>
+ &#8226;   <a href="#textwrap">textwrap</a>
+ &#8226;   <a href="#warnings">warnings</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.opentelemetry.importlib_metadata">mysql.opentelemetry.importlib_metadata</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.opentelemetry.importlib_metadata._collections"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/opentelemetry/importlib_metadata/_collections.py" type="text/plain"><tt>mysql.opentelemetry.importlib_metadata._collections</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#collections">collections</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata">mysql.opentelemetry.importlib_metadata</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.opentelemetry.importlib_metadata">mysql.opentelemetry.importlib_metadata</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.opentelemetry.importlib_metadata._compat"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/opentelemetry/importlib_metadata/_compat.py" type="text/plain"><tt>mysql.opentelemetry.importlib_metadata._compat</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#mysql.opentelemetry.importlib_metadata">mysql.opentelemetry.importlib_metadata</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#platform">platform</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#typing">typing</a>
+ &#8226;   <a href="#typing_extensions">typing_extensions</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.opentelemetry.importlib_metadata">mysql.opentelemetry.importlib_metadata</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata._adapters">mysql.opentelemetry.importlib_metadata._adapters</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata._meta">mysql.opentelemetry.importlib_metadata._meta</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.opentelemetry.importlib_metadata._functools"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/opentelemetry/importlib_metadata/_functools.py" type="text/plain"><tt>mysql.opentelemetry.importlib_metadata._functools</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#functools">functools</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata">mysql.opentelemetry.importlib_metadata</a>
+ &#8226;   <a href="#types">types</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.opentelemetry.importlib_metadata">mysql.opentelemetry.importlib_metadata</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata._text">mysql.opentelemetry.importlib_metadata._text</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.opentelemetry.importlib_metadata._itertools"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/opentelemetry/importlib_metadata/_itertools.py" type="text/plain"><tt>mysql.opentelemetry.importlib_metadata._itertools</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#itertools">itertools</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata">mysql.opentelemetry.importlib_metadata</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.opentelemetry.importlib_metadata">mysql.opentelemetry.importlib_metadata</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.opentelemetry.importlib_metadata._meta"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/opentelemetry/importlib_metadata/_meta.py" type="text/plain"><tt>mysql.opentelemetry.importlib_metadata._meta</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#mysql.opentelemetry.importlib_metadata">mysql.opentelemetry.importlib_metadata</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata._compat">mysql.opentelemetry.importlib_metadata._compat</a>
+ &#8226;   <a href="#typing">typing</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.opentelemetry.importlib_metadata">mysql.opentelemetry.importlib_metadata</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.opentelemetry.importlib_metadata._py39compat"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/opentelemetry/importlib_metadata/_py39compat.py" type="text/plain"><tt>mysql.opentelemetry.importlib_metadata._py39compat</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#mysql.opentelemetry.importlib_metadata">mysql.opentelemetry.importlib_metadata</a>
+ &#8226;   <a href="#typing">typing</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.opentelemetry.importlib_metadata">mysql.opentelemetry.importlib_metadata</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.opentelemetry.importlib_metadata._text"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/opentelemetry/importlib_metadata/_text.py" type="text/plain"><tt>mysql.opentelemetry.importlib_metadata._text</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#mysql.opentelemetry.importlib_metadata">mysql.opentelemetry.importlib_metadata</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata._functools">mysql.opentelemetry.importlib_metadata._functools</a>
+ &#8226;   <a href="#re">re</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.opentelemetry.importlib_metadata._adapters">mysql.opentelemetry.importlib_metadata._adapters</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.opentelemetry.metrics"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/opentelemetry/metrics/__init__.py" type="text/plain"><tt>mysql.opentelemetry.metrics</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#mysql.opentelemetry">mysql.opentelemetry</a>
+ &#8226;   <a href="#mysql.opentelemetry.metrics._internal">mysql.opentelemetry.metrics._internal</a>
+ &#8226;   <a href="#mysql.opentelemetry.metrics._internal.instrument">mysql.opentelemetry.metrics._internal.instrument</a>
+ &#8226;   <a href="#mysql.opentelemetry.metrics._internal.observation">mysql.opentelemetry.metrics._internal.observation</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.opentelemetry.metrics._internal">mysql.opentelemetry.metrics._internal</a>
+ &#8226;   <a href="#mysql.opentelemetry.metrics._internal.instrument">mysql.opentelemetry.metrics._internal.instrument</a>
+ &#8226;   <a href="#mysql.opentelemetry.util._providers">mysql.opentelemetry.util._providers</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.opentelemetry.metrics._internal"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/opentelemetry/metrics/_internal/__init__.py" type="text/plain"><tt>mysql.opentelemetry.metrics._internal</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#abc">abc</a>
+ &#8226;   <a href="#logging">logging</a>
+ &#8226;   <a href="#mysql.opentelemetry.environment_variables">mysql.opentelemetry.environment_variables</a>
+ &#8226;   <a href="#mysql.opentelemetry.metrics">mysql.opentelemetry.metrics</a>
+ &#8226;   <a href="#mysql.opentelemetry.metrics._internal.instrument">mysql.opentelemetry.metrics._internal.instrument</a>
+ &#8226;   <a href="#mysql.opentelemetry.util._once">mysql.opentelemetry.util._once</a>
+ &#8226;   <a href="#mysql.opentelemetry.util._providers">mysql.opentelemetry.util._providers</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#threading">threading</a>
+ &#8226;   <a href="#typing">typing</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.opentelemetry.metrics">mysql.opentelemetry.metrics</a>
+ &#8226;   <a href="#mysql.opentelemetry.metrics._internal.instrument">mysql.opentelemetry.metrics._internal.instrument</a>
+ &#8226;   <a href="#mysql.opentelemetry.metrics._internal.observation">mysql.opentelemetry.metrics._internal.observation</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.opentelemetry.metrics._internal.instrument"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/opentelemetry/metrics/_internal/instrument.py" type="text/plain"><tt>mysql.opentelemetry.metrics._internal.instrument</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#abc">abc</a>
+ &#8226;   <a href="#dataclasses">dataclasses</a>
+ &#8226;   <a href="#logging">logging</a>
+ &#8226;   <a href="#mysql.opentelemetry">mysql.opentelemetry</a>
+ &#8226;   <a href="#mysql.opentelemetry.metrics">mysql.opentelemetry.metrics</a>
+ &#8226;   <a href="#mysql.opentelemetry.metrics._internal">mysql.opentelemetry.metrics._internal</a>
+ &#8226;   <a href="#mysql.opentelemetry.metrics._internal.observation">mysql.opentelemetry.metrics._internal.observation</a>
+ &#8226;   <a href="#mysql.opentelemetry.util.types">mysql.opentelemetry.util.types</a>
+ &#8226;   <a href="#re">re</a>
+ &#8226;   <a href="#typing">typing</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.opentelemetry.metrics">mysql.opentelemetry.metrics</a>
+ &#8226;   <a href="#mysql.opentelemetry.metrics._internal">mysql.opentelemetry.metrics._internal</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.opentelemetry.metrics._internal.observation"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/opentelemetry/metrics/_internal/observation.py" type="text/plain"><tt>mysql.opentelemetry.metrics._internal.observation</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#mysql.opentelemetry.metrics._internal">mysql.opentelemetry.metrics._internal</a>
+ &#8226;   <a href="#mysql.opentelemetry.util.types">mysql.opentelemetry.util.types</a>
+ &#8226;   <a href="#typing">typing</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.opentelemetry.metrics">mysql.opentelemetry.metrics</a>
+ &#8226;   <a href="#mysql.opentelemetry.metrics._internal.instrument">mysql.opentelemetry.metrics._internal.instrument</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.opentelemetry.sdk"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/opentelemetry/sdk/__init__.py" type="text/plain"><tt>mysql.opentelemetry.sdk</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#mysql.opentelemetry">mysql.opentelemetry</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.util">mysql.opentelemetry.sdk.util</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.opentelemetry.sdk.environment_variables">mysql.opentelemetry.sdk.environment_variables</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.resources">mysql.opentelemetry.sdk.resources</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.trace">mysql.opentelemetry.sdk.trace</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.util">mysql.opentelemetry.sdk.util</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.opentelemetry.sdk.environment_variables"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/opentelemetry/sdk/environment_variables.py" type="text/plain"><tt>mysql.opentelemetry.sdk.environment_variables</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#mysql.opentelemetry.sdk">mysql.opentelemetry.sdk</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.opentelemetry.sdk.resources">mysql.opentelemetry.sdk.resources</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.trace">mysql.opentelemetry.sdk.trace</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.trace.sampling">mysql.opentelemetry.sdk.trace.sampling</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.opentelemetry.sdk.resources"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/opentelemetry/sdk/resources/__init__.py" type="text/plain"><tt>mysql.opentelemetry.sdk.resources</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#abc">abc</a>
+ &#8226;   <a href="#concurrent.futures">concurrent.futures</a>
+ &#8226;   <a href="#json">json</a>
+ &#8226;   <a href="#logging">logging</a>
+ &#8226;   <a href="#mysql.opentelemetry.attributes">mysql.opentelemetry.attributes</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk">mysql.opentelemetry.sdk</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.environment_variables">mysql.opentelemetry.sdk.environment_variables</a>
+ &#8226;   <a href="#mysql.opentelemetry.semconv.resource">mysql.opentelemetry.semconv.resource</a>
+ &#8226;   <a href="#mysql.opentelemetry.util._importlib_metadata">mysql.opentelemetry.util._importlib_metadata</a>
+ &#8226;   <a href="#mysql.opentelemetry.util.types">mysql.opentelemetry.util.types</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#typing">typing</a>
+ &#8226;   <a href="#urllib">urllib</a>
+ &#8226;   <a href="#urllib.parse">urllib.parse</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.opentelemetry.sdk.trace">mysql.opentelemetry.sdk.trace</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.opentelemetry.sdk.trace"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/opentelemetry/sdk/trace/__init__.py" type="text/plain"><tt>mysql.opentelemetry.sdk.trace</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#abc">abc</a>
+ &#8226;   <a href="#atexit">atexit</a>
+ &#8226;   <a href="#collections">collections</a>
+ &#8226;   <a href="#concurrent.futures">concurrent.futures</a>
+ &#8226;   <a href="#contextlib">contextlib</a>
+ &#8226;   <a href="#deprecated">deprecated</a>
+ &#8226;   <a href="#json">json</a>
+ &#8226;   <a href="#logging">logging</a>
+ &#8226;   <a href="#mysql.opentelemetry">mysql.opentelemetry</a>
+ &#8226;   <a href="#mysql.opentelemetry.attributes">mysql.opentelemetry.attributes</a>
+ &#8226;   <a href="#mysql.opentelemetry.context">mysql.opentelemetry.context</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk">mysql.opentelemetry.sdk</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.environment_variables">mysql.opentelemetry.sdk.environment_variables</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.resources">mysql.opentelemetry.sdk.resources</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.trace">mysql.opentelemetry.sdk.trace</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.trace.id_generator">mysql.opentelemetry.sdk.trace.id_generator</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.trace.sampling">mysql.opentelemetry.sdk.trace.sampling</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.util">mysql.opentelemetry.sdk.util</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.util.instrumentation">mysql.opentelemetry.sdk.util.instrumentation</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace">mysql.opentelemetry.trace</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace.status">mysql.opentelemetry.trace.status</a>
+ &#8226;   <a href="#mysql.opentelemetry.util">mysql.opentelemetry.util</a>
+ &#8226;   <a href="#mysql.opentelemetry.util.types">mysql.opentelemetry.util.types</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#threading">threading</a>
+ &#8226;   <a href="#time">time</a>
+ &#8226;   <a href="#traceback">traceback</a>
+ &#8226;   <a href="#types">types</a>
+ &#8226;   <a href="#typing">typing</a>
+ &#8226;   <a href="#warnings">warnings</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.connector.opentelemetry.constants">mysql.connector.opentelemetry.constants</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.trace">mysql.opentelemetry.sdk.trace</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.trace.id_generator">mysql.opentelemetry.sdk.trace.id_generator</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.trace.sampling">mysql.opentelemetry.sdk.trace.sampling</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.opentelemetry.sdk.trace.id_generator"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/opentelemetry/sdk/trace/id_generator.py" type="text/plain"><tt>mysql.opentelemetry.sdk.trace.id_generator</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#abc">abc</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.trace">mysql.opentelemetry.sdk.trace</a>
+ &#8226;   <a href="#random">random</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.opentelemetry.sdk.trace">mysql.opentelemetry.sdk.trace</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.opentelemetry.sdk.trace.sampling"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/opentelemetry/sdk/trace/sampling.py" type="text/plain"><tt>mysql.opentelemetry.sdk.trace.sampling</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#abc">abc</a>
+ &#8226;   <a href="#enum">enum</a>
+ &#8226;   <a href="#logging">logging</a>
+ &#8226;   <a href="#mysql.opentelemetry.context">mysql.opentelemetry.context</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.environment_variables">mysql.opentelemetry.sdk.environment_variables</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.trace">mysql.opentelemetry.sdk.trace</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace">mysql.opentelemetry.trace</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace.span">mysql.opentelemetry.trace.span</a>
+ &#8226;   <a href="#mysql.opentelemetry.util.types">mysql.opentelemetry.util.types</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#types">types</a>
+ &#8226;   <a href="#typing">typing</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.opentelemetry.sdk.trace">mysql.opentelemetry.sdk.trace</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.opentelemetry.sdk.util"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/opentelemetry/sdk/util/__init__.py" type="text/plain"><tt>mysql.opentelemetry.sdk.util</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#collections">collections</a>
+ &#8226;   <a href="#collections.abc">collections.abc</a>
+ &#8226;   <a href="#datetime">datetime</a>
+ &#8226;   <a href="#deprecated">deprecated</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk">mysql.opentelemetry.sdk</a>
+ &#8226;   <a href="#threading">threading</a>
+ &#8226;   <a href="#typing">typing</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.opentelemetry.sdk">mysql.opentelemetry.sdk</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.trace">mysql.opentelemetry.sdk.trace</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.util.instrumentation">mysql.opentelemetry.sdk.util.instrumentation</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.opentelemetry.sdk.util.instrumentation"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/opentelemetry/sdk/util/instrumentation.py" type="text/plain"><tt>mysql.opentelemetry.sdk.util.instrumentation</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#deprecated">deprecated</a>
+ &#8226;   <a href="#json">json</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.util">mysql.opentelemetry.sdk.util</a>
+ &#8226;   <a href="#typing">typing</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.opentelemetry.sdk.trace">mysql.opentelemetry.sdk.trace</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.opentelemetry.semconv"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/opentelemetry/semconv/__init__.py" type="text/plain"><tt>mysql.opentelemetry.semconv</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#mysql.opentelemetry">mysql.opentelemetry</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.opentelemetry.semconv.resource">mysql.opentelemetry.semconv.resource</a>
+ &#8226;   <a href="#mysql.opentelemetry.semconv.trace">mysql.opentelemetry.semconv.trace</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.opentelemetry.semconv.resource"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/opentelemetry/semconv/resource/__init__.py" type="text/plain"><tt>mysql.opentelemetry.semconv.resource</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#enum">enum</a>
+ &#8226;   <a href="#mysql.opentelemetry.semconv">mysql.opentelemetry.semconv</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.opentelemetry.sdk.resources">mysql.opentelemetry.sdk.resources</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.opentelemetry.semconv.trace"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/opentelemetry/semconv/trace/__init__.py" type="text/plain"><tt>mysql.opentelemetry.semconv.trace</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#enum">enum</a>
+ &#8226;   <a href="#mysql.opentelemetry.semconv">mysql.opentelemetry.semconv</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.connector.opentelemetry.constants">mysql.connector.opentelemetry.constants</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry.instrumentation">mysql.connector.opentelemetry.instrumentation</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.opentelemetry.trace"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/opentelemetry/trace/__init__.py" type="text/plain"><tt>mysql.opentelemetry.trace</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#abc">abc</a>
+ &#8226;   <a href="#contextlib">contextlib</a>
+ &#8226;   <a href="#deprecated">deprecated</a>
+ &#8226;   <a href="#enum">enum</a>
+ &#8226;   <a href="#logging">logging</a>
+ &#8226;   <a href="#mysql.opentelemetry">mysql.opentelemetry</a>
+ &#8226;   <a href="#mysql.opentelemetry.attributes">mysql.opentelemetry.attributes</a>
+ &#8226;   <a href="#mysql.opentelemetry.context">mysql.opentelemetry.context</a>
+ &#8226;   <a href="#mysql.opentelemetry.context.context">mysql.opentelemetry.context.context</a>
+ &#8226;   <a href="#mysql.opentelemetry.environment_variables">mysql.opentelemetry.environment_variables</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace.propagation">mysql.opentelemetry.trace.propagation</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace.span">mysql.opentelemetry.trace.span</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace.status">mysql.opentelemetry.trace.status</a>
+ &#8226;   <a href="#mysql.opentelemetry.util">mysql.opentelemetry.util</a>
+ &#8226;   <a href="#mysql.opentelemetry.util._once">mysql.opentelemetry.util._once</a>
+ &#8226;   <a href="#mysql.opentelemetry.util._providers">mysql.opentelemetry.util._providers</a>
+ &#8226;   <a href="#mysql.opentelemetry.util.types">mysql.opentelemetry.util.types</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#typing">typing</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.connector.opentelemetry.constants">mysql.connector.opentelemetry.constants</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry.context_propagation">mysql.connector.opentelemetry.context_propagation</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry.instrumentation">mysql.connector.opentelemetry.instrumentation</a>
+ &#8226;   <a href="#mysql.opentelemetry">mysql.opentelemetry</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.trace">mysql.opentelemetry.sdk.trace</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.trace.sampling">mysql.opentelemetry.sdk.trace.sampling</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace.propagation">mysql.opentelemetry.trace.propagation</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace.span">mysql.opentelemetry.trace.span</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace.status">mysql.opentelemetry.trace.status</a>
+ &#8226;   <a href="#mysql.opentelemetry.util._providers">mysql.opentelemetry.util._providers</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.opentelemetry.trace.propagation"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/opentelemetry/trace/propagation/__init__.py" type="text/plain"><tt>mysql.opentelemetry.trace.propagation</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#mysql.opentelemetry.context">mysql.opentelemetry.context</a>
+ &#8226;   <a href="#mysql.opentelemetry.context.context">mysql.opentelemetry.context.context</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace">mysql.opentelemetry.trace</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace.span">mysql.opentelemetry.trace.span</a>
+ &#8226;   <a href="#typing">typing</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.opentelemetry.trace">mysql.opentelemetry.trace</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.opentelemetry.trace.span"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/opentelemetry/trace/span.py" type="text/plain"><tt>mysql.opentelemetry.trace.span</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#abc">abc</a>
+ &#8226;   <a href="#collections">collections</a>
+ &#8226;   <a href="#logging">logging</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace">mysql.opentelemetry.trace</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace.status">mysql.opentelemetry.trace.status</a>
+ &#8226;   <a href="#mysql.opentelemetry.util">mysql.opentelemetry.util</a>
+ &#8226;   <a href="#mysql.opentelemetry.util.types">mysql.opentelemetry.util.types</a>
+ &#8226;   <a href="#re">re</a>
+ &#8226;   <a href="#types">types</a>
+ &#8226;   <a href="#typing">typing</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.connector.opentelemetry.context_propagation">mysql.connector.opentelemetry.context_propagation</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.trace.sampling">mysql.opentelemetry.sdk.trace.sampling</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace">mysql.opentelemetry.trace</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace.propagation">mysql.opentelemetry.trace.propagation</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.opentelemetry.trace.status"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/opentelemetry/trace/status.py" type="text/plain"><tt>mysql.opentelemetry.trace.status</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#enum">enum</a>
+ &#8226;   <a href="#logging">logging</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace">mysql.opentelemetry.trace</a>
+ &#8226;   <a href="#typing">typing</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.opentelemetry.sdk.trace">mysql.opentelemetry.sdk.trace</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace">mysql.opentelemetry.trace</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace.span">mysql.opentelemetry.trace.span</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.opentelemetry.util"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/opentelemetry/util/__init__.py" type="text/plain"><tt>mysql.opentelemetry.util</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#mysql.opentelemetry">mysql.opentelemetry</a>
+ &#8226;   <a href="#mysql.opentelemetry.util.types">mysql.opentelemetry.util.types</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.opentelemetry.attributes">mysql.opentelemetry.attributes</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.trace">mysql.opentelemetry.sdk.trace</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace">mysql.opentelemetry.trace</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace.span">mysql.opentelemetry.trace.span</a>
+ &#8226;   <a href="#mysql.opentelemetry.util._importlib_metadata">mysql.opentelemetry.util._importlib_metadata</a>
+ &#8226;   <a href="#mysql.opentelemetry.util._once">mysql.opentelemetry.util._once</a>
+ &#8226;   <a href="#mysql.opentelemetry.util._providers">mysql.opentelemetry.util._providers</a>
+ &#8226;   <a href="#mysql.opentelemetry.util.types">mysql.opentelemetry.util.types</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.opentelemetry.util._importlib_metadata"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/opentelemetry/util/_importlib_metadata.py" type="text/plain"><tt>mysql.opentelemetry.util._importlib_metadata</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#mysql.opentelemetry.importlib_metadata">mysql.opentelemetry.importlib_metadata</a>
+ &#8226;   <a href="#mysql.opentelemetry.util">mysql.opentelemetry.util</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#sys">sys</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.opentelemetry.context">mysql.opentelemetry.context</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.resources">mysql.opentelemetry.sdk.resources</a>
+ &#8226;   <a href="#mysql.opentelemetry.util._providers">mysql.opentelemetry.util._providers</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.opentelemetry.util._once"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/opentelemetry/util/_once.py" type="text/plain"><tt>mysql.opentelemetry.util._once</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#mysql.opentelemetry.util">mysql.opentelemetry.util</a>
+ &#8226;   <a href="#threading">threading</a>
+ &#8226;   <a href="#typing">typing</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.opentelemetry.metrics._internal">mysql.opentelemetry.metrics._internal</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace">mysql.opentelemetry.trace</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.opentelemetry.util._providers"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/opentelemetry/util/_providers.py" type="text/plain"><tt>mysql.opentelemetry.util._providers</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#logging">logging</a>
+ &#8226;   <a href="#mysql.opentelemetry.metrics">mysql.opentelemetry.metrics</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace">mysql.opentelemetry.trace</a>
+ &#8226;   <a href="#mysql.opentelemetry.util">mysql.opentelemetry.util</a>
+ &#8226;   <a href="#mysql.opentelemetry.util._importlib_metadata">mysql.opentelemetry.util._importlib_metadata</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#typing">typing</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.opentelemetry.metrics._internal">mysql.opentelemetry.metrics._internal</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace">mysql.opentelemetry.trace</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mysql.opentelemetry.util.types"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/mysql/opentelemetry/util/types.py" type="text/plain"><tt>mysql.opentelemetry.util.types</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#mysql.opentelemetry.util">mysql.opentelemetry.util</a>
+ &#8226;   <a href="#typing">typing</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mysql.opentelemetry.attributes">mysql.opentelemetry.attributes</a>
+ &#8226;   <a href="#mysql.opentelemetry.metrics._internal.instrument">mysql.opentelemetry.metrics._internal.instrument</a>
+ &#8226;   <a href="#mysql.opentelemetry.metrics._internal.observation">mysql.opentelemetry.metrics._internal.observation</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.resources">mysql.opentelemetry.sdk.resources</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.trace">mysql.opentelemetry.sdk.trace</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.trace.sampling">mysql.opentelemetry.sdk.trace.sampling</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace">mysql.opentelemetry.trace</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace.span">mysql.opentelemetry.trace.span</a>
+ &#8226;   <a href="#mysql.opentelemetry.util">mysql.opentelemetry.util</a>
+
+  </div>
+
+</div>
+
+<div class="node">
   <a name="netrc"></a>
   <a target="code" href="///C:/Python311/Lib/netrc.py" type="text/plain"><tt>netrc</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
@@ -16054,6 +18231,7 @@ imported by:
  &#8226;   <a href="#pandas.core.arrays.sparse.array">pandas.core.arrays.sparse.array</a>
  &#8226;   <a href="#pandas.core.dtypes.inference">pandas.core.dtypes.inference</a>
  &#8226;   <a href="#pandas.io.html">pandas.io.html</a>
+ &#8226;   <a href="#pyodbc">pyodbc</a>
  &#8226;   <a href="#statistics">statistics</a>
 
   </div>
@@ -21179,6 +23357,19 @@ imported by:
 </div>
 
 <div class="node">
+  <a name="opentelemetry"></a>
+  <a target="code" href="" type="text/plain"><tt>opentelemetry</tt></a>
+<span class="moduletype">MissingModule</span>  <div class="import">
+imported by:
+    <a href="#mysql.connector.opentelemetry.constants">mysql.connector.opentelemetry.constants</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry.context_propagation">mysql.connector.opentelemetry.context_propagation</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry.instrumentation">mysql.connector.opentelemetry.instrumentation</a>
+
+  </div>
+
+</div>
+
+<div class="node">
   <a name="operator"></a>
   <a target="code" href="///C:/Python311/Lib/operator.py" type="text/plain"><tt>operator</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
@@ -21208,6 +23399,7 @@ imported by:
  &#8226;   <a href="#jinja2.sandbox">jinja2.sandbox</a>
  &#8226;   <a href="#jinja2.tests">jinja2.tests</a>
  &#8226;   <a href="#main.py">main.py</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata">mysql.opentelemetry.importlib_metadata</a>
  &#8226;   <a href="#numpy.array_api._array_object">numpy.array_api._array_object</a>
  &#8226;   <a href="#numpy.core.arrayprint">numpy.core.arrayprint</a>
  &#8226;   <a href="#numpy.core.einsumfunc">numpy.core.einsumfunc</a>
@@ -21357,6 +23549,7 @@ imported by:
  &#8226;   <a href="#colorama.ansitowin32">colorama.ansitowin32</a>
  &#8226;   <a href="#concurrent.futures.process">concurrent.futures.process</a>
  &#8226;   <a href="#concurrent.futures.thread">concurrent.futures.thread</a>
+ &#8226;   <a href="#configparser">configparser</a>
  &#8226;   <a href="#contextlib">contextlib</a>
  &#8226;   <a href="#ctypes">ctypes</a>
  &#8226;   <a href="#dateutil.tz.tz">dateutil.tz.tz</a>
@@ -21415,6 +23608,23 @@ imported by:
  &#8226;   <a href="#multiprocessing.spawn">multiprocessing.spawn</a>
  &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
  &#8226;   <a href="#multitasking">multitasking</a>
+ &#8226;   <a href="#mysql.connector.abstracts">mysql.connector.abstracts</a>
+ &#8226;   <a href="#mysql.connector.connection">mysql.connector.connection</a>
+ &#8226;   <a href="#mysql.connector.connection_cext">mysql.connector.connection_cext</a>
+ &#8226;   <a href="#mysql.connector.network">mysql.connector.network</a>
+ &#8226;   <a href="#mysql.connector.optionfiles">mysql.connector.optionfiles</a>
+ &#8226;   <a href="#mysql.connector.types">mysql.connector.types</a>
+ &#8226;   <a href="#mysql.connector.utils">mysql.connector.utils</a>
+ &#8226;   <a href="#mysql.opentelemetry.context">mysql.opentelemetry.context</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata">mysql.opentelemetry.importlib_metadata</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata._compat">mysql.opentelemetry.importlib_metadata._compat</a>
+ &#8226;   <a href="#mysql.opentelemetry.metrics._internal">mysql.opentelemetry.metrics._internal</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.resources">mysql.opentelemetry.sdk.resources</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.trace">mysql.opentelemetry.sdk.trace</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.trace.sampling">mysql.opentelemetry.sdk.trace.sampling</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace">mysql.opentelemetry.trace</a>
+ &#8226;   <a href="#mysql.opentelemetry.util._importlib_metadata">mysql.opentelemetry.util._importlib_metadata</a>
+ &#8226;   <a href="#mysql.opentelemetry.util._providers">mysql.opentelemetry.util._providers</a>
  &#8226;   <a href="#netrc">netrc</a>
  &#8226;   <a href="#ntpath">ntpath</a>
  &#8226;   <a href="#ntpath">ntpath</a>
@@ -21589,8 +23799,7 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#Bux.GetCurrentBux">Bux.GetCurrentBux</a>
- &#8226;   <a href="#pandas">pandas</a>
+    <a href="#pandas">pandas</a>
  &#8226;   <a href="#pandas._config">pandas._config</a>
  &#8226;   <a href="#pandas._libs">pandas._libs</a>
  &#8226;   <a href="#pandas._testing">pandas._testing</a>
@@ -27214,9 +29423,12 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#Bux.GetTodayBux">Bux.GetTodayBux</a>
+    <a href="#Bux.GetCurrentBux">Bux.GetCurrentBux</a>
+ &#8226;   <a href="#Bux.GetTodayBux">Bux.GetTodayBux</a>
  &#8226;   <a href="#Stock.GetCurrentStockPrice">Stock.GetCurrentStockPrice</a>
  &#8226;   <a href="#Stock.GetSpecificHistoryStockData">Stock.GetSpecificHistoryStockData</a>
+ &#8226;   <a href="#Stock.Methods.GetCurrentStockDataFromApi">Stock.Methods.GetCurrentStockDataFromApi</a>
+ &#8226;   <a href="#Stock.SetCurrentStockPricesInDb">Stock.SetCurrentStockPricesInDb</a>
  &#8226;   <a href="#pandas._typing">pandas._typing</a>
  &#8226;   <a href="#pandas.core.api">pandas.core.api</a>
  &#8226;   <a href="#pandas.core.arraylike">pandas.core.arraylike</a>
@@ -33155,6 +35367,7 @@ imported by:
  &#8226;   <a href="#importlib.resources._legacy">importlib.resources._legacy</a>
  &#8226;   <a href="#importlib.resources.readers">importlib.resources.readers</a>
  &#8226;   <a href="#main.py">main.py</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata">mysql.opentelemetry.importlib_metadata</a>
  &#8226;   <a href="#numpy">numpy</a>
  &#8226;   <a href="#numpy.compat.py3k">numpy.compat.py3k</a>
  &#8226;   <a href="#numpy.testing._private.extbuild">numpy.testing._private.extbuild</a>
@@ -34467,6 +36680,9 @@ imports:
 imported by:
     <a href="#appdirs">appdirs</a>
  &#8226;   <a href="#flask.cli">flask.cli</a>
+ &#8226;   <a href="#mysql.connector.connection_cext">mysql.connector.connection_cext</a>
+ &#8226;   <a href="#mysql.connector.utils">mysql.connector.utils</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata._compat">mysql.opentelemetry.importlib_metadata._compat</a>
  &#8226;   <a href="#numpy.lib.utils">numpy.lib.utils</a>
  &#8226;   <a href="#numpy.testing._private.utils">numpy.testing._private.utils</a>
  &#8226;   <a href="#pandas._config.localization">pandas._config.localization</a>
@@ -34551,6 +36767,7 @@ imported by:
  &#8226;   <a href="#jinja2.loaders">jinja2.loaders</a>
  &#8226;   <a href="#main.py">main.py</a>
  &#8226;   <a href="#mimetypes">mimetypes</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata">mysql.opentelemetry.importlib_metadata</a>
  &#8226;   <a href="#os">os</a>
  &#8226;   <a href="#pathlib">pathlib</a>
  &#8226;   <a href="#pkg_resources">pkg_resources</a>
@@ -34784,6 +37001,31 @@ imported by:
 </div>
 
 <div class="node">
+  <a name="pyodbc"></a>
+  <tt>pyodbc</tt> <span class="moduletype"><tt>C:\Users\tkorn\PycharmProjects\yfinanceApi\venv\Lib\site-packages\pyodbc.cp311-win_amd64.pyd</tt></span>  <div class="import">
+imports:
+    <a href="#_blake2">_blake2</a>
+ &#8226;   <a href="#_datetime">_datetime</a>
+ &#8226;   <a href="#_decimal">_decimal</a>
+ &#8226;   <a href="#_hashlib">_hashlib</a>
+ &#8226;   <a href="#_locale">_locale</a>
+ &#8226;   <a href="#datetime">datetime</a>
+ &#8226;   <a href="#decimal">decimal</a>
+ &#8226;   <a href="#hashlib">hashlib</a>
+ &#8226;   <a href="#locale">locale</a>
+ &#8226;   <a href="#math">math</a>
+ &#8226;   <a href="#numbers">numbers</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#Data.DbContext">Data.DbContext</a>
+
+  </div>
+
+</div>
+
+<div class="node">
   <a name="pyparsing"></a>
   <a target="code" href="" type="text/plain"><tt>pyparsing</tt></a>
 <span class="moduletype">MissingModule</span>  <div class="import">
@@ -34832,6 +37074,7 @@ imported by:
  &#8226;   <a href="#pytz.lazy">pytz.lazy</a>
  &#8226;   <a href="#pytz.tzfile">pytz.tzfile</a>
  &#8226;   <a href="#pytz.tzinfo">pytz.tzinfo</a>
+ &#8226;   <a href="#schedule">schedule</a>
  &#8226;   <a href="#yfinance.utils">yfinance.utils</a>
 
   </div>
@@ -34962,6 +37205,7 @@ imported by:
  &#8226;   <a href="#multiprocessing.managers">multiprocessing.managers</a>
  &#8226;   <a href="#multiprocessing.pool">multiprocessing.pool</a>
  &#8226;   <a href="#multiprocessing.queues">multiprocessing.queues</a>
+ &#8226;   <a href="#mysql.connector.pooling">mysql.connector.pooling</a>
  &#8226;   <a href="#pkg_resources._vendor.more_itertools.more">pkg_resources._vendor.more_itertools.more</a>
  &#8226;   <a href="#urllib3.connectionpool">urllib3.connectionpool</a>
 
@@ -35027,8 +37271,11 @@ imported by:
  &#8226;   <a href="#email.utils">email.utils</a>
  &#8226;   <a href="#jinja2.filters">jinja2.filters</a>
  &#8226;   <a href="#jinja2.utils">jinja2.utils</a>
+ &#8226;   <a href="#mysql.connector.pooling">mysql.connector.pooling</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.trace.id_generator">mysql.opentelemetry.sdk.trace.id_generator</a>
  &#8226;   <a href="#pkg_resources._vendor.more_itertools.more">pkg_resources._vendor.more_itertools.more</a>
  &#8226;   <a href="#pkg_resources._vendor.more_itertools.recipes">pkg_resources._vendor.more_itertools.recipes</a>
+ &#8226;   <a href="#schedule">schedule</a>
  &#8226;   <a href="#secrets">secrets</a>
  &#8226;   <a href="#statistics">statistics</a>
  &#8226;   <a href="#tempfile">tempfile</a>
@@ -35076,6 +37323,7 @@ imported by:
  &#8226;   <a href="#click.shell_completion">click.shell_completion</a>
  &#8226;   <a href="#click.utils">click.utils</a>
  &#8226;   <a href="#colorama.ansitowin32">colorama.ansitowin32</a>
+ &#8226;   <a href="#configparser">configparser</a>
  &#8226;   <a href="#csv">csv</a>
  &#8226;   <a href="#dataclasses">dataclasses</a>
  &#8226;   <a href="#dateutil.parser._parser">dateutil.parser._parser</a>
@@ -35094,6 +37342,7 @@ imported by:
  &#8226;   <a href="#email.utils">email.utils</a>
  &#8226;   <a href="#encodings.idna">encodings.idna</a>
  &#8226;   <a href="#flask.cli">flask.cli</a>
+ &#8226;   <a href="#flask_cors.core">flask_cors.core</a>
  &#8226;   <a href="#fnmatch">fnmatch</a>
  &#8226;   <a href="#fractions">fractions</a>
  &#8226;   <a href="#ftplib">ftplib</a>
@@ -35134,6 +37383,17 @@ imported by:
  &#8226;   <a href="#lxml.html.soupparser">lxml.html.soupparser</a>
  &#8226;   <a href="#main.py">main.py</a>
  &#8226;   <a href="#markupsafe">markupsafe</a>
+ &#8226;   <a href="#mysql.connector.abstracts">mysql.connector.abstracts</a>
+ &#8226;   <a href="#mysql.connector.cursor">mysql.connector.cursor</a>
+ &#8226;   <a href="#mysql.connector.cursor_cext">mysql.connector.cursor_cext</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry.instrumentation">mysql.connector.opentelemetry.instrumentation</a>
+ &#8226;   <a href="#mysql.connector.optionfiles">mysql.connector.optionfiles</a>
+ &#8226;   <a href="#mysql.connector.pooling">mysql.connector.pooling</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata">mysql.opentelemetry.importlib_metadata</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata._adapters">mysql.opentelemetry.importlib_metadata._adapters</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata._text">mysql.opentelemetry.importlib_metadata._text</a>
+ &#8226;   <a href="#mysql.opentelemetry.metrics._internal.instrument">mysql.opentelemetry.metrics._internal.instrument</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace.span">mysql.opentelemetry.trace.span</a>
  &#8226;   <a href="#numpy._typing._add_docstring">numpy._typing._add_docstring</a>
  &#8226;   <a href="#numpy.core._internal">numpy.core._internal</a>
  &#8226;   <a href="#numpy.lib._version">numpy.lib._version</a>
@@ -35202,6 +37462,7 @@ imported by:
  &#8226;   <a href="#requests.auth">requests.auth</a>
  &#8226;   <a href="#requests.utils">requests.utils</a>
  &#8226;   <a href="#rlcompleter">rlcompleter</a>
+ &#8226;   <a href="#schedule">schedule</a>
  &#8226;   <a href="#shlex">shlex</a>
  &#8226;   <a href="#soupsieve.__meta__">soupsieve.__meta__</a>
  &#8226;   <a href="#soupsieve.css_match">soupsieve.css_match</a>
@@ -35891,6 +38152,30 @@ imported by:
 </div>
 
 <div class="node">
+  <a name="schedule"></a>
+  <a target="code" href="///C:/Users/tkorn/PycharmProjects/yfinanceApi/venv/Lib/site-packages/schedule/__init__.py" type="text/plain"><tt>schedule</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#collections.abc">collections.abc</a>
+ &#8226;   <a href="#datetime">datetime</a>
+ &#8226;   <a href="#functools">functools</a>
+ &#8226;   <a href="#logging">logging</a>
+ &#8226;   <a href="#pytz">pytz</a>
+ &#8226;   <a href="#random">random</a>
+ &#8226;   <a href="#re">re</a>
+ &#8226;   <a href="#time">time</a>
+ &#8226;   <a href="#typing">typing</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#main.py">main.py</a>
+
+  </div>
+
+</div>
+
+<div class="node">
   <a name="scipy"></a>
   <a target="code" href="" type="text/plain"><tt>scipy</tt></a>
 <span class="moduletype">MissingModule</span>  <div class="import">
@@ -36208,6 +38493,9 @@ imported by:
  &#8226;   <a href="#multiprocessing.forkserver">multiprocessing.forkserver</a>
  &#8226;   <a href="#multiprocessing.reduction">multiprocessing.reduction</a>
  &#8226;   <a href="#multiprocessing.resource_sharer">multiprocessing.resource_sharer</a>
+ &#8226;   <a href="#mysql.connector.connection">mysql.connector.connection</a>
+ &#8226;   <a href="#mysql.connector.connection_cext">mysql.connector.connection_cext</a>
+ &#8226;   <a href="#mysql.connector.network">mysql.connector.network</a>
  &#8226;   <a href="#pandas._testing._io">pandas._testing._io</a>
  &#8226;   <a href="#platform">platform</a>
  &#8226;   <a href="#requests.adapters">requests.adapters</a>
@@ -36583,6 +38871,8 @@ imported by:
  &#8226;   <a href="#flask.cli">flask.cli</a>
  &#8226;   <a href="#ftplib">ftplib</a>
  &#8226;   <a href="#http.client">http.client</a>
+ &#8226;   <a href="#mysql.connector.abstracts">mysql.connector.abstracts</a>
+ &#8226;   <a href="#mysql.connector.network">mysql.connector.network</a>
  &#8226;   <a href="#requests">requests</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
  &#8226;   <a href="#urllib3">urllib3</a>
@@ -36708,6 +38998,7 @@ imports:
   <div class="import">
 imported by:
     <a href="#encodings.idna">encodings.idna</a>
+ &#8226;   <a href="#mysql.connector.utils">mysql.connector.utils</a>
 
   </div>
 
@@ -36735,6 +39026,11 @@ imported by:
  &#8226;   <a href="#multiprocessing.forkserver">multiprocessing.forkserver</a>
  &#8226;   <a href="#multiprocessing.shared_memory">multiprocessing.shared_memory</a>
  &#8226;   <a href="#multiprocessing.synchronize">multiprocessing.synchronize</a>
+ &#8226;   <a href="#mysql.connector.connection">mysql.connector.connection</a>
+ &#8226;   <a href="#mysql.connector.conversion">mysql.connector.conversion</a>
+ &#8226;   <a href="#mysql.connector.network">mysql.connector.network</a>
+ &#8226;   <a href="#mysql.connector.protocol">mysql.connector.protocol</a>
+ &#8226;   <a href="#mysql.connector.utils">mysql.connector.utils</a>
  &#8226;   <a href="#numpy.lib.format">numpy.lib.format</a>
  &#8226;   <a href="#pandas.core.computation.scope">pandas.core.computation.scope</a>
  &#8226;   <a href="#pandas.io.sas.sas_xport">pandas.io.sas.sas_xport</a>
@@ -36795,6 +39091,7 @@ imported by:
  &#8226;   <a href="#click.shell_completion">click.shell_completion</a>
  &#8226;   <a href="#http.server">http.server</a>
  &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
+ &#8226;   <a href="#mysql.connector.utils">mysql.connector.utils</a>
  &#8226;   <a href="#numpy.testing._private.utils">numpy.testing._private.utils</a>
  &#8226;   <a href="#os">os</a>
  &#8226;   <a href="#pandas._config.localization">pandas._config.localization</a>
@@ -36862,6 +39159,7 @@ imported by:
  &#8226;   <a href="#colorama.ansitowin32">colorama.ansitowin32</a>
  &#8226;   <a href="#colorama.initialise">colorama.initialise</a>
  &#8226;   <a href="#concurrent.futures.process">concurrent.futures.process</a>
+ &#8226;   <a href="#configparser">configparser</a>
  &#8226;   <a href="#contextlib">contextlib</a>
  &#8226;   <a href="#ctypes">ctypes</a>
  &#8226;   <a href="#ctypes._endian">ctypes._endian</a>
@@ -36935,6 +39233,13 @@ imported by:
  &#8226;   <a href="#multiprocessing.synchronize">multiprocessing.synchronize</a>
  &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
  &#8226;   <a href="#multitasking">multitasking</a>
+ &#8226;   <a href="#mysql.connector.connection">mysql.connector.connection</a>
+ &#8226;   <a href="#mysql.connector.connection_cext">mysql.connector.connection_cext</a>
+ &#8226;   <a href="#mysql.connector.utils">mysql.connector.utils</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata">mysql.opentelemetry.importlib_metadata</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata._compat">mysql.opentelemetry.importlib_metadata._compat</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.resources">mysql.opentelemetry.sdk.resources</a>
+ &#8226;   <a href="#mysql.opentelemetry.util._importlib_metadata">mysql.opentelemetry.util._importlib_metadata</a>
  &#8226;   <a href="#ntpath">ntpath</a>
  &#8226;   <a href="#numpy">numpy</a>
  &#8226;   <a href="#numpy.__config__">numpy.__config__</a>
@@ -37229,6 +39534,8 @@ imported by:
  &#8226;   <a href="#importlib.metadata">importlib.metadata</a>
  &#8226;   <a href="#importlib.metadata._adapters">importlib.metadata._adapters</a>
  &#8226;   <a href="#jinja2.filters">jinja2.filters</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata">mysql.opentelemetry.importlib_metadata</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata._adapters">mysql.opentelemetry.importlib_metadata._adapters</a>
  &#8226;   <a href="#numpy._typing._add_docstring">numpy._typing._add_docstring</a>
  &#8226;   <a href="#numpy.lib.utils">numpy.lib.utils</a>
  &#8226;   <a href="#numpy.ma.core">numpy.ma.core</a>
@@ -37301,6 +39608,7 @@ imported by:
  &#8226;   <a href="#http.cookiejar">http.cookiejar</a>
  &#8226;   <a href="#jinja2.utils">jinja2.utils</a>
  &#8226;   <a href="#logging">logging</a>
+ &#8226;   <a href="#main.py">main.py</a>
  &#8226;   <a href="#multiprocessing.context">multiprocessing.context</a>
  &#8226;   <a href="#multiprocessing.dummy">multiprocessing.dummy</a>
  &#8226;   <a href="#multiprocessing.forkserver">multiprocessing.forkserver</a>
@@ -37314,6 +39622,13 @@ imported by:
  &#8226;   <a href="#multiprocessing.synchronize">multiprocessing.synchronize</a>
  &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
  &#8226;   <a href="#multitasking">multitasking</a>
+ &#8226;   <a href="#mysql.connector.pooling">mysql.connector.pooling</a>
+ &#8226;   <a href="#mysql.opentelemetry.attributes">mysql.opentelemetry.attributes</a>
+ &#8226;   <a href="#mysql.opentelemetry.context">mysql.opentelemetry.context</a>
+ &#8226;   <a href="#mysql.opentelemetry.metrics._internal">mysql.opentelemetry.metrics._internal</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.trace">mysql.opentelemetry.sdk.trace</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.util">mysql.opentelemetry.sdk.util</a>
+ &#8226;   <a href="#mysql.opentelemetry.util._once">mysql.opentelemetry.util._once</a>
  &#8226;   <a href="#pkg_resources._vendor.pyparsing.core">pkg_resources._vendor.pyparsing.core</a>
  &#8226;   <a href="#pydoc">pydoc</a>
  &#8226;   <a href="#pyi_rth_multiprocessing.py">pyi_rth_multiprocessing.py</a>
@@ -37375,12 +39690,18 @@ imported by:
  &#8226;   <a href="#http.server">http.server</a>
  &#8226;   <a href="#itsdangerous.timed">itsdangerous.timed</a>
  &#8226;   <a href="#logging">logging</a>
+ &#8226;   <a href="#main.py">main.py</a>
  &#8226;   <a href="#multiprocessing.connection">multiprocessing.connection</a>
  &#8226;   <a href="#multiprocessing.managers">multiprocessing.managers</a>
  &#8226;   <a href="#multiprocessing.pool">multiprocessing.pool</a>
  &#8226;   <a href="#multiprocessing.queues">multiprocessing.queues</a>
  &#8226;   <a href="#multiprocessing.synchronize">multiprocessing.synchronize</a>
  &#8226;   <a href="#multitasking">multitasking</a>
+ &#8226;   <a href="#mysql.connector.abstracts">mysql.connector.abstracts</a>
+ &#8226;   <a href="#mysql.connector.conversion">mysql.connector.conversion</a>
+ &#8226;   <a href="#mysql.connector.dbapi">mysql.connector.dbapi</a>
+ &#8226;   <a href="#mysql.connector.types">mysql.connector.types</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.trace">mysql.opentelemetry.sdk.trace</a>
  &#8226;   <a href="#numpy.testing._private.utils">numpy.testing._private.utils</a>
  &#8226;   <a href="#pandas._testing.contexts">pandas._testing.contexts</a>
  &#8226;   <a href="#pandas.io.clipboard">pandas.io.clipboard</a>
@@ -37394,6 +39715,7 @@ imported by:
  &#8226;   <a href="#requests.auth">requests.auth</a>
  &#8226;   <a href="#requests.cookies">requests.cookies</a>
  &#8226;   <a href="#requests.sessions">requests.sessions</a>
+ &#8226;   <a href="#schedule">schedule</a>
  &#8226;   <a href="#socketserver">socketserver</a>
  &#8226;   <a href="#sqlite3.dbapi2">sqlite3.dbapi2</a>
  &#8226;   <a href="#ssl">ssl</a>
@@ -37509,6 +39831,7 @@ imported by:
  &#8226;   <a href="#multiprocessing.process">multiprocessing.process</a>
  &#8226;   <a href="#multiprocessing.queues">multiprocessing.queues</a>
  &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.trace">mysql.opentelemetry.sdk.trace</a>
  &#8226;   <a href="#numpy.testing._private.utils">numpy.testing._private.utils</a>
  &#8226;   <a href="#pdb">pdb</a>
  &#8226;   <a href="#pkg_resources._vendor.pyparsing.core">pkg_resources._vendor.pyparsing.core</a>
@@ -37639,6 +39962,12 @@ imported by:
  &#8226;   <a href="#multiprocessing.queues">multiprocessing.queues</a>
  &#8226;   <a href="#multiprocessing.shared_memory">multiprocessing.shared_memory</a>
  &#8226;   <a href="#multiprocessing.spawn">multiprocessing.spawn</a>
+ &#8226;   <a href="#mysql.connector.abstracts">mysql.connector.abstracts</a>
+ &#8226;   <a href="#mysql.connector.pooling">mysql.connector.pooling</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata._functools">mysql.opentelemetry.importlib_metadata._functools</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.trace">mysql.opentelemetry.sdk.trace</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.trace.sampling">mysql.opentelemetry.sdk.trace.sampling</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace.span">mysql.opentelemetry.trace.span</a>
  &#8226;   <a href="#numpy._utils._inspect">numpy._utils._inspect</a>
  &#8226;   <a href="#numpy.array_api._array_object">numpy.array_api._array_object</a>
  &#8226;   <a href="#numpy.core.fromnumeric">numpy.core.fromnumeric</a>
@@ -37790,6 +40119,50 @@ imported by:
  &#8226;   <a href="#jinja2.visitor">jinja2.visitor</a>
  &#8226;   <a href="#markupsafe">markupsafe</a>
  &#8226;   <a href="#markupsafe._native">markupsafe._native</a>
+ &#8226;   <a href="#mysql.connector.abstracts">mysql.connector.abstracts</a>
+ &#8226;   <a href="#mysql.connector.authentication">mysql.connector.authentication</a>
+ &#8226;   <a href="#mysql.connector.charsets">mysql.connector.charsets</a>
+ &#8226;   <a href="#mysql.connector.connection">mysql.connector.connection</a>
+ &#8226;   <a href="#mysql.connector.connection_cext">mysql.connector.connection_cext</a>
+ &#8226;   <a href="#mysql.connector.constants">mysql.connector.constants</a>
+ &#8226;   <a href="#mysql.connector.conversion">mysql.connector.conversion</a>
+ &#8226;   <a href="#mysql.connector.cursor">mysql.connector.cursor</a>
+ &#8226;   <a href="#mysql.connector.cursor_cext">mysql.connector.cursor_cext</a>
+ &#8226;   <a href="#mysql.connector.custom_types">mysql.connector.custom_types</a>
+ &#8226;   <a href="#mysql.connector.dbapi">mysql.connector.dbapi</a>
+ &#8226;   <a href="#mysql.connector.errors">mysql.connector.errors</a>
+ &#8226;   <a href="#mysql.connector.locales">mysql.connector.locales</a>
+ &#8226;   <a href="#mysql.connector.network">mysql.connector.network</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry.context_propagation">mysql.connector.opentelemetry.context_propagation</a>
+ &#8226;   <a href="#mysql.connector.opentelemetry.instrumentation">mysql.connector.opentelemetry.instrumentation</a>
+ &#8226;   <a href="#mysql.connector.optionfiles">mysql.connector.optionfiles</a>
+ &#8226;   <a href="#mysql.connector.plugins">mysql.connector.plugins</a>
+ &#8226;   <a href="#mysql.connector.pooling">mysql.connector.pooling</a>
+ &#8226;   <a href="#mysql.connector.protocol">mysql.connector.protocol</a>
+ &#8226;   <a href="#mysql.connector.types">mysql.connector.types</a>
+ &#8226;   <a href="#mysql.connector.utils">mysql.connector.utils</a>
+ &#8226;   <a href="#mysql.opentelemetry.attributes">mysql.opentelemetry.attributes</a>
+ &#8226;   <a href="#mysql.opentelemetry.context">mysql.opentelemetry.context</a>
+ &#8226;   <a href="#mysql.opentelemetry.context.context">mysql.opentelemetry.context.context</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata">mysql.opentelemetry.importlib_metadata</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata._compat">mysql.opentelemetry.importlib_metadata._compat</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata._meta">mysql.opentelemetry.importlib_metadata._meta</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata._py39compat">mysql.opentelemetry.importlib_metadata._py39compat</a>
+ &#8226;   <a href="#mysql.opentelemetry.metrics._internal">mysql.opentelemetry.metrics._internal</a>
+ &#8226;   <a href="#mysql.opentelemetry.metrics._internal.instrument">mysql.opentelemetry.metrics._internal.instrument</a>
+ &#8226;   <a href="#mysql.opentelemetry.metrics._internal.observation">mysql.opentelemetry.metrics._internal.observation</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.resources">mysql.opentelemetry.sdk.resources</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.trace">mysql.opentelemetry.sdk.trace</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.trace.sampling">mysql.opentelemetry.sdk.trace.sampling</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.util">mysql.opentelemetry.sdk.util</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.util.instrumentation">mysql.opentelemetry.sdk.util.instrumentation</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace">mysql.opentelemetry.trace</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace.propagation">mysql.opentelemetry.trace.propagation</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace.span">mysql.opentelemetry.trace.span</a>
+ &#8226;   <a href="#mysql.opentelemetry.trace.status">mysql.opentelemetry.trace.status</a>
+ &#8226;   <a href="#mysql.opentelemetry.util._once">mysql.opentelemetry.util._once</a>
+ &#8226;   <a href="#mysql.opentelemetry.util._providers">mysql.opentelemetry.util._providers</a>
+ &#8226;   <a href="#mysql.opentelemetry.util.types">mysql.opentelemetry.util.types</a>
  &#8226;   <a href="#numpy._typing">numpy._typing</a>
  &#8226;   <a href="#numpy._typing._array_like">numpy._typing._array_like</a>
  &#8226;   <a href="#numpy._typing._char_codes">numpy._typing._char_codes</a>
@@ -38013,6 +40386,7 @@ imported by:
  &#8226;   <a href="#pkg_resources._vendor.pyparsing.testing">pkg_resources._vendor.pyparsing.testing</a>
  &#8226;   <a href="#pkg_resources._vendor.pyparsing.unicode">pkg_resources._vendor.pyparsing.unicode</a>
  &#8226;   <a href="#pkg_resources._vendor.pyparsing.util">pkg_resources._vendor.pyparsing.util</a>
+ &#8226;   <a href="#schedule">schedule</a>
  &#8226;   <a href="#soupsieve">soupsieve</a>
  &#8226;   <a href="#soupsieve.css_match">soupsieve.css_match</a>
  &#8226;   <a href="#soupsieve.css_parser">soupsieve.css_parser</a>
@@ -38105,6 +40479,8 @@ imported by:
  &#8226;   <a href="#jinja2.utils">jinja2.utils</a>
  &#8226;   <a href="#jinja2.visitor">jinja2.visitor</a>
  &#8226;   <a href="#markupsafe">markupsafe</a>
+ &#8226;   <a href="#mysql.connector.types">mysql.connector.types</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata._compat">mysql.opentelemetry.importlib_metadata._compat</a>
  &#8226;   <a href="#urllib3._base_connection">urllib3._base_connection</a>
  &#8226;   <a href="#urllib3._collections">urllib3._collections</a>
  &#8226;   <a href="#urllib3.connection">urllib3.connection</a>
@@ -38140,6 +40516,7 @@ imported by:
     <a href="#charset_normalizer.utils">charset_normalizer.utils</a>
  &#8226;   <a href="#encodings.idna">encodings.idna</a>
  &#8226;   <a href="#idna.core">idna.core</a>
+ &#8226;   <a href="#mysql.connector.utils">mysql.connector.utils</a>
  &#8226;   <a href="#pandas.core.arrays.arrow.array">pandas.core.arrays.arrow.array</a>
  &#8226;   <a href="#pandas.core.strings.object_array">pandas.core.strings.object_array</a>
  &#8226;   <a href="#pandas.io.formats.format">pandas.io.formats.format</a>
@@ -38472,6 +40849,7 @@ imported by:
     <a href="#email._header_value_parser">email._header_value_parser</a>
  &#8226;   <a href="#lxml.html">lxml.html</a>
  &#8226;   <a href="#main.py">main.py</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.resources">mysql.opentelemetry.sdk.resources</a>
  &#8226;   <a href="#urllib.error">urllib.error</a>
  &#8226;   <a href="#urllib.parse">urllib.parse</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
@@ -38542,6 +40920,7 @@ imported by:
  &#8226;   <a href="#email.utils">email.utils</a>
  &#8226;   <a href="#flask.app">flask.app</a>
  &#8226;   <a href="#flask.testing">flask.testing</a>
+ &#8226;   <a href="#flask_cors.extension">flask_cors.extension</a>
  &#8226;   <a href="#http.client">http.client</a>
  &#8226;   <a href="#http.cookiejar">http.cookiejar</a>
  &#8226;   <a href="#http.server">http.server</a>
@@ -38551,6 +40930,7 @@ imported by:
  &#8226;   <a href="#lxml.html.html5parser">lxml.html.html5parser</a>
  &#8226;   <a href="#main.py">main.py</a>
  &#8226;   <a href="#mimetypes">mimetypes</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.resources">mysql.opentelemetry.sdk.resources</a>
  &#8226;   <a href="#nturl2path">nturl2path</a>
  &#8226;   <a href="#numpy.lib._datasource">numpy.lib._datasource</a>
  &#8226;   <a href="#pandas.io.common">pandas.io.common</a>
@@ -39618,6 +41998,8 @@ imported by:
     <a href="#click.types">click.types</a>
  &#8226;   <a href="#flask.json.provider">flask.json.provider</a>
  &#8226;   <a href="#flask.json.tag">flask.json.tag</a>
+ &#8226;   <a href="#mysql.connector.pooling">mysql.connector.pooling</a>
+ &#8226;   <a href="#mysql.opentelemetry.context">mysql.opentelemetry.context</a>
  &#8226;   <a href="#pandas._testing.contexts">pandas._testing.contexts</a>
  &#8226;   <a href="#pandas.core.reshape.merge">pandas.core.reshape.merge</a>
  &#8226;   <a href="#pandas.io.formats.style_render">pandas.io.formats.style_render</a>
@@ -39676,6 +42058,7 @@ imported by:
  &#8226;   <a href="#cgi">cgi</a>
  &#8226;   <a href="#charset_normalizer.legacy">charset_normalizer.legacy</a>
  &#8226;   <a href="#codeop">codeop</a>
+ &#8226;   <a href="#configparser">configparser</a>
  &#8226;   <a href="#dateutil.parser">dateutil.parser</a>
  &#8226;   <a href="#dateutil.parser._parser">dateutil.parser._parser</a>
  &#8226;   <a href="#dateutil.relativedelta">dateutil.relativedelta</a>
@@ -39714,6 +42097,14 @@ imported by:
  &#8226;   <a href="#multiprocessing.forkserver">multiprocessing.forkserver</a>
  &#8226;   <a href="#multiprocessing.pool">multiprocessing.pool</a>
  &#8226;   <a href="#multiprocessing.resource_tracker">multiprocessing.resource_tracker</a>
+ &#8226;   <a href="#mysql.connector.connection">mysql.connector.connection</a>
+ &#8226;   <a href="#mysql.connector.constants">mysql.connector.constants</a>
+ &#8226;   <a href="#mysql.connector.cursor">mysql.connector.cursor</a>
+ &#8226;   <a href="#mysql.connector.cursor_cext">mysql.connector.cursor_cext</a>
+ &#8226;   <a href="#mysql.connector.network">mysql.connector.network</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata">mysql.opentelemetry.importlib_metadata</a>
+ &#8226;   <a href="#mysql.opentelemetry.importlib_metadata._adapters">mysql.opentelemetry.importlib_metadata._adapters</a>
+ &#8226;   <a href="#mysql.opentelemetry.sdk.trace">mysql.opentelemetry.sdk.trace</a>
  &#8226;   <a href="#numpy">numpy</a>
  &#8226;   <a href="#numpy._distributor_init">numpy._distributor_init</a>
  &#8226;   <a href="#numpy._pytesttester">numpy._pytesttester</a>
@@ -39931,6 +42322,9 @@ imported by:
  &#8226;   <a href="#multiprocessing.queues">multiprocessing.queues</a>
  &#8226;   <a href="#multiprocessing.sharedctypes">multiprocessing.sharedctypes</a>
  &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
+ &#8226;   <a href="#mysql.connector.abstracts">mysql.connector.abstracts</a>
+ &#8226;   <a href="#mysql.connector.cursor">mysql.connector.cursor</a>
+ &#8226;   <a href="#mysql.connector.cursor_cext">mysql.connector.cursor_cext</a>
  &#8226;   <a href="#numpy.lib.npyio">numpy.lib.npyio</a>
  &#8226;   <a href="#pandas.core.flags">pandas.core.flags</a>
  &#8226;   <a href="#pandas.core.generic">pandas.core.generic</a>
@@ -40175,6 +42569,7 @@ imported by:
     <a href="#flask.app">flask.app</a>
  &#8226;   <a href="#flask.sessions">flask.sessions</a>
  &#8226;   <a href="#flask.typing">flask.typing</a>
+ &#8226;   <a href="#flask_cors.core">flask_cors.core</a>
  &#8226;   <a href="#werkzeug.datastructures.accept">werkzeug.datastructures.accept</a>
  &#8226;   <a href="#werkzeug.datastructures.auth">werkzeug.datastructures.auth</a>
  &#8226;   <a href="#werkzeug.datastructures.cache_control">werkzeug.datastructures.cache_control</a>
@@ -41845,7 +44240,6 @@ imported by:
 <span class="moduletype">Package</span>  <div class="import">
 imports:
     <a href="#xml">xml</a>
- &#8226;   <a href="#xml.parsers.expat">xml.parsers.expat</a>
 
   </div>
   <div class="import">
@@ -41875,7 +44269,6 @@ imported by:
     <a href="#plistlib">plistlib</a>
  &#8226;   <a href="#xml.dom.expatbuilder">xml.dom.expatbuilder</a>
  &#8226;   <a href="#xml.etree.ElementTree">xml.etree.ElementTree</a>
- &#8226;   <a href="#xml.parsers">xml.parsers</a>
  &#8226;   <a href="#xml.sax.expatreader">xml.sax.expatreader</a>
  &#8226;   <a href="#xmlrpc.client">xmlrpc.client</a>
 
@@ -42092,6 +44485,7 @@ imported by:
  &#8226;   <a href="#Bux.GetTodayBux">Bux.GetTodayBux</a>
  &#8226;   <a href="#Stock.GetCurrentStockPrice">Stock.GetCurrentStockPrice</a>
  &#8226;   <a href="#Stock.GetSpecificHistoryStockData">Stock.GetSpecificHistoryStockData</a>
+ &#8226;   <a href="#Stock.SetCurrentStockPricesInDb">Stock.SetCurrentStockPricesInDb</a>
  &#8226;   <a href="#yfinance">yfinance</a>
  &#8226;   <a href="#yfinance.base">yfinance.base</a>
  &#8226;   <a href="#yfinance.const">yfinance.const</a>
@@ -42539,12 +44933,24 @@ imported by:
 </div>
 
 <div class="node">
+  <a name="zipp"></a>
+  <a target="code" href="" type="text/plain"><tt>zipp</tt></a>
+<span class="moduletype">MissingModule</span>  <div class="import">
+imported by:
+    <a href="#mysql.opentelemetry.importlib_metadata">mysql.opentelemetry.importlib_metadata</a>
+
+  </div>
+
+</div>
+
+<div class="node">
   <a name="zlib"></a>
   <tt>zlib</tt> <span class="moduletype"><i>(builtin module)</i></span>  <div class="import">
 imported by:
     <a href="#encodings.zlib_codec">encodings.zlib_codec</a>
  &#8226;   <a href="#gzip">gzip</a>
  &#8226;   <a href="#itsdangerous.url_safe">itsdangerous.url_safe</a>
+ &#8226;   <a href="#mysql.connector.network">mysql.connector.network</a>
  &#8226;   <a href="#shutil">shutil</a>
  &#8226;   <a href="#tarfile">tarfile</a>
  &#8226;   <a href="#urllib3.response">urllib3.response</a>
