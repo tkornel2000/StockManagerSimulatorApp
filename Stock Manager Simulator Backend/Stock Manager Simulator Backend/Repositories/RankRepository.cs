@@ -38,6 +38,24 @@ namespace Stock_Manager_Simulator_Backend.Repositories
             return new List<Rank>();
         }
 
+        public Task<List<Rank>> GetLatestRanksAsync()
+        {
+            return _context.Ranks
+                .Include(x => x.User)
+                .GroupBy(x => x.RankType)
+                .Select(y => new Rank
+                {
+                    Id = y.OrderByDescending(x => x.Datetime).Select(x => x.Id).FirstOrDefault(),
+                    UserId = y.OrderByDescending(x => x.Datetime).Select(x => x.UserId).FirstOrDefault(),
+                    CurrentValue = y.OrderByDescending(x => x.Datetime).Select(x => x.CurrentValue).FirstOrDefault(),
+                    Datetime = y.OrderByDescending(x => x.Datetime).Select(x => x.Datetime).FirstOrDefault(),
+                    PreviousValue = y.OrderByDescending(x => x.Datetime).Select(x => x.PreviousValue).FirstOrDefault(),
+                    RankType = y.OrderByDescending(x => x.Datetime).Select(x => x.RankType).FirstOrDefault(),
+                    User = y.OrderByDescending(x => x.Datetime).FirstOrDefault()!.User,
+                }).ToListAsync();
+        }
+
+
         public async Task CreateRankAsync(Rank rank)
         {
             _context.Ranks.Add(rank);

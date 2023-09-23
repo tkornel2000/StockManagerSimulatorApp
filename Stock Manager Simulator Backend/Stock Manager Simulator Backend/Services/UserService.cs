@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Stock_Manager_Simulator_Backend.Constans;
 using Stock_Manager_Simulator_Backend.Dtos;
+using Stock_Manager_Simulator_Backend.Dtos.Results;
 using Stock_Manager_Simulator_Backend.Models;
 using Stock_Manager_Simulator_Backend.Repositories.Interfaces;
 using Stock_Manager_Simulator_Backend.Services.Interfaces;
@@ -88,6 +89,30 @@ namespace Stock_Manager_Simulator_Backend.Services
 
             var userDto = _mapper.Map<UserDto>(user);
             return userDto;
+        }
+
+        public async Task<PutUserResult> PutUserAsync(int id, PutUserDto putUserDto)
+        {
+            var oldUser = await _userRepository.GetUserByIdAsync(id);
+            if (oldUser?.Username != putUserDto.Username)
+            {
+                if (!_userRepository.WithThisUsernameThereIsNoUser(putUserDto.Username))
+                {
+                    return new PutUserResult { ErrorMessage= ErrorConstans.THERE_IS_USER_WITH_THIS_USERNAME };
+                };
+            }
+            
+            if (oldUser?.Email != putUserDto.Email)
+            {
+                if (!_userRepository.WithThisEmailThereIsNoUser(putUserDto.Email))
+                {
+                    return new PutUserResult { ErrorMessage= ErrorConstans.THERE_IS_USER_WITH_THIS_EMAIL };
+                };
+            }
+
+            _mapper.Map(putUserDto, oldUser);
+            await _userRepository.SaveChangesAsync();
+            return new PutUserResult { PutUserDto=putUserDto};
         }
 
     }

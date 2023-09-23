@@ -14,6 +14,10 @@ namespace Stock_Manager_Simulator_Backend.Validators
                 .Matches("[A-Z]").WithMessage(ErrorConstans.PASSWORD_MUST_HAVE_UPPERCASE_LETTER)
                 .Matches("[a-z]").WithMessage(ErrorConstans.PASSWORD_MUST_HAVE_LOWERCASE_LETTER)
                 .Matches("[0-9]").WithMessage(ErrorConstans.PASSWORD_MUST_HAVE_NUMBER);
+
+            RuleFor(x => x.ConfirmPassword)
+                .NotEmpty().WithMessage(ErrorConstans.CONFIRMPASSWORD_IS_REQUIRED)
+                .Equal(x => x.NewPassword).WithMessage(ErrorConstans.CONFIRMPASSWORD_IS_NOT_MATCHED_WITH_PASSWORD);
         }
     }
 }

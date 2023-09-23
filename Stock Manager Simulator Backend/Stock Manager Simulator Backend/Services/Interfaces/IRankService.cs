@@ -5,7 +5,8 @@ namespace Stock_Manager_Simulator_Backend.Services.Interfaces
 {
     public interface IRankService
     {
-        Task<IEnumerable<RankDto>> GetLatestRankAsync(RankType rankType);
+        Task<IEnumerable<RankDto>> GetLatestRankByTypeAsync(RankType rankType);
+        Task<IEnumerable<RankDto>> GetLatestRankAsync();
         Task UpdateRankAsync();
     }
 }

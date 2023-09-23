@@ -9,7 +9,7 @@ namespace Stock_Manager_Simulator_Backend.Dtos
         public int Quantity { get; set; }
         public float Price { get; set; }
         public float CurrentPrice { get; set; }
-        public bool IsSell { get; set; }
+        public bool IsPurchase { get; set; }
 
         public long TimeInTimestamp { get; set; }
     }

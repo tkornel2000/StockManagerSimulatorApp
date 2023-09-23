@@ -9,5 +9,6 @@ namespace Stock_Manager_Simulator_Backend.Repositories.Interfaces
         Task<List<Rank>> GetLatestUsersByTypeAsync(RankType rankType);
         Task SaveChangesAsync();
         Task<Rank?> GetLatestRankByUserAndTypeAsync (int userId, RankType rankType);
+        Task<List<Rank>> GetLatestRanksAsync();
     }
 }

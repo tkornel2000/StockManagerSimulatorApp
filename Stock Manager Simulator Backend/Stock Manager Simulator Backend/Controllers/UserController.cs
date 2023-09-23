@@ -17,17 +17,19 @@ namespace Stock_Manager_Simulator_Backend.Controllers
         private readonly IUserService _userService;
         private readonly IValidator<RegisterDto> _registerValidator;
         private readonly IValidator<ChangePasswordDto> _changePasswordValidator;
+        private readonly IValidator<PutUserDto> _changeUserValidator;
 
-        public UserController(IUserService userService, IValidator<RegisterDto> registerValidator, IValidator<ChangePasswordDto> changePasswordValidator)
+        public UserController(IUserService userService, IValidator<RegisterDto> registerValidator, IValidator<ChangePasswordDto> changePasswordValidator, IValidator<PutUserDto> changeUserValidator)
         {
             _userService = userService;
             _registerValidator = registerValidator;
             _changePasswordValidator = changePasswordValidator;
+            _changeUserValidator = changeUserValidator;
         }
 
         // POST api/<UserController>
         [HttpPost]
-        public async Task<ActionResult> Post([FromBody] RegisterDto registerDto)
+        public async Task<ActionResult> PostAsync([FromBody] RegisterDto registerDto)
         {
             var result = await _registerValidator.ValidateAsync(registerDto);
             if (!result.IsValid)
@@ -38,10 +40,9 @@ namespace Stock_Manager_Simulator_Backend.Controllers
             return NoContent();
         }
 
-        // PUT api/<UserController>/5
         [Authorize]
         [HttpPut("change-password/{id}")]
-        public async Task<ActionResult> Put(int id, [FromBody] ChangePasswordDto changePasswordDto)
+        public async Task<ActionResult> ChangePasswordAsync(int id, [FromBody] ChangePasswordDto changePasswordDto)
         {
             var validateResult = await _changePasswordValidator.ValidateAsync(changePasswordDto);
             if (!validateResult.IsValid)
@@ -56,6 +57,25 @@ namespace Stock_Manager_Simulator_Backend.Controllers
             }
 
             return NoContent();
+        }
+        
+        [Authorize]
+        [HttpPut("{id}")]
+        public async Task<ActionResult> PutAsync(int id, [FromBody] PutUserDto putUserDto)
+        {
+            var validateResult = await _changeUserValidator.ValidateAsync(putUserDto);
+            if (!validateResult.IsValid)
+            {
+                return BadRequest(new { Error = validateResult.Errors.First().ErrorMessage });
+            }
+
+            var result = await _userService.PutUserAsync(id, putUserDto);
+            if (result.ErrorMessage != null)
+            {
+                return BadRequest(new { Error = result.ErrorMessage });
+            }
+
+            return Ok(result.PutUserDto);
         }
 
         // DELETE api/<UserController>/5

@@ -25,11 +25,17 @@ namespace Stock_Manager_Simulator_Backend.Mapper
             CreateMap<Transaction, TransactionDto>()
                 .ForMember(dest => dest.StockName, opt => opt.MapFrom(src => src.Stock.Name))
                 .ForMember(dest => dest.CurrentPrice, opt => opt.MapFrom(src => src.Stock.StocksPrices.OrderByDescending(x => x.UpdateTimeInTimestamp).First().Price))
-                .ForMember(dest => dest.IsSell, opt => opt.MapFrom(src => src.Quantity<0));
+                .ForMember(dest => dest.IsPurchase, opt => opt.MapFrom(src => src.Quantity>0))
+                .ForMember(dest => dest.Quantity, opt => opt.MapFrom(src => 
+                    src.Quantity<0
+                    ? -1*(src.Quantity)
+                    : src.Quantity));
 
             CreateMap<Rank, RankDto>()
-                .ForMember(dest => dest.UserDto, opt => opt.MapFrom(src => src.User));
-            
+                .ForMember(dest => dest.UserDto, opt => opt.MapFrom(src => src.User))
+                .ForMember(dest => dest.RankType, opt => opt.MapFrom(src => src.RankType.ToString()));
+
+            CreateMap<PutUserDto, User>();
         }
     }
 }

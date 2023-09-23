@@ -12,18 +12,27 @@ namespace Stock_Manager_Simulator_Backend.Services
         private readonly IRankRepository _rankRepository;
         private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
+        private readonly ILogger<RankService> _logger;
 
 
-        public RankService(IRankRepository rankRepository, IUserRepository userRepository, IMapper mapper)
+        public RankService(IRankRepository rankRepository, IUserRepository userRepository, IMapper mapper, ILogger<RankService> logger)
         {
             _rankRepository = rankRepository;
             _userRepository = userRepository;
             _mapper = mapper;
+            _logger = logger;
         }
 
-        public async Task<IEnumerable<RankDto>> GetLatestRankAsync(RankType rankType)
+        public async Task<IEnumerable<RankDto>> GetLatestRankByTypeAsync(RankType rankType)
         {
             var ranks = await _rankRepository.GetLatestUsersByTypeAsync(rankType);
+            var rankDtos = ranks.Select(rank => _mapper.Map<RankDto>(rank));
+            return rankDtos;
+        }
+
+        public async Task<IEnumerable<RankDto>> GetLatestRankAsync()
+        {
+            var ranks = await _rankRepository.GetLatestRanksAsync();
             var rankDtos = ranks.Select(rank => _mapper.Map<RankDto>(rank));
             return rankDtos;
         }
@@ -55,8 +64,8 @@ namespace Stock_Manager_Simulator_Backend.Services
 
                     var latestWeeklyRank = await _rankRepository.GetLatestRankByUserAndTypeAsync(user.Id, RankType.Weekly);
                     if (latestWeeklyRank == null ||
-                        cal.GetWeekOfYear(today, CalendarWeekRule.FirstDay, DayOfWeek.Monday) !=
-                        cal.GetWeekOfYear(today, CalendarWeekRule.FirstDay, DayOfWeek.Monday))
+                        cal.GetWeekOfYear(latestWeeklyRank.Datetime, CalendarWeekRule.FirstDay, DayOfWeek.Monday)
+                        != cal.GetWeekOfYear(today, CalendarWeekRule.FirstDay, DayOfWeek.Monday))
                     {
                         var weeklyRank = new Rank
                         {
@@ -72,6 +81,8 @@ namespace Stock_Manager_Simulator_Backend.Services
                     var latestMonthlyRank = await _rankRepository.GetLatestRankByUserAndTypeAsync(user.Id, RankType.Monthly);
                     if (latestMonthlyRank == null || latestMonthlyRank.Datetime.Month != today.Month)
                     {
+                        _logger.LogWarning("beléptem");
+                        _logger.LogError(latestMonthlyRank?.ToString());
                         var monthlyRank = new Rank
                         {
                             CurrentValue = currentValue,

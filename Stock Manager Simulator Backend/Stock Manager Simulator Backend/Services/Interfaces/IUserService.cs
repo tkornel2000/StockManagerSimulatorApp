@@ -1,4 +1,5 @@
 ﻿using Stock_Manager_Simulator_Backend.Dtos;
+using Stock_Manager_Simulator_Backend.Dtos.Results;
 
 namespace Stock_Manager_Simulator_Backend.Services.Interfaces
 {
@@ -10,5 +11,6 @@ namespace Stock_Manager_Simulator_Backend.Services.Interfaces
         string HashPassword(string password);
         bool ValidatePassword(string inputPassword, string passwordHash);
         Task<UserDto?> GetMySelfAsync();
+        Task<PutUserResult> PutUserAsync(int id, PutUserDto putUserDto);
     }
 }

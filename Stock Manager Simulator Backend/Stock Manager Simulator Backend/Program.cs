@@ -80,6 +80,7 @@ builder.Services.AddScoped<IRankService, RankService>();
 
 builder.Services.AddScoped<IValidator<RegisterDto>, RegisterValidator>();
 builder.Services.AddScoped<IValidator<ChangePasswordDto>, ChangePasswordValidator>();
+builder.Services.AddScoped<IValidator<PutUserDto>, PutUserValidator>();
 
 builder.Services.AddHostedService<UpdatePortfolioService>();
 builder.Services.AddHostedService<UpdateRankService>();

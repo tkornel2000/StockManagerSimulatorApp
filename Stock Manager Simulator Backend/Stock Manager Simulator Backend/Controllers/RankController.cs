@@ -17,6 +17,12 @@ namespace Stock_Manager_Simulator_Backend.Controllers
         {
             _rankService = rankService;
         }
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<RankDto>>> GetAllLatestRanks()
+        {
+            var result = await _rankService.GetLatestRankAsync();
+            return Ok(result);
+        }
 
         // GET: api/<RankController>
         [HttpGet("{rankType}")]
@@ -43,7 +49,7 @@ namespace Stock_Manager_Simulator_Backend.Controllers
                     return BadRequest("Érvénytelen rang típus.");
             }
 
-            var result = await _rankService.GetLatestRankAsync(enumRankType);
+            var result = await _rankService.GetLatestRankByTypeAsync(enumRankType);
             return Ok(result);
         }
 
