@@ -2,11 +2,9 @@ import { Navbar } from "./Navbar";
 import { PermissionForComponent } from "./Functions/PermissionForComponent";
 import React, { useEffect, useState } from "react";
 import { FaSort } from "react-icons/fa";
-import { BsInfoCircle } from "react-icons/bs";
 import { dotnetApi } from "../api/axios";
 import ErrorModal from "../Modals/ErrorModal";
 import SuccessModal from "../Modals/SuccessModal";
-import explains from "./Constans/explains";
 
 export const MyStock = () => {
   PermissionForComponent();
@@ -14,24 +12,22 @@ export const MyStock = () => {
   const [stocks, setStocks] = useState([]);
   const [sortOrder, setSortOrder] = useState("asc");
   const [sortColumn, setSortColumn] = useState("");
-  const [message, setMessage] = useState("");
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [saleQuantities, setSaleQuantities] = useState({});
-  const [saleValues, setSaleValues] = useState({});
   const [loading, setLoading] = useState(true);
+  const [stockQuantity, setStockQuantity] = useState({});
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [showErrorModal, setShowErrorModal] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
   const fetchData = async () => {
     const accessToken = localStorage.getItem("accessToken");
     try {
-      const response = await dotnetApi.get(
-        "Transaction/available-stocks",
-        {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
-        } );
+      const response = await dotnetApi.get("Transaction/available-stocks", {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      });
       const data = response.data;
       console.log(data);
       setStocks(data);
@@ -58,63 +54,48 @@ export const MyStock = () => {
     }
   };
 
-  const handleSaleQuantityChange = (symbol, value) => {
-    if (value >= 0 && value <= stocks.find(stock => stock.symbol === symbol).quantity) {
-      setSaleQuantities((prevState) => ({
-        ...prevState,
-        [symbol]: parseInt(value)
-      }));
-
-      const stock = stocks.find(stock => stock.symbol === symbol);
-      const saleValue = parseFloat(value) * stock.current_price;
-
-      setSaleValues(prevState => ({
-        ...prevState,
-        [symbol]: saleValue
-      }));
-    }
+  const handleInputQuantityChange = (symbol, quantity) => {
+    const newStockQuantity = { [symbol]: quantity };
+    setStockQuantity(newStockQuantity);
   };
-
-  const handleSellClick = async (symbol, current_Price, stock_name, all_quantity) => {
-    const saleQuantity = saleQuantities[symbol];
-
-    if (saleQuantity === undefined) {
-      setMessage("0 db-ot nem tudsz eladni.");
-      setIsModalOpen(true);
-      return;
-    }
-
+  
+  const handleSellClick = async (symbol) => {
+    setStockQuantity({})
+    const accessToken = localStorage.getItem("accessToken");
     try {
-      const currentTime = new Date().getTime();
-      const response = await dotnetApi.post("Transaction/sell", {
-        symbol: symbol,
-        price: current_Price,
-        quantity: saleQuantity,
-        timestamp: currentTime,
-        stock_name: stock_name
-      });
-      var money = parseFloat(localStorage.getItem('money'))
-      console.log("saleQuantity ",saleQuantity)
-      console.log("current_Price ",current_Price)
-      console.log("current_Price*saleQuantity ",current_Price*saleQuantity)
-      money = money+(current_Price*saleQuantity);
-      console.log("money ",money)
-      localStorage.setItem('money',money);
-      console.log(response.data);
-      setMessage(response.data);
-      setIsModalOpen(true);
-      fetchData();
-
-      const saleValue = parseFloat(saleQuantity) * current_Price;
-      setSaleValues(prevState => ({
-        ...prevState,
-        [symbol]: saleValue.toFixed(2)
-      }));
+      const response = await dotnetApi.post(
+        "Transaction/sell",
+        {
+          stockSymbol: symbol,
+          quantity: stockQuantity[symbol],
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        }
+      );
+      if (response.status === 204) {
+        console.log("Sikeres eladás történt.");
+        const responseMe = await dotnetApi.get("User/me", {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        });
+        const user = responseMe?.data;
+        localStorage.setItem("currentUser", JSON.stringify(user));
+        setShowSuccessModal(true);
+      }
     } catch (error) {
-      console.log("Error selling stock:", error);
-      setMessage(error.message);
-      setIsModalOpen(true);
+      console.log(error.response);
+      if (error?.response?.status === 400) {
+        setErrorMessage(error.response.data.error);
+      } else {
+        setErrorMessage("SERVER_ERROR");
+      }
+      setShowErrorModal(true);
     }
+    fetchData()
   };
 
   const getSortedStocks = () => {
@@ -122,11 +103,11 @@ export const MyStock = () => {
       return [];
     }
     switch (sortColumn) {
-      case "stock_name":
+      case "stockName":
         return stocks.sort((a, b) =>
           sortOrder === "asc"
-            ? a.stock_name.localeCompare(b.stock_name)
-            : b.stock_name.localeCompare(a.stock_name)
+            ? a.stockName.localeCompare(b.stockName)
+            : b.stockName.localeCompare(a.stockName)
         );
       case "quantity":
         return stocks.sort((a, b) =>
@@ -134,27 +115,15 @@ export const MyStock = () => {
             ? a.quantity - b.quantity
             : b.quantity - a.quantity
         );
-      case "current_price":
+      case "price":
         return stocks.sort((a, b) =>
-          sortOrder === "asc"
-            ? a.current_price - b.current_price
-            : b.current_price - a.current_price
-        );
-      case "delta_value":
-        return stocks.sort((a, b) =>
-          sortOrder === "asc"
-            ? a.delta_value - b.delta_value
-            : b.delta_value - a.delta_value
-        );
-      case "delta_percent":
-        return stocks.sort((a, b) =>
-          sortOrder === "asc"
-            ? a.delta_percent - b.delta_percent
-            : b.delta_percent - a.delta_percent
+          sortOrder === "asc" ? a.price - b.price : b.price - a.price
         );
       case "value":
         return stocks.sort((a, b) =>
-          sortOrder === "asc" ? a.value - b.value : b.value - a.value
+          sortOrder === "asc"
+            ? a.price * a.quantity - b.price * b.quantity
+            : b.price * b.quantity - a.price * a.quantity
         );
       default:
         return stocks;
@@ -172,100 +141,141 @@ export const MyStock = () => {
     return null;
   };
 
+  const handleErrorClose = () => {
+    setShowErrorModal(false);
+  };
+
+  const handleSuccessClose = () => {
+    setShowSuccessModal(false);
+  };
+
   return (
     <div>
       <Navbar />
-      <div className="container">
+      <div className="container" style={{ width: "100%", minHeight: "90vh" }}>
         <div className="row justify-content-center mt-3">
           <div className="col-12 bg-little-transparent-white">
             <div className="row justify-content-center mt-3">
               <div className="col-11">
-              <h1 className="text-center mt-1 mb-3">Összes részvény</h1>
+                <h1 className="text-center mt-1 mb-3">Saját részvényeim</h1>
                 <h5 className="text-center mb-3">
                   Rendelkezésre álló pénzed:{" "}
                   {currentUser.money.toLocaleString()} Ft
                 </h5>
                 <h5 className="text-center mb-3">
                   Pénzed részvényekben:{" "}
-                  {currentUser.money.toLocaleString()} Ft
+                  {currentUser.stockValue.toLocaleString()} Ft
                 </h5>
                 {loading ? (
                   <div className="text-center">Betöltés...</div>
                 ) : (
-              <table className="sell-table">
-            <thead>
-              <tr className="tableHead">
-                <th onClick={() => handleColumnClick("stock_name")}>
-                  Név {renderSortIcon("stock_name")}
-                </th>
-                <th onClick={() => handleColumnClick("quantity")}>
-                  Mennyiség(db) {renderSortIcon("quantity")}
-                </th>
-                <th onClick={() => handleColumnClick("current_price")}>
-                  Ára(Ft) {renderSortIcon("current_price")}
-                </th>
-                <th onClick={() => handleColumnClick("value")}>
-                  Érték(Ft){renderSortIcon("value")}
-                </th>
-                <th onClick={() => handleColumnClick("delta_value")}>
-                  Érték változás(Ft){renderSortIcon("delta_value")}
-                </th>
-                <th onClick={() => handleColumnClick("delta_percent")}>
-                  Érték változás(%){renderSortIcon("delta_percent")}
-                </th>
-                <th>Eladás mennyisége(db)</th>
-                <th>Eladás értéke(Ft)</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody className="">
-              {getSortedStocks().map((stock) => (
-                <tr key={stock.symbol}>
-                  <td>
-                    {stock.stockSymbol} 
-                  </td>
-                  <td>{stock.quantity}</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td>
-                    <input
-                      className="input"
-                      type="number"
-                      min={0}
-                      max={stock.quantity}
-                      value={saleQuantities[stock.symbol] || 0}
-                      onChange={(e) =>
-                        handleSaleQuantityChange(stock.symbol, e.target.value)
-                      }
-                    />
-                  </td>
-                  <td>{saleValues[stock.symbol]?saleValues[stock.symbol].toLocaleString():""}</td>
-                  <td>
-                    <button
-                      className="fogomb"
-                      onClick={() =>
-                        handleSellClick(
-                          stock.symbol,
-                          stock.current_price,
-                          stock.stock_name,
-                          stock.quantity
-                        )
-                      }
-                    >
-                      Eladás
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>)}
+                  <table className="table table-striped border">
+                    <thead>
+                      <tr>
+                        <th
+                          onClick={() => handleColumnClick("stockName")}
+                          style={{ cursor: "pointer" }}
+                          className="text-center"
+                        >
+                          Név {renderSortIcon("stockName")}
+                        </th>
+                        <th
+                          onClick={() => handleColumnClick("quantity")}
+                          style={{ cursor: "pointer" }}
+                          className="text-center"
+                        >
+                          Mennyiség(db) {renderSortIcon("quantity")}
+                        </th>
+                        <th
+                          onClick={() => handleColumnClick("price")}
+                          style={{ cursor: "pointer" }}
+                          className="text-center"
+                        >
+                          Ára(Ft) {renderSortIcon("price")}
+                        </th>
+                        <th
+                          onClick={() => handleColumnClick("value")}
+                          style={{ cursor: "pointer" }}
+                          className="text-center"
+                        >
+                          Érték(Ft){renderSortIcon("value")}
+                        </th>
+                        <th className="text-center">Eladás mennyisége(db)</th>
+                        <th className="text-center">Eladás értéke(Ft)</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {getSortedStocks().map((stock) => (
+                        <tr key={stock.stockSymbol}>
+                          <td className="text-center">{stock.stockName}</td>
+                          <td className="text-center">{stock.quantity}</td>
+                          <td className="text-center">{stock.price.toLocaleString()}</td>
+                          <td className="text-center">
+                            {(stock.quantity * stock.price).toLocaleString()}
+                          </td>
+                          <td className="text-center">
+                            <div className="col-md-5 mx-auto">
+                            <input
+                              style={{width:"80px"}}
+                              className="form-control"
+                              type="number"
+                              min={0}
+                              max={stock.quantity}
+                              value={stockQuantity[stock.stockSymbol] || ""}
+                              onChange={(e) => {
+                                const newValue = parseInt(e.target.value);
+                                  if (
+                                    !isNaN(newValue) &&
+                                    newValue >= 1 &&
+                                    newValue <= stock.quantity
+                                  ) {
+                                    handleInputQuantityChange(
+                                      stock.stockSymbol,
+                                      newValue
+                                    );
+                                  }
+                              }}
+                            />
+                            </div>
+                          </td>
+                          <td className="text-center">
+                            {stockQuantity[stock.stockSymbol]*stock.price
+                            ?(stockQuantity[stock.stockSymbol]*stock.price).toLocaleString()
+                            : ""}
+                          </td>
+                          <td className="text-center">
+                            <button
+                              className="btn btn-secondary"
+                              onClick={() =>
+                                handleSellClick(stock.stockSymbol)
+                              }
+                            >
+                              Eladás
+                            </button>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                )}
               </div>
             </div>
           </div>
         </div>
       </div>
+      <ErrorModal
+        show={showErrorModal}
+        onClose={handleErrorClose}
+        errorHead="Eladási hiba"
+        errorMessage={errorMessage}
+      />
+      <SuccessModal
+        show={showSuccessModal}
+        onClose={handleSuccessClose}
+        successHead="Sikeres vásrlás"
+        successMessage="Ön sikeresen adott el részvényeket."
+      />
     </div>
   );
 };

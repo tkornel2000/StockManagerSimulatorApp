@@ -6,9 +6,11 @@ export const WelcomeUser = () => {
   return (
     <div>
         <h3>Üdvözöllek {currentUser.lastname} {currentUser.firstname}!</h3>
-        <p>Rendelkezésre álló pénzed: {currentUser.money}</p>
-        <p>Részvényekben lévő pénzed: {currentUser.stockValue}</p>
-        <p>Portfoliód teljes értéke: {currentUser.money+currentUser.stockValue}</p>
+        <p>Rendelkezésre álló pénzed: {currentUser.money.toLocaleString()}{" Ft"}</p>
+        <p>Részvényekben lévő pénzed: {currentUser.stockValue.toLocaleString()}{" Ft"}</p>
+        <p>Portfoliód teljes értéke: {" "}
+          {(currentUser.money+currentUser.stockValue).toLocaleString()}{" Ft"}
+        </p>
     </div>
   )
 }

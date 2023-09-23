@@ -202,11 +202,11 @@ export const Stocks = () => {
   return (
     <div>
       <Navbar />
-      <div className="container">
-        <div className="row justify-content-center mt-3">
-          <div className="col-12 bg-little-transparent-white">
+      <div className="container" style={{ width: "100%", minHeight: "90vh" }}>
+        <div className="row justify-content-center mt-3" style={{width:"100%"}}>
+          <div className="col bg-little-transparent-white">
             <div className="row justify-content-center mt-3">
-              <div className="col-11">
+              <div className="col-12">
                 <h1 className="text-center mt-1 mb-3">Összes részvény</h1>
                 <h5 className="text-center mb-3">
                   Rendelkezésre álló pénzed:{" "}
@@ -221,6 +221,7 @@ export const Stocks = () => {
                         <th
                           style={{ cursor: "pointer" }}
                           onClick={() => handleColumnClick("name")}
+                          className="text-center"
                         >
                           Név
                           {renderSortIcon("name")}
@@ -228,6 +229,7 @@ export const Stocks = () => {
                         <th
                           style={{ cursor: "pointer" }}
                           onClick={() => handleColumnClick("price")}
+                          className="text-center"
                         >
                           Jelenlegi ár(Ft)
                           {renderHelperIcon(explains.priceExplain)}
@@ -236,6 +238,7 @@ export const Stocks = () => {
                         <th
                           style={{ cursor: "pointer" }}
                           onClick={() => handleColumnClick("traffic")}
+                          className="text-center"
                         >
                           Forgalom(m Ft)
                           {renderHelperIcon(explains.volumeExplain)}
@@ -244,6 +247,7 @@ export const Stocks = () => {
                         <th
                           style={{ cursor: "pointer" }}
                           onClick={() => handleColumnClick("dayHigh")}
+                          className="text-center"
                         >
                           Napi max(Ft)
                           {renderHelperIcon(explains.dailyMaxExplain)}
@@ -252,6 +256,7 @@ export const Stocks = () => {
                         <th
                           style={{ cursor: "pointer" }}
                           onClick={() => handleColumnClick("dayLow")}
+                          className="text-center"
                         >
                           Napi min(Ft)
                           {renderHelperIcon(explains.dailyMinExplain)}
@@ -260,6 +265,7 @@ export const Stocks = () => {
                         <th
                           style={{ cursor: "pointer" }}
                           onClick={() => handleColumnClick("dayOpen")}
+                          className="text-center"
                         >
                           Nyitó ár(Ft)
                           {renderHelperIcon(explains.dailyOpenExplain)}
@@ -268,34 +274,33 @@ export const Stocks = () => {
                         <th
                           style={{ cursor: "pointer" }}
                           onClick={() => handleColumnClick("dayDeltaPrice")}
+                          className="text-center"
                         >
                           Árváltozás(%)
                           {renderHelperIcon(explains.dailyDeltaOpenExplain)}
                           {renderSortIcon("dayDeltaPrice")}
                         </th>
-                        <th>Vásárlási mennyiség(db)</th>
+                        <th className="text-center">Vásárlási mennyiség(db)</th>
                         <th></th>
                       </tr>
                     </thead>
                     <tbody>
                       {getSortedStocks().map((stock) => (
                         <tr key={stock.stockSymbol}>
-                          <td>
-                            <a href={`./stocks/${stock.stockSymbol}`}>
+                          <td className="text-center">
                               {stock.name}
-                            </a>
                           </td>
-                          <td>{stock.price.toLocaleString()}</td>
-                          <td>
+                          <td className="text-center">{stock.price.toLocaleString()}</td>
+                          <td className="text-center">
                             {((stock.volume * stock.price) / 1000000)
                               .toFixed(2)
                               .replace(".", ",")}
                           </td>
-                          <td>{stock.dayHigh.toLocaleString()}</td>
-                          <td>{stock.dayLow.toLocaleString()}</td>
-                          <td>{stock.dayOpen.toLocaleString()}</td>
-                          <td>
-                            {stock.price/stock.dayOpen>=1?"+":""}{Math.round((stock.price/stock.dayOpen-1)*1000)/1000}
+                          <td className="text-center">{stock.dayHigh.toLocaleString()}</td>
+                          <td className="text-center">{stock.dayLow.toLocaleString()}</td>
+                          <td className="text-center">{stock.dayOpen.toLocaleString()}</td>
+                          <td className="text-center">
+                            {stock.price/stock.dayOpen>1?"+":""}{(Math.round((stock.price/stock.dayOpen-1)*1000)/1000).toLocaleString()}
                             </td>
                           <td>
                             <div className="col-md-5 mx-auto">
