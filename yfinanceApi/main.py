@@ -44,7 +44,7 @@ def run_schedule():
         schedule.run_pending()
         time.sleep(1)
 
-if __name__ == "__main__":
-    thread = threading.Thread(target=run_schedule)
-    thread.start()
-    app.run()
+#if __name__ == "__main__":
+thread = threading.Thread(target=run_schedule)
+thread.start()
+app.run()
