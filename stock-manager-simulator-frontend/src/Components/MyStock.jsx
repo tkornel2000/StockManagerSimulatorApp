@@ -1,5 +1,4 @@
 import { Navbar } from "./Navbar";
-import { PermissionForComponent } from "./Functions/PermissionForComponent";
 import React, { useEffect, useState } from "react";
 import { FaSort } from "react-icons/fa";
 import { dotnetApi } from "../api/axios";
@@ -7,7 +6,6 @@ import ErrorModal from "../Modals/ErrorModal";
 import SuccessModal from "../Modals/SuccessModal";
 
 export const MyStock = () => {
-  PermissionForComponent();
 
   const [stocks, setStocks] = useState([]);
   const [sortOrder, setSortOrder] = useState("asc");
@@ -117,7 +115,9 @@ export const MyStock = () => {
         );
       case "price":
         return stocks.sort((a, b) =>
-          sortOrder === "asc" ? a.price - b.price : b.price - a.price
+          sortOrder === "asc" 
+            ? a.price - b.price 
+            : b.price - a.price
         );
       case "value":
         return stocks.sort((a, b) =>
@@ -149,7 +149,7 @@ export const MyStock = () => {
     setShowSuccessModal(false);
   };
 
-  return (
+  return(
     <div>
       <Navbar />
       <div className="container" style={{ width: "100%", minHeight: "90vh" }}>

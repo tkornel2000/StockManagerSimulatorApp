@@ -1,12 +1,10 @@
 import { Navbar } from "./Navbar";
-import { PermissionForComponent } from "./Functions/PermissionForComponent";
 import React, { useEffect, useState } from "react";
 import { FaSort } from "react-icons/fa";
 import { dotnetApi } from "../api/axios";
 
 export const Rank = () => {
-  PermissionForComponent();
-
+  
   const [ranks, setRanks] = useState([]);
   const [sortOrder, setSortOrder] = useState("asc");
   const [sortColumn, setSortColumn] = useState("place");
@@ -130,7 +128,7 @@ export const Rank = () => {
     indexOfLastItem
   );
 
-  return (
+  return(
     <div>
       <Navbar />
       <div className="container" style={{ width: "100%", minHeight: "90vh" }}>

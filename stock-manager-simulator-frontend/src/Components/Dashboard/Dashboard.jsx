@@ -1,4 +1,3 @@
-import { PermissionForComponent } from "../Functions/PermissionForComponent";
 import { Navbar } from "../Navbar";
 import BuxPrice from "./BuxPrice";
 import BuxLineChart from "./BuxLineChart";
@@ -6,10 +5,8 @@ import { WelcomeUser } from "./WelcomeUser";
 import { MostPopularStocks } from "./MostPopularStocks";
 
 export const Dashboard = () => {
-  PermissionForComponent();
-  
 
-  return (
+  return(
     <div className="vh-100">
       <Navbar />
       <div className="container">

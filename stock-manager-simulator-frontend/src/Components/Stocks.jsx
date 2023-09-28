@@ -1,5 +1,4 @@
 import { Navbar } from "./Navbar";
-import { PermissionForComponent } from "./Functions/PermissionForComponent";
 import React, { useEffect, useState } from "react";
 import { FaSort } from "react-icons/fa";
 import { BsInfoCircle } from "react-icons/bs";
@@ -9,7 +8,7 @@ import SuccessModal from "../Modals/SuccessModal";
 import explains from "./Constans/explains";
 
 export const Stocks = () => {
-  PermissionForComponent();
+
   const [stockData, setStockData] = useState({});
   const [sortOrder, setSortOrder] = useState("asc");
   const [sortColumn, setSortColumn] = useState("");
@@ -54,7 +53,10 @@ export const Stocks = () => {
   }, []);
 
   const handleInputQuantityChange = (symbol, quantity) => {
+    console.log(quantity)
+    console.log("const newStockQuantity = { [symbol]: quantity };...")
     const newStockQuantity = { [symbol]: quantity };
+    console.log("setStockQuantity(newStockQuantity);...")
     setStockQuantity(newStockQuantity);
   };
 
@@ -127,8 +129,8 @@ export const Stocks = () => {
       case "traffic":
         return stockData.sort((stock1, stock2) =>
           sortOrder === "asc"
-            ? stock1.volume * stock1.price - stock2.volume * stock1.price
-            : stock2.volume * stock1.price - stock1.volume * stock1.price
+            ? (stock1.volume * stock1.price) - (stock2.volume * stock2.price)
+            : (stock2.volume * stock2.price) - (stock1.volume * stock1.price)
         );
       case "dayHigh":
         return stockData.sort((stock1, stock2) =>
@@ -199,7 +201,7 @@ export const Stocks = () => {
     setShowSuccessModal(false);
   };
 
-  return (
+  return(
     <div>
       <Navbar />
       <div className="container" style={{ width: "100%", minHeight: "90vh" }}>
@@ -312,8 +314,9 @@ export const Stocks = () => {
                                 max={Math.floor(
                                   currentUser.money / stock.price
                                 )}
-                                value={stockQuantity[stock.stockSymbol] || ""}
+                                 value={stockQuantity[stock.stockSymbol] || ""}
                                 onChange={(e) => {
+                                  console.log(e.target.value)
                                   const newValue = parseInt(e.target.value);
                                   if (
                                     !isNaN(newValue) &&
@@ -321,7 +324,7 @@ export const Stocks = () => {
                                     newValue <=
                                       Math.round(
                                         currentUser.money / stock.price
-                                      )
+                                    )
                                   ) {
                                     handleInputQuantityChange(
                                       stock.stockSymbol,

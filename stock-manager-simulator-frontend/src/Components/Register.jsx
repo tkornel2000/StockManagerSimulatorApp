@@ -59,14 +59,6 @@ const Register = () => {
     setShowSuccessModal(false);
   };
 
-  const openSuccessModal = () => {
-    setShowSuccessModal(true);
-  };
-
-  const openErrorModal = () => {
-    setShowErrorModal(true);
-  };
-
   return (
     <div className="vh-100 bg-jpg">
       <div className="container">
@@ -197,8 +189,6 @@ const Register = () => {
                   Bejelentkezés
                 </a>
               </p>
-              <button onClick={openSuccessModal} >success</button>
-              <button onClick={openErrorModal} >error</button>
             </div>
           </div>
         </div>

@@ -1,11 +1,9 @@
 import { Navbar } from "./Navbar";
-import { PermissionForComponent } from "./Functions/PermissionForComponent";
 import React, { useEffect, useState } from "react";
 import { FaSort } from "react-icons/fa";
 import { dotnetApi } from "../api/axios";
 
 export const Transactions = () => {
-  PermissionForComponent();
 
   const [transactions, setTransactions] = useState([]);
   const [sortOrder, setSortOrder] = useState("desc");
@@ -143,7 +141,7 @@ export const Transactions = () => {
     indexOfLastItem
   );
 
-  return (
+  return(
     <div>
       <Navbar />
       <div className="container" style={{ width: "100%", minHeight: "90vh" }}>
