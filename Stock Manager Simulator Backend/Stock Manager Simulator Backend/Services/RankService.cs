@@ -113,7 +113,7 @@ namespace Stock_Manager_Simulator_Backend.Services
                     //Frissíteni kell.
                     var portfolioValue = await _userRepository.GetCurrentPortfolioValueByUserAsync(user.Id);
                     latestDailyRank.CurrentValue = portfolioValue;
-                    await _rankRepository.SaveChangesAsync();
+                    //await _rankRepository.SaveChangesAsync();
 
                     var latestWeeklyRank = await _rankRepository.GetLatestRankByUserAndTypeAsync(user.Id, RankType.Weekly);
                     latestWeeklyRank!.CurrentValue = currentValue;
@@ -125,6 +125,7 @@ namespace Stock_Manager_Simulator_Backend.Services
                     allTimeRank!.CurrentValue = currentValue;
                 }
             }
+            await _rankRepository.SaveChangesAsync();
         }
     }
 }
