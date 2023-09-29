@@ -14,25 +14,17 @@ namespace Stock_Manager_Simulator_Backend.Repositories
             _context = context;
         }
 
-        public Task<List<StockPrice>> GetAllStockLastPriceAsync()
+        public async Task<List<StockPrice>> GetAllStockLastPriceAsync()
         {
-            return _context.StocksPrices
-            .OrderByDescending(x => x.UpdateTimeInTimestamp)
-            .GroupBy(x => x.StockSymbol)
-            .Select(x => new StockPrice
+            var stockPriceList = new List<StockPrice>();
+            foreach (var stockSymbol in Constans.StockConstans.AllStockSymbol)
             {
-                StockSymbol = x.Key,
-                DayHigh = x.First().DayHigh,
-                DayLow = x.First().DayLow,
-                DayOpen = x.First().DayOpen,
-                Price = x.First().Price,
-                Id = x.First().Id,
-                Stock = x.First().Stock,
-                UpdateTimeInTimestamp = x.First().UpdateTimeInTimestamp,
-                Volume = x.First().Volume
-            })
-            .ToListAsync();
+                stockPriceList.Add(await _context.StocksPrices.Include(x => x.Stock).OrderBy(x => x.Id).LastAsync(x => x.StockSymbol == stockSymbol));
+            }
+            return stockPriceList;
         }
+
+
 
         public Task<StockPrice> GetSpecificStockLastPriceAsync(string stockSymbol)
         {
