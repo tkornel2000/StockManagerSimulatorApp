@@ -302,7 +302,7 @@ export const Stocks = () => {
                           <td className="text-center">{stock.dayLow.toLocaleString()}</td>
                           <td className="text-center">{stock.dayOpen.toLocaleString()}</td>
                           <td className="text-center">
-                            {stock.price/stock.dayOpen>1?"+":""}{(Math.round((stock.price/stock.dayOpen-1)*1000)/1000).toLocaleString()}
+                            {stock.price/stock.dayOpen>1?"+":""}{(Math.round((stock.price/stock.dayOpen-1)*1000)/10).toLocaleString()}
                             </td>
                           <td>
                             <div className="col-md-5 mx-auto">
