@@ -4,7 +4,6 @@ import { FaSort } from "react-icons/fa";
 import { dotnetApi } from "../api/axios";
 
 export const Transactions = () => {
-
   const [transactions, setTransactions] = useState([]);
   const [sortOrder, setSortOrder] = useState("desc");
   const [sortColumn, setSortColumn] = useState("time");
@@ -141,7 +140,7 @@ export const Transactions = () => {
     indexOfLastItem
   );
 
-  return(
+  return (
     <div>
       <Navbar />
       <div className="container" style={{ width: "100%", minHeight: "90vh" }}>
@@ -264,18 +263,20 @@ export const Transactions = () => {
                         >
                           Jelenlegi értéke(Ft){renderSortIcon("currentValue")}
                         </th>
-                        <th
-                          onClick={() => handleColumnClick("isPurchase")}
-                          style={{ cursor: "pointer" }}
-                          className="text-center"
-                        >
-                          {isPurchase
-                            ? "Vásásrlás "
-                            : isPurchase === false
-                            ? "Eladás "
-                            : "Vásárlás/eladás "}
-                          {renderSortIcon("isPurchase")}
-                        </th>
+                        {isPurchase === null ? (
+                          <th
+                            onClick={() => handleColumnClick("isPurchase")}
+                            style={{ cursor: "pointer" }}
+                            className="text-center"
+                          >
+                            {isPurchase
+                              ? "Vásásrlás "
+                              : isPurchase === false
+                              ? "Eladás "
+                              : "Vásárlás/eladás "}
+                            {renderSortIcon("isPurchase")}
+                          </th>
+                        ) : null}
                       </tr>
                     </thead>
                     <tbody>
@@ -290,18 +291,28 @@ export const Transactions = () => {
                             ).toLocaleTimeString()}
                           </td>
                           <td className="text-center">{stock.stockName}</td>
-                          <td className="text-center">{stock.quantity.toLocaleString()}</td>
-                          <td className="text-center">{stock.price.toLocaleString()}</td>
-                          <td className="text-center">{stock.currentPrice.toLocaleString()}</td>
+                          <td className="text-center">
+                            {stock.quantity.toLocaleString()}
+                          </td>
+                          <td className="text-center">
+                            {stock.price.toLocaleString()}
+                          </td>
+                          <td className="text-center">
+                            {stock.currentPrice.toLocaleString()}
+                          </td>
                           <td className="text-center">
                             {(stock.quantity * stock.price).toLocaleString()}
                           </td>
                           <td className="text-center">
-                            {(stock.quantity * stock.currentPrice).toLocaleString()}
+                            {(
+                              stock.quantity * stock.currentPrice
+                            ).toLocaleString()}
                           </td>
+                          {isPurchase === null?(
                           <td className="text-center">
                             {stock.isPurchase ? "vásárlás" : "eladás"}
-                          </td>
+                          </td>) 
+                          : null}
                         </tr>
                       ))}
                     </tbody>

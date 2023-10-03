@@ -4,7 +4,7 @@ const explains = {
     dailyMaxExplain: "Ez az adott napon vagy ha nem ismert az adat az adott napon, akkor a legutóbbi kereskedési napon az adott részvények napi maximumuma.",
     dailyMinExplain: "Ez az adott napon vagy ha nem ismert az adat az adott napon, akkor a legutóbbi kereskedési napon az adott részvények napi minimuma.",
     dailyOpenExplain: "Ez az adott napon vagy ha nem ismert az adat az adott napon, akkor a legutóbbi kereskedési napon az adott részvények nyitási ára.",
-    dailyDeltaOpenExplain: "Megnézi a nyitó árfolyamot és a jelenlegi árfolyamot, a kettőt elosztja egymással és ennek a változása szerepel ebben az oszlopban. Ha növekedett akkor pozitív(+) előjel szerepel, ha pedig csökkent akkor negatív(-)"
+    dailyDeltaOpenExplain: "Megnézi a nyitó árfolyamot és a jelenlegi árfolyamot, a kettőt elosztja egymással és ennek a változása szerepel ebben az oszlopban. Ha növekedett akkor pozitív(+) előjel szerepel, ha pedig csökkent akkor negatív(-)."
 
 
 }

@@ -34,7 +34,7 @@ export const MostPopularStocks = () => {
             .map((stock, index) => (
               <tr key={stock.stockSymbol}>
                 <th scope="row">{index + 1}</th>
-                <td>{stock.stockSymbol}</td>
+                <td>{stock.name}</td>
                 <td>{(Math.round((stock.volume * stock.price / 10000) / 100)).toLocaleString()}</td>
                 <td>{stock.price.toLocaleString()}</td>
               </tr>
