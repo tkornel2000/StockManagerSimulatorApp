@@ -26,18 +26,6 @@ namespace Stock_Manager_Simulator_Backend.Repositories
             return _context.Transactions.Where(x => x.UserId == userId).Include(x => x.Stock).ThenInclude(x => x.StocksPrices).ToListAsync();
         }
 
-        public Task<List<StockQuantityDto>> GetAllCurrentStockQuantityAsyncByUser(int userId)
-        {
-            return _context.Transactions
-                .Where(x => x.UserId == userId)
-                .GroupBy(x => x.StockSymbol)
-                .Select(x => new StockQuantityDto
-                {
-                    StockSymbol = x.Key,
-                    Quantity = x.Sum(x => x.Quantity)
-                }).ToListAsync();
-        }
-
         public Task<StockQuantityDto> GetAvailableStockQuantityByUserAndSymbolAsync
             (int userId, string stockSymbol)
         {
@@ -62,7 +50,7 @@ namespace Stock_Manager_Simulator_Backend.Repositories
                     StockSymbol = x.Key,
                     StockName = x.Select(x => x.Stock.Name).First(),
                     Quantity = x.Sum(x => x.Quantity),
-                    Price = x.Select(x => x.Stock.StocksPrices.First()).OrderByDescending(x => x.UpdateTimeInTimestamp).First().Price,
+                    Price = x.Select(x => x.Stock.StocksPrices.OrderByDescending(x => x.UpdateTimeInTimestamp).First().Price).First(),
                 }).ToListAsync();
         }
 
