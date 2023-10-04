@@ -54,6 +54,8 @@ function translateErrorMessage(errorMessage) {
             return 'Nincs részvény ezzel a szimbólummal.';
         case 'INVALID_BIRTH_OF_DATE':
             return 'Érvénytelen születési dátum formátum.';
+        case 'THE_TEXT_IS_TOO_LONG':
+            return 'Túl hosszú a szöveg, amit megadott.';
         case 'SERVER_ERROR':
             return 'A szerver jelenleg nem elérhető';
         default:
