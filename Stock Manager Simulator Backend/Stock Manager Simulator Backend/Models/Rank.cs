@@ -1,4 +1,6 @@
-﻿using Stock_Manager_Simulator_Backend.Enums;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Stock_Manager_Simulator_Backend.Enums;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Stock_Manager_Simulator_Backend.Models
 {

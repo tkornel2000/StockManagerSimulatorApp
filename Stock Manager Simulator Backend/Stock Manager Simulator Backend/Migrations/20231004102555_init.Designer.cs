@@ -12,8 +12,8 @@ using Stock_Manager_Simulator_Backend.Data;
 namespace Stock_Manager_Simulator_Backend.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230903130110_delete-isBuy")]
-    partial class deleteisBuy
+    [Migration("20231004102555_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -24,18 +24,48 @@ namespace Stock_Manager_Simulator_Backend.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("Stock_Manager_Simulator_Backend.Models.Rank", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<float>("CurrentValue")
+                        .HasColumnType("real");
+
+                    b.Property<DateTime>("Datetime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<float>("PreviousValue")
+                        .HasColumnType("real");
+
+                    b.Property<int>("RankType")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Ranks");
+                });
+
             modelBuilder.Entity("Stock_Manager_Simulator_Backend.Models.Stock", b =>
                 {
                     b.Property<string>("StockSymbol")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("varchar(10)");
 
                     b.Property<string>("FullName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(20)");
 
                     b.HasKey("StockSymbol");
 
@@ -64,7 +94,7 @@ namespace Stock_Manager_Simulator_Backend.Migrations
 
                     b.Property<string>("StockSymbol")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("varchar(10)");
 
                     b.Property<long>("UpdateTimeInTimestamp")
                         .HasColumnType("bigint");
@@ -95,7 +125,7 @@ namespace Stock_Manager_Simulator_Backend.Migrations
 
                     b.Property<string>("StockSymbol")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("varchar(10)");
 
                     b.Property<long>("TimeInTimestamp")
                         .HasColumnType("bigint");
@@ -125,11 +155,11 @@ namespace Stock_Manager_Simulator_Backend.Migrations
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(40)");
 
                     b.Property<string>("Firstname")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<bool>("IsDelete")
                         .HasColumnType("bit");
@@ -139,25 +169,36 @@ namespace Stock_Manager_Simulator_Backend.Migrations
 
                     b.Property<string>("Lastname")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<float>("Money")
                         .HasColumnType("real");
 
                     b.Property<string>("PasswordHash")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("varchar(64)");
 
                     b.Property<float>("StockValue")
                         .HasColumnType("real");
 
                     b.Property<string>("Username")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(30)");
 
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("Stock_Manager_Simulator_Backend.Models.Rank", b =>
+                {
+                    b.HasOne("Stock_Manager_Simulator_Backend.Models.User", "User")
+                        .WithMany("Ranks")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Stock_Manager_Simulator_Backend.Models.StockPrice", b =>
@@ -199,6 +240,8 @@ namespace Stock_Manager_Simulator_Backend.Migrations
 
             modelBuilder.Entity("Stock_Manager_Simulator_Backend.Models.User", b =>
                 {
+                    b.Navigation("Ranks");
+
                     b.Navigation("Transactions");
                 });
 #pragma warning restore 612, 618
